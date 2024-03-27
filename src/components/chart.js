@@ -37,9 +37,9 @@ function Chart() {
     }, [])
 
     return (
-        <>
+        
             <Plot
-                className={'w-[100%] h-[100%] '}
+                className={'lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] '}
                 data={[
                     {
                         x: date,
@@ -91,7 +91,7 @@ function Chart() {
                         l: 60
                     },
                 }} />
-        </>
+        
     )
 }
 

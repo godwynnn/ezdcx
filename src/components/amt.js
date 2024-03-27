@@ -32,7 +32,7 @@ function Amt() {
 
       </div>
 
-      <input type="number" min={0.01} placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+      <input type="number" min={0.01} placeholder="Type here" className="input input-bordered w-full max-w-xs mt-10" />
 
     </div>
   )

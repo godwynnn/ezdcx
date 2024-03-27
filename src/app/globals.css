@@ -21,3 +21,19 @@
 .grow{
   background-color: transparent;
 }
+.btn_active{
+  color: white;
+}
+.btn_selector{
+  transition: 0.8s ease;
+}
+.auth_holder{
+  overflow: hidden;
+}
+.auth_holder form{
+  position: absolute;
+  top: 15%;
+  transition: 0.8s ease;
+  /* border: 1px solid red; */
+  
+}
