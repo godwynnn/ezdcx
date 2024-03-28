@@ -10,7 +10,7 @@ function Amt() {
             <h2 className="card-title text-[18px]">card title</h2>
 
             <div className="card-actions justify-center">
-              <button className="btn btn-error btn-sm">Sell</button>
+              <button className="btn btn-error btn-sm" disabled >Sell</button>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@ function Amt() {
             <h2 className="card-title text-[18px]">Card title!</h2>
 
             <div className="card-actions justify-center">
-              <button className="btn btn-success btn-sm">Buy</button>
+              <button className="btn btn-success btn-sm " disabled>Buy</button>
             </div>
           </div>
         </div>

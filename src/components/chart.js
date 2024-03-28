@@ -39,7 +39,7 @@ function Chart() {
     return (
         
             <Plot
-                className={'lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] '}
+                className={'lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] '}
                 data={[
                     {
                         x: date,
@@ -52,7 +52,7 @@ function Chart() {
                         type: 'candlestick',
                         mode: 'lines+markers',
                         // marker: { color: 'white' },
-                        increasing: { line: { color: 'yellow' } },
+                        increasing: { line: { color: 'green' } },
                         decreasing: { line: { color: 'red' } },
                         name: 'AAPL'
 
