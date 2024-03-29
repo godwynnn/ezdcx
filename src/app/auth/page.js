@@ -91,7 +91,7 @@ function Auth() {
   }, [])
 
   return (
-    <div className='bg-[#101720] flex flex-col justify-center  items-center lg:w-full lg:h-[100vh] md:h-[100vh] md:w-full sm:h-[100vh] sm:w-full max-sm:h-[100vh] max-sm:w-full '>
+    <div className=' flex flex-col justify-center  items-center bg_default '>
 
       <div className=' bg-slate-100 rounded-lg flex flex-col lg:h-[90%] lg:w-[40%] md:h-[90%] md:w-[50%] sm:h-[90%] sm:w-[60%] max-sm:h-[90%] max-sm:w-[80%]  p-5  auth_holder relative'>
         <div className='flex flex-row justify-evenly h-[10%] w-[100%] relative'>
