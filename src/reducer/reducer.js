@@ -4,6 +4,7 @@ const State={
     accessToken:null,
     refreshToken:null,
     logged_in:false,
+    email:''
 
 }
 
@@ -13,7 +14,9 @@ export const AuthenticationSlice=createSlice({
 
     reducers:{
         Login:(state,action)=>{
-            console.log(action.payload)
+            console.log('dispatch values',action.payload.email)
+            state.logged_in=true
+            state.email=action.payload.email
 
         },
 

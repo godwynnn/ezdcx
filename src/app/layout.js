@@ -4,12 +4,14 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 // import { Provider } from "react-redux";
 import { Providers } from "@/components/provider";
-import { store } from "@/store/store";
+import { store, Persistor } from "@/store/store";
+// import { PersistGate } from "redux-persist/integration/react";
+import Persist from "./persist";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "EZDCX",
+  title: "EZRFX",
   description: "Trading Broker",
 };
 
@@ -17,19 +19,25 @@ export default function RootLayout({ children }) {
   return (
 
 
-    <Providers store={store}>
-      <html lang="en">
-        <body className={inter.className}>
-        
-          <Navbar />
-          {children}
-         
-        </body>
-      </html>
-       </Providers>
 
 
-   
+    <html lang="en">
+      <body className={inter.className}>
+        <Providers store={store}>
+          <Persist>
+
+            <Navbar />
+            {children}
+          </Persist>
+        </Providers>
+
+      </body>
+    </html>
+
+
+
+
+
 
   );
 }

@@ -7,9 +7,13 @@ import Chart from '@/components/chart'
 import Navbar from '@/components/navbar'
 import Rates from '@/components/rates'
 import Amt from '@/components/amt'
+import { UseSelector, useSelector } from 'react-redux'
 
 
 function Dashboard() {
+    const data=useSelector((state)=>state.authreducer)
+
+    console.log('dashboard',data)
 
     return (
         <main className={'bg-[#0B1215] lg:w-[100%] lg:h-[100vh]  max-xl:h-[100vh] lg:overflow-x-hidden md:h-[150vh] md:w-[100%] max-md:h-[100vh] max-md:w-[100%] '}>
