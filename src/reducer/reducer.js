@@ -20,9 +20,13 @@ export const AuthenticationSlice=createSlice({
 
         },
 
-        Logout:()=>{
+        Logout:(state,action)=>{
 
             console.log('logged out')
+            state.logged_in=false
+            state.email=''
+            state.refreshToken=null
+            state.accessToken=null
 
         }
     }

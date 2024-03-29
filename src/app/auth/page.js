@@ -21,6 +21,8 @@ function Auth() {
     },
     onSubmit: values => {
       console.log(values)
+      dispatch(AuthencticationAction.Logout())
+      router.push('/auth')
     },
 
     validationSchema:Yup.object({
