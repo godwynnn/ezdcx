@@ -2,12 +2,14 @@
 import React from 'react'
 import { useState } from 'react'
 import { fetchChartData } from './fetchdata'
+import { UseDispatch, useDispatch } from 'react-redux'
 
 
 
 
 function Navbar() {
    const [data,setData]=useState(null)
+   const dispatch=useDispatch()
     return (
 
         <div className="navbar  bg-[#101720] text-white">
@@ -68,7 +70,7 @@ function Navbar() {
 
 
                 <dialog id="my_modal_2" className="modal">
-                    <form  method='post' onSubmit={e=>{e.preventDefault(),fetchChartData(data)}} className="modal-box opacity-[90%] flex flex-col min-h-[90vh] items-center justify-center text-black">
+                    <form  method='post' onSubmit={e=>(e.preventDefault(),fetchChartData(data,dispatch))} className="modal-box opacity-[90%] flex flex-col min-h-[90vh] items-center justify-center text-black">
                         <label className="input input-bordered flex items-center gap-2 m-4">
                             Ticker
                             <input type="text" className="grow" placeholder="#" name='ticker' onChange={e=>setData({...data,'ticker':e.target.value})} />
@@ -76,10 +78,10 @@ function Navbar() {
 
                         <select className="select select-bordered w-full max-w-xs" name='interval'onChange={e=>setData({...data,'interval':e.target.value})} >
                                 <option disabled selected>Select Interval?</option>
-                                <option value='min'>Minutes</option>
-                                <option value='hr'>Hours</option>
-                                <option value='day'>Days</option>
-                                <option value='week'>Weeks</option>
+                                <option value='m'>Minutes</option>
+                                <option value='h'>Hours</option>
+                                <option value='d'>Days</option>
+                                <option value='w'>Weeks</option>
                             </select>
 
                         <label className="input input-bordered flex items-center gap-2 m-8">
@@ -92,10 +94,10 @@ function Navbar() {
 
                         <select className="select select-bordered w-full max-w-xs" name='period' onChange={e=>setData({...data,'period':e.target.value})}>
                                 <option disabled selected>Select Period?</option>
-                                <option value='min'>Minutes</option>
-                                <option value='hr'>Hours</option>
-                                <option value='day'>Days</option>
-                                <option value='week'>Weeks</option>
+                                <option value='m'>Minutes</option>
+                                <option value='h'>Hours</option>
+                                <option value='d'>Days</option>
+                                <option value='w'>Weeks</option>
                             </select> 
                         <label className="input input-bordered flex items-center gap-2 m-8">
                             Period

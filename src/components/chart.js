@@ -8,9 +8,10 @@ import { useEffect, useState, useRef } from 'react';
 import { object } from 'yup';
 import { Urls } from '@/app/urls';
 import { chartData } from './fetchdata';
-import { UseSelector, useSelector } from 'react-redux';
+import { UseSelector, useDispatch, useSelector } from 'react-redux';
 import { fetchChartData } from './fetchdata';
-
+import { UseDispatch } from 'react-redux';
+import { ChartAction } from '@/reducer/reducer';
 // import Chart from '@/components/chart'
 
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
@@ -23,12 +24,13 @@ const url=Urls()
 
 function Chart() {
     //  client=w3cwebsocket('')
+    const dispatch=useDispatch()
     const chartData=useSelector((state)=>state.reducer.chartreducer)
     
-    const [loading, setLoading] = useState(true)
+    // const [loading, setLoading] = useState(true)
 
     
-    // console.log('dates',chartData.dates)
+    // console.log('dates',chartData)
 
     const date = chartData.dates
     const close_data = chartData.close
@@ -52,14 +54,15 @@ function Chart() {
 
 
     useEffect(() => {
-        fetchChartData(null)
+        dispatch(ChartAction.setQuery({loading:true}))
+        fetchChartData(null,dispatch)
 
     }, [])
 
     return (
         <>
             {
-                loading  ? <span className="loading loading-bars text-white loading-lg"></span>
+                chartData.loading? <span className="loading loading-bars text-white loading-lg"></span>
                 : 
             
 
@@ -105,7 +108,7 @@ function Chart() {
                     plot_bgcolor: 'rgba(0,0,0,0)',
                     paper_bgcolor: '#0B1215',
 
-                    dragmode: 'zoom', // Enable zooming without range slider
+                    // dragmode: 'zoom', // Enable zooming without range slider
                     xaxis: {
                         rangeslider: { visible: false } // Disable range slider
                     },

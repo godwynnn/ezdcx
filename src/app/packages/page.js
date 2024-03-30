@@ -1,6 +1,10 @@
+ "use client"
  import React from 'react'
+ import { UseSelector, useSelector } from 'react-redux'
  
  function Packages() {
+    const data=useSelector(state=>state.reducer.chartreducer)
+    console.log(data)
    return (
      <div className='bg_default p-20 grid grid-cols-3'>
 

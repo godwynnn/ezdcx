@@ -41,7 +41,8 @@ const chartState={
     high:null,
     low:null,
     open:null,
-    loading:false,
+    loading:true,
+    using_post:false
 }
 
 const ChartSlice=createSlice({
@@ -50,6 +51,14 @@ const ChartSlice=createSlice({
 
     reducers:{
         setQuery:(state,action)=>{
+            console.log(action.payload)
+            state.dates=action.payload.dates
+            state.close=action.payload.close
+            state.high=action.payload.high
+            state.low=action.payload.low
+            state.open=action.payload.open
+            state.loading=action.payload.loading
+            state.using_post=action.payload.searched_with_post
 
         },
         getData:(state,action)=>{
