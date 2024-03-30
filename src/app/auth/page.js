@@ -7,7 +7,10 @@ import { UseDispatch, useDispatch } from 'react-redux'
 import { AuthencticationAction } from '@/reducer/reducer'
 import { redirect } from 'next/navigation'
 import { useRouter } from 'next/navigation'
+import { Urls } from '../urls'
 
+
+const url=Urls()
 function Auth() {
   const dispatch = useDispatch()
   const router = useRouter()
@@ -19,10 +22,22 @@ function Auth() {
       email: '',
       passWord: '',
     },
-    onSubmit: values => {
+    onSubmit: async(values) => {
       console.log(values)
-      dispatch(AuthencticationAction.Logout())
-      router.push('/auth')
+      const res= await fetch(url.signup,{
+        method:'POST',
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/form-data',
+          },
+          body: JSON.stringify(values)
+
+      })
+      const data=await res.json()
+
+      console.log(data)
+      
+      // router.push('/auth')
     },
 
     validationSchema: Yup.object({
@@ -43,8 +58,8 @@ function Auth() {
     onSubmit: values => {
       console.log(values)
       dispatch(AuthencticationAction.Login(values))
-      router.push('/dashboard')
-      fetch('', {
+      // router.push('/dashboard')
+      fetch(url.login, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

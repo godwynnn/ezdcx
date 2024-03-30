@@ -1,8 +1,13 @@
 "use client"
 import React from 'react'
+import { useState } from 'react'
+import { fetchChartData } from './fetchdata'
+
+
 
 
 function Navbar() {
+   const [data,setData]=useState(null)
     return (
 
         <div className="navbar  bg-[#101720] text-white">
@@ -63,53 +68,72 @@ function Navbar() {
 
 
                 <dialog id="my_modal_2" className="modal">
-                    <form className="modal-box opacity-[90%] items-center justify-center text-black">
-                        <label className="input input-bordered flex items-center gap-2 m-8">
-                            Ticker Symbol
-                            <input type="text" className="grow" placeholder="#" />
+                    <form  method='post' onSubmit={e=>{e.preventDefault(),fetchChartData(data)}} className="modal-box opacity-[90%] flex flex-col min-h-[90vh] items-center justify-center text-black">
+                        <label className="input input-bordered flex items-center gap-2 m-4">
+                            Ticker
+                            <input type="text" className="grow" placeholder="#" name='ticker' onChange={e=>setData({...data,'ticker':e.target.value})} />
                         </label>
+
+                        <select className="select select-bordered w-full max-w-xs" name='interval'onChange={e=>setData({...data,'interval':e.target.value})} >
+                                <option disabled selected>Select Interval?</option>
+                                <option value='min'>Minutes</option>
+                                <option value='hr'>Hours</option>
+                                <option value='day'>Days</option>
+                                <option value='week'>Weeks</option>
+                            </select>
 
                         <label className="input input-bordered flex items-center gap-2 m-8">
                             Interval
-                            <input type="text" className="grow" placeholder="#" />
+                            
+                            
+                            <input type="text" className="grow" placeholder="interval?" name='interval_value' onChange={e=>setData({...data,'interval_duration':e.target.value})} />
                         </label>
 
+
+                        <select className="select select-bordered w-full max-w-xs" name='period' onChange={e=>setData({...data,'period':e.target.value})}>
+                                <option disabled selected>Select Period?</option>
+                                <option value='min'>Minutes</option>
+                                <option value='hr'>Hours</option>
+                                <option value='day'>Days</option>
+                                <option value='week'>Weeks</option>
+                            </select> 
                         <label className="input input-bordered flex items-center gap-2 m-8">
                             Period
-                            <input type="text" className="grow" placeholder="#" />
+                            <input type="text" className="grow" placeholder="period?"  name='period_value' onChange={e=>setData({...data,'period_duration':e.target.value})}/>
                         </label>
+
 
                         <div className="form-control flex flex-row">
 
                             <label className="cursor-pointer label">
                                 <span className="label-text">Gartley</span>
-                                <input type="checkbox" defaultChecked className="checkbox checkbox-success" />
+                                <input type="checkbox"  className="checkbox checkbox-success"  />
                             </label>
                             <label className="cursor-pointer label">
                                 <span className="label-text">Butterfly</span>
-                                <input type="checkbox" defaultChecked className="checkbox checkbox-success" />
+                                <input type="checkbox"  className="checkbox checkbox-success" name='butter_fly' />
                             </label>
                             <label className="cursor-pointer label">
                                 <span className="label-text">Bat</span>
-                                <input type="checkbox" defaultChecked className="checkbox checkbox-success" />
+                                <input type="checkbox"  className="checkbox checkbox-success" name='bat' />
                             </label>
                             <label className="cursor-pointer label">
                                 <span className="label-text">Crab</span>
-                                <input type="checkbox" defaultChecked className="checkbox checkbox-success" />
+                                <input type="checkbox"  className="checkbox checkbox-success" name='crab' />
                             </label>
                             <label className="cursor-pointer label">
                                 <span className="label-text">ABCD</span>
-                                <input type="checkbox" defaultChecked className="checkbox checkbox-success" />
+                                <input type="checkbox"  className="checkbox checkbox-success" name='abcd' />
                             </label>
 
                         </div><br />
 
                         <label className="cursor-pointer label flex flex-col">
-                            <span className="label-text  ">Bollinger Bands</span>
-                            <input type="checkbox" defaultChecked className="checkbox checkbox-success" />
+                            <span className="label-text">Bollinger Bands</span>
+                            <input type="checkbox" className="checkbox checkbox-success" name='bollinger' onChange={e=>setData({...data,'bollinger':e.target.value})} />
                         </label>
 
-                        <button class="btn btn-active btn-neutral">Submit</button>
+                        <button class="btn btn-active btn-neutral" type='submit'>Submit</button>
                     </form>
                     <form method="dialog" className="modal-backdrop">
                         <button>close</button>

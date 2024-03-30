@@ -34,3 +34,30 @@ export const AuthenticationSlice=createSlice({
 
 
 export const{actions:AuthencticationAction, reducer:AuthenticationReducer}=AuthenticationSlice
+
+const chartState={
+    dates:null,
+    close:null,
+    high:null,
+    low:null,
+    open:null,
+    loading:false,
+}
+
+const ChartSlice=createSlice({
+    name:'chart',
+    initialState:chartState,
+
+    reducers:{
+        setQuery:(state,action)=>{
+
+        },
+        getData:(state,action)=>{
+
+        }
+        
+
+    }
+})
+
+export const {actions:ChartAction,reducer:ChartReducer}=ChartSlice

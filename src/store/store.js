@@ -1,6 +1,6 @@
 "use client"
-import { AuthenticationReducer } from "@/reducer/reducer";
-import { configureStore } from "@reduxjs/toolkit";
+import { AuthenticationReducer, ChartReducer } from "@/reducer/reducer";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { thunk } from "redux-thunk";
 import { persistReducer,persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
@@ -12,12 +12,19 @@ const persistConfig = {
     key: 'root',
     storage,
   }
-const persistedReducer = persistReducer(persistConfig, AuthenticationReducer)
+
+const allReducer=combineReducers({
+    authreducer:AuthenticationReducer,
+    chartreducer:ChartReducer
+})
+const persistedReducer = persistReducer(persistConfig, allReducer)
+
+
 
 export const store=configureStore({
 
     reducer:{
-        authreducer:persistedReducer,
+       reducer:persistedReducer,
         middleware: [thunk]
     }
    
