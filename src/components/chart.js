@@ -67,7 +67,7 @@ function Chart() {
             
 
             <Plot
-                className={'lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] '}
+                className={'p-0  m-0 lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] '}
                 data={[
                     {
                         x: date,
@@ -112,10 +112,10 @@ function Chart() {
                     xaxis: {
                         rangeslider: { visible: false } // Disable range slider
                     },
-                    dragmode: 'zoom',
+                    // dragmode: 'zoom',
                     margin: {
-                        r: 10,
-                        t: 25,
+                        r: 0,
+                        t: 0,
                         b: 40,
                         l: 60
                     },
