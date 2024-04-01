@@ -42,7 +42,8 @@ const chartState={
     low:null,
     open:null,
     loading:true,
-    using_post:false
+    using_post:false,
+    symbol:'BTC-USD'
 }
 
 const ChartSlice=createSlice({
@@ -59,6 +60,7 @@ const ChartSlice=createSlice({
             state.open=action.payload.open
             state.loading=action.payload.loading
             state.using_post=action.payload.searched_with_post
+            state.symbol=action.payload.symbol
 
         },
         getData:(state,action)=>{

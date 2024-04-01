@@ -30,7 +30,7 @@ function Chart() {
     // const [loading, setLoading] = useState(true)
 
     
-    // console.log('dates',chartData)
+    console.log('data',chartData)
 
     const date = chartData.dates
     const close_data = chartData.close
@@ -55,7 +55,7 @@ function Chart() {
 
     useEffect(() => {
         dispatch(ChartAction.setQuery({loading:true}))
-        fetchChartData(null,dispatch)
+        // fetchChartData(null,dispatch)
 
     }, [])
 

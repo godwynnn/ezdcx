@@ -71,10 +71,10 @@ function Navbar() {
 
                 <dialog id="my_modal_2" className="modal">
                     <form  method='post' onSubmit={e=>(e.preventDefault(),fetchChartData(data,dispatch))} className="modal-box opacity-[90%] flex flex-col min-h-[90vh] items-center justify-center text-black">
-                        <label className="input input-bordered flex items-center gap-2 m-4">
+                        {/* <label className="input input-bordered flex items-center gap-2 m-4">
                             Ticker
-                            <input type="text" className="grow" placeholder="#" name='ticker' onChange={e=>setData({...data,'ticker':e.target.value})} />
-                        </label>
+                            <input type="text" className="grow" placeholder="#" name='ticker' readOnly />
+                        </label> */}
 
                         <select className="select select-bordered w-full max-w-xs" name='interval'onChange={e=>setData({...data,'interval':e.target.value})} >
                                 <option disabled selected>Select Interval?</option>
