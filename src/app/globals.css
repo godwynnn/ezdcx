@@ -13,6 +13,9 @@
   .bg_default{
     @apply bg-[#101720] lg:w-full lg:h-[100vh] md:h-[100vh] md:w-full sm:h-[100vh] sm:w-full max-sm:h-[100vh] max-sm:w-full
   }
+  /* .modebar{
+    @apply grid grid-cols-6
+  } */
 
   
 }
@@ -62,3 +65,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+/* .modebar{
+  background-color: red;
+  width: 100%;
+} */

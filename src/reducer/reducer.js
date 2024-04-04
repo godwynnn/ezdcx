@@ -1,4 +1,7 @@
+
  import { createSlice } from "@reduxjs/toolkit";
+ import { useSelector } from "react-redux";
+//  import { cookies } from "next/headers";
 
 const State={
     accessToken:null,
@@ -17,6 +20,7 @@ export const AuthenticationSlice=createSlice({
             console.log('dispatch values',action.payload.email)
             state.logged_in=true
             state.email=action.payload.email
+            // cookies().set('logged_in',true)
 
         },
 
@@ -72,3 +76,4 @@ const ChartSlice=createSlice({
 })
 
 export const {actions:ChartAction,reducer:ChartReducer}=ChartSlice
+// export const authData=useSelector(state=>state.reducer.authreducer)

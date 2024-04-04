@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { Urls } from '@/app/urls'
 import { fetchChartData } from './fetchdata'
@@ -39,14 +40,17 @@ function Rates() {
 
 
   const handleChange = (val) => {
-    console.log(val)
-    if (val !== '') {
+    console.log(val.length)
+    if (val.length > 0 ) {
       setTickerQuery(val)
-      getTickerData()
-    } else {
+      
+    } else if(val.length == 0) {
       setTickerQuery('btc')
-      getTickerData()
     }
+    else{
+      setTickerQuery('btc')
+    }
+    getTickerData()
 
 
   }
@@ -84,7 +88,7 @@ function Rates() {
 
                   return (
                     <div className='w-full h-[10%] p-2 flex justify-center items-center cursor-pointer' key={idx} onClick={(e) => handleClick(e.target.id)} id={ticker.symbol} style={{ borderBottom: '1px solid white' }}>
-                      <p className=' text-white text-md' id={ticker.symbol}  >{ticker.symbol}</p>
+                      <p className=' text-white text-sm' id={ticker.symbol}  >{ticker.symbol}</p>
                     </div>)
                 })
               }
@@ -100,7 +104,7 @@ function Rates() {
             </div>
           </>
 
-        }
+         } 
       </div>
 
 

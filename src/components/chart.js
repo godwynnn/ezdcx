@@ -3,7 +3,6 @@
 // import Plot from 'react-plotly.js';
 import React from 'react';
 import dynamic from 'next/dynamic'
-import { w3cwebsocket } from 'websocket';
 import { useEffect, useState, useRef } from 'react';
 import { object } from 'yup';
 import { Urls } from '@/app/urls';
@@ -12,6 +11,7 @@ import { UseSelector, useDispatch, useSelector } from 'react-redux';
 import { fetchChartData } from './fetchdata';
 import { UseDispatch } from 'react-redux';
 import { ChartAction } from '@/reducer/reducer';
+import { w3cwebsocket as wS3} from 'websocket';
 // import Chart from '@/components/chart'
 
 const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
@@ -26,6 +26,7 @@ function Chart() {
     //  client=w3cwebsocket('')
     const dispatch=useDispatch()
     const chartData=useSelector((state)=>state.reducer.chartreducer)
+    // client=new wS3('');
     
     // const [loading, setLoading] = useState(true)
 
@@ -51,7 +52,7 @@ function Chart() {
 
 
 
-
+    
 
     useEffect(() => {
         dispatch(ChartAction.setQuery({loading:true}))
@@ -81,8 +82,8 @@ function Chart() {
                         mode: 'lines',
 
                         // marker: { color: 'white' },
-                        increasing: { line: { color: 'green' } },
-                        decreasing: { line: { color: 'red' } },
+                        increasing: { line: { color: '#1654B0' } },
+                        decreasing: { line: { color: '#BD0C0C' } },
                         // name: 'AAPL'
 
                     },
@@ -112,13 +113,17 @@ function Chart() {
                     xaxis: {
                         rangeslider: { visible: false } // Disable range slider
                     },
-                    // dragmode: 'zoom',
+                    dragmode: 'pan',
                     margin: {
                         r: 0,
                         t: 0,
                         b: 40,
                         l: 60
                     },
+                    showlegend: false, 
+                    modebar:{
+                        orientation:'v'
+                    }
                 }} />
             }
 
