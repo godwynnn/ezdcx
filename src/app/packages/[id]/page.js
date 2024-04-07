@@ -2,7 +2,7 @@ import React from 'react'
 
 function Packages() {
     return (
-        <div className='bg_default p-20 '>
+        <div className='bg_default p-20  min-h-[100vh]'>
 
             <div className="hero min-h-full w-full">
                 <form className="hero-content w-full flex-col lg:flex-row lg:justify-between">
@@ -31,7 +31,7 @@ function Packages() {
 
 
 
-                        <button className="btn btn-primary mt-5">Get Started</button>
+                        <button className="btn btn-primary mt-5" type='submit'>Proceed</button>
                     </div>
                 </form>
             </div>

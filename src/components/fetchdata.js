@@ -11,7 +11,7 @@ const url = Urls()
 export const fetchChartData = async (data, dispatch) => {
 
 
-    console.log('fetch data', data)
+    // console.log('fetch data', data)
     console.log('fetching post..')
     dispatch(ChartAction.setQuery({ loading: true }))
 
@@ -29,9 +29,77 @@ export const fetchChartData = async (data, dispatch) => {
 
 
     var obj = await res.json()
-    console.log(obj)
-    if (obj.status === 200) {
+    console.log('fetch data', obj)
 
+    // APEXCHARTS
+    if (obj.status===200){
+
+    
+    const entry = ''
+    const all_dates = Object.entries(obj.prices.Datetime)
+    const all_highs = Object.entries(obj.prices.high)
+    const all_opens = Object.entries(obj.prices.open)
+    const all_closes = Object.entries(obj.prices.close)
+    const all_lows = Object.entries(obj.prices.low)
+
+    all_dates.forEach((val, idx) => {
+
+        all_highs.forEach(val => {
+            return val
+        })
+        all_opens.forEach(val => {
+            return val
+        })
+        all_lows.forEach(val => {
+            return val
+        })
+        all_closes.forEach(val => {
+            return val
+        })
+
+        if (idx === all_opens.indexOf(all_opens[idx])) {
+            val[2] = all_opens[idx][1]
+            
+
+        }
+        if (idx === all_highs.indexOf(all_highs[idx])) {
+            val[3] = all_highs[idx][1]
+            
+        }
+
+        if (idx === all_lows.indexOf(all_lows[idx])) {
+            val[4] = all_lows[idx][1]
+            
+
+        }
+        if (idx === all_closes.indexOf(all_closes[idx])) {
+            val[5] = all_closes[idx][1]
+            
+
+        }
+        // let obj_data=val.slice(1,val.length)
+        val.splice(0,1)
+        return val
+
+
+
+
+    })
+    let all_data=all_dates
+    console.log('dates_holder', all_data)
+
+
+
+
+
+
+
+
+
+
+
+    // PLOTLY JS
+   
 
         let all_date = []
         let all_close = []
@@ -88,10 +156,13 @@ export const fetchChartData = async (data, dispatch) => {
             close: all_close,
             searched_with_post: true,
             loading: false,
-            symbol:data.ticker
+            symbol: data.ticker,
+            data:all_data
 
         }
         dispatch(ChartAction.setQuery(chart_data))
+
+
         // setChartData({
         //     dates: all_date,
         //     high: all_high,
