@@ -10,10 +10,10 @@ import { useRouter } from 'next/navigation'
 import { Urls } from '@/app/urls'
 
 
-const url=Urls()
+const url = Urls()
 function AuthComponent() {
-  const authData=useSelector(state=>state.reducer.authreducer)
-  
+  const authData = useSelector(state => state.reducer.authreducer)
+
 
   const dispatch = useDispatch()
   const router = useRouter()
@@ -26,22 +26,28 @@ function AuthComponent() {
       email: '',
       passWord: '',
     },
-    onSubmit: async(values) => {
+    onSubmit: async (values) => {
       console.log(values)
-      const res= await fetch(url.signup,{
-        method:'POST',
+      const res = await fetch(url.signup, {
+        method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/form-data',
-          },
-          body: JSON.stringify(values)
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/form-data',
+        },
+        body: JSON.stringify(values)
 
       })
-      const data=await res.json()
+      const data = await res.json()
+      if (data.status === 'success') {
+        router.push('/auth')
 
-      console.log(data)
+      }
+      else{
+        console.log(data.message)
+      }
+
       
-      // router.push('/auth')
+
     },
 
     validationSchema: Yup.object({
@@ -61,7 +67,7 @@ function AuthComponent() {
     },
     onSubmit: values => {
       // console.log(values)
-      dispatch(AuthencticationAction.Login(values))
+
       fetch(url.login, {
         method: 'POST',
         headers: {
@@ -71,7 +77,14 @@ function AuthComponent() {
         body: JSON.stringify(values)
       }).then(res => res.json()).then(data => {
         console.log(data)
-        router.push('/dashboard')
+        if (data.status === 'success') {
+          console.log(data)
+          dispatch(AuthencticationAction.Login(values))
+          router.push('/dashboard')
+        } else {
+          console.log(data.message)
+        }
+
       })
 
 
@@ -120,10 +133,10 @@ function AuthComponent() {
   }, [])
 
   return (
-  
-   
-    
-      <div className=' flex flex-col justify-center  items-center bg_default '>
+
+
+
+    <div className=' flex flex-col justify-center  items-center bg_default '>
 
       <div className=' bg-slate-100 rounded-lg flex flex-col lg:h-[90%] lg:w-[40%] md:h-[90%] md:w-[50%] sm:h-[90%] sm:w-[60%] max-sm:h-[90%] max-sm:w-[80%]  p-5  auth_holder relative'>
         <div className='flex flex-row justify-evenly h-[10%] w-[100%] relative'>
@@ -207,7 +220,7 @@ function AuthComponent() {
 
     </div>
 
-   
+
 
   )
 }

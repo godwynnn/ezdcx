@@ -27,7 +27,10 @@ function Packages() {
                         <p><b>Monthly plan:</b> #67,500</p>
 
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <Link href={'/packages/1'}>
+                                <button className="btn btn-primary">Buy Now</button>
+
+                            </Link>
                         </div>
                     </div>
                 </div>

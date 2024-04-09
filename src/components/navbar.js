@@ -27,28 +27,13 @@ function Navbar() {
     }
     return (
 
-        <div className="navbar  bg-[#101720] text-white">
+        <div className="navbar  bg-[#101720] text-white  justify-between p-4">
 
-            <div className="drawer navbar-start z-[1000]">
-                <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content">
-                    {/* Page content here */}
-                    
-                    <label tabIndex={0} htmlFor='my-drawer' role="button" className="btn btn-ghost btn-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
-                    </label>
-                </div>
-                <div className="drawer-side ">
-                    <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 min-h-full bg-[#101720] text-white">
-                        {/* Sidebar content here */}
-                        <Link href={'/'}> <li><a>Home</a></li></Link>
-                        <Link href={'/packages'}> <li><a>Package</a></li></Link>
-
-
-                    </ul>
-                </div>
+            <div className="navbar-left">
+                <a className="btn btn-ghost text-xl">EZFRX</a>
             </div>
+
+
             {/* <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
@@ -62,9 +47,7 @@ function Navbar() {
                     </ul>
                 </div>
             </div> */}
-            <div className="navbar-center">
-                <a className="btn btn-ghost text-xl">EZFRX</a>
-            </div>
+
             <div className="navbar-end">
                 <button className="btn btn-ghost btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -109,6 +92,8 @@ function Navbar() {
 
 
                 }
+
+
 
 
 
@@ -185,6 +170,31 @@ function Navbar() {
                         <button>close</button>
                     </form>
                 </dialog>
+
+
+                <div className="drawer navbar-end z-[1000] w-[10%]">
+                    <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                    <div className="drawer-content">
+                        {/* Page content here */}
+
+                        <label tabIndex={0} htmlFor='my-drawer' role="button" className="btn btn-ghost btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" className=" h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                        </label>
+                    </div>
+                    <div className="drawer-side " >
+                        <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                        <ul className="menu p-4 w-80 min-h-[90%] bg-[#101720] relative top-[12.5%] text-white" >
+                            {/* Sidebar content here */}
+                            <Link href={'/'}> <li><a>Home</a></li></Link>
+                            <Link href={'/packages'}> <li><a>Package</a></li></Link>
+
+                            {authData.logged_in ?
+                                <Link href={'/videos'}> <li><a>Videos</a></li></Link> : ''
+                            }
+
+                        </ul>
+                    </div>
+                </div>
 
             </div>
         </div>
