@@ -47,14 +47,14 @@ function Packages() {
 
         <>
             <Hero>
-                <div className='bg_default p-20  min-h-[100vh]'>
+                <div className='bg-[#0B1215] p-20  min-h-[100vh] w-full'>
 
                     <div className="hero min-h-full w-full">
-                        <form className="hero-content w-full flex-col lg:flex-row lg:justify-between">
-                            <img src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg" className=" h-[90%] max-w-lg rounded-lg shadow-2xl" />
+                        <form className="hero-content w-[100%] flex-col items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center lg:justify-between">
+                            <img src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg" className=" h-[90%] max-w-lg sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
 
 
-                            <div className='w-[50%] bg-base-200 p-20 rounded-lg'>
+                            <div className='w-[50%] sm:w-[100%] max-sm:w-full bg-base-200 p-20 max-sm:p-10 rounded-lg'>
                                 <h1 className="text-5xl font-bold">Level1</h1>
                                 <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem</p>
 
