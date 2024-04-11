@@ -23,9 +23,9 @@ export default function Home() {
       <Hero>
         <main className=" min-h-[100vh] w-[100%]">
 
-          <header className="w-[100%] h-[90vh] flex lg:flex-row bg-[#101720]"   >
+          <header className="w-[100%] h-[90vh] flex lg:flex-row bg-[#101720] p-[5%]"   >
             <section className="h-full w-[60%] text-white flex flex-col justify-center p-[5%] header_caption "  >
-              <p className=" text-[80px]">Explore the World of Forex Trading</p>
+              <p className=" text-[100px]">Trade <br /> Abundance</p>
               {/* <p className="text-[15px]">Gain a competitive edge with our cutting-edge trading signals designed to guide you towards success in the currency markets.</p> */}
 
             </section>

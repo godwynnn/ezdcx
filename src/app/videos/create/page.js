@@ -23,7 +23,7 @@ function Create() {
                                 {({ open }) => {
                                     return (
                                         <button className=" bg-gray-500  text-white rounded-md p-3" onClick={() => open()}  >
-                                            Upload an Image
+                                            Upload Video
                                         </button>
 
                                     );
