@@ -27,6 +27,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header{
+  background-image: url(../../assets/header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom 10%;
+
+}
 .grow{
   background-color: transparent;
 }
@@ -70,9 +78,12 @@
   background: #555;
 }
 .header_caption{
-  font-family: "Oswald", sans-serif;
+  font-family: 'Bebas Neue';
+  font-family: 'EB Garamond';
+  font-family: 'Martian Mono';
+
   font-optical-sizing: auto;
-  font-weight: 700;
+  /* font-weight: 700; */
   font-style: normal;
   /* font-style: italic; */
 }
@@ -81,22 +92,49 @@
   width: 100%;
 } */
 
-.wave1 {
+/* .wave1 {
   position: absolute;
-  bottom: -24%;
+  bottom: -50%;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
 }
 
-.wave1svg {
+
+.wave1 svg {
   position: relative;
   display: block;
   width: calc(184% + 1.3px);
   height: 348px;
+ 
+
 }
 
 .wave1 .shape-fill {
   fill: #101720;
+} */
+
+.wave1 {
+  position: absolute;
+  bottom: -105%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave1 svg {
+  position: relative;
+  display: block;
+  width: calc(112% + 1.3px);
+  height: 83px;
+}
+
+.wave1 .shape-fill {
+  fill: #0B1215;
+}
+.section{
+  font-family: 'Martian Mono';
+  font-style: normal;
 }

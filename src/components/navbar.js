@@ -27,7 +27,7 @@ function Navbar() {
     }
     return (
 
-        <div className="navbar  bg-[#101720] text-white  justify-between p-4">
+        <div className="navbar  bg-[#101720] text-white  justify-between p-4 pl-[5%] pr-[5%]">
 
             <div className="navbar-left">
                 <a className="btn btn-ghost text-xl">EZFRX</a>
