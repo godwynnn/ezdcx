@@ -28,11 +28,12 @@
   box-sizing: border-box;
 }
 
-header{
-  background-image: url(../../assets/header.png);
+.header{
+  background-image: url(../../assets/blob1.png);
+  /* background: url(../../assets/img15.png); */
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom 10%;
+  /* background-position: bottom 10%; */
 
 }
 .grow{
@@ -92,9 +93,9 @@ header{
   width: 100%;
 } */
 
-/* .wave1 {
+.wave2 {
   position: absolute;
-  bottom: -50%;
+  top: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -102,7 +103,7 @@ header{
 }
 
 
-.wave1 svg {
+.wave2 svg {
   position: relative;
   display: block;
   width: calc(184% + 1.3px);
@@ -111,13 +112,13 @@ header{
 
 }
 
-.wave1 .shape-fill {
-  fill: #101720;
-} */
+.wave2 .shape-fill {
+  fill: #0B1215;
+}
 
 .wave1 {
   position: absolute;
-  bottom: -105%;
+  bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
@@ -134,7 +135,38 @@ header{
 .wave1 .shape-fill {
   fill: #0B1215;
 }
+.feature{
+  font-family: 'Martian Mono';
+  font-style: normal;
+  position: relative;
+  cursor: pointer;
+}
 .section{
   font-family: 'Martian Mono';
   font-style: normal;
 }
+/* .feature::before{
+  content: "";
+
+  height: 0;
+  transition: 0.8s ease;
+}
+  
+.feature:hover::before{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -0.5;
+ 
+
+}
+.feature:hover p{
+  color: white;
+  z-index: 999999;
+  
+} */
