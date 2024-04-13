@@ -50,7 +50,7 @@ function Packages() {
                 <div className='bg-[#0B1215] p-20  min-h-[100vh] w-full'>
 
                     <div className="hero min-h-full w-full">
-                        <form className="hero-content w-[100%] flex-col items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center lg:justify-between">
+                        <form className="hero-content w-[100%] flex-col items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center  lg:justify-between">
                             <img src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg" className=" h-[90%] max-w-lg sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
 
 

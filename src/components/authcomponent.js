@@ -39,7 +39,7 @@ function AuthComponent() {
       })
       const data = await res.json()
       if (data.status === 'success') {
-        router.push('/auth')
+        router.push('/')
 
       }
       else{
