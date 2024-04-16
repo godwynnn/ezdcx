@@ -30,6 +30,7 @@
     "react-redux": "^9.1.0",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^3.1.0",
+    "vara": "^1.4.1",
     "websocket": "^1.0.34",
     "yup": "^1.4.0"
   },

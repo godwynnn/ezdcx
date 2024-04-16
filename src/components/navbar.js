@@ -6,6 +6,7 @@ import { UseDispatch, useDispatch, useSelector } from 'react-redux'
 import { AuthencticationAction, AuthenticationReducer } from '@/reducer/reducer'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Rates from './rates'
 
 
 
@@ -48,7 +49,15 @@ function Navbar() {
                 </div>
             </div> */}
 
+
+            
             <div className="navbar-end">
+            <ul className="menu menu-vertical lg:flex md:hidden sm:hidden max-sm:hidden flex-row bg-transparent rounded-box w-[60%] font-bold justify-evenly ">
+                <li><a>Home</a></li>
+                <li><a>Package</a></li>
+                <li><a>About Us</a></li>
+            </ul>
+
                 <button className="btn btn-ghost btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button>
@@ -58,6 +67,9 @@ function Navbar() {
                         <span className="badge badge-xs badge-primary indicator-item"></span>
                     </div>
                 </button> */}
+
+
+
 
 
 
@@ -84,6 +96,7 @@ function Navbar() {
 
                     </>
                     :
+
                     <Link href={'/auth'}>
                         <button class="btn btn-outline btn-primary float-right btn-sm " >Login</button>
 
@@ -172,7 +185,7 @@ function Navbar() {
                 </dialog>
 
 
-                <div className="drawer navbar-end z-[1000] w-[10%]">
+                <div className="drawer navbar-end z-[1000] w-[10%] lg:hidden md:visible sm:visible max-sm:visible max-md:visible">
                     <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content">
                         {/* Page content here */}
@@ -189,7 +202,12 @@ function Navbar() {
                             <Link href={'/packages'}> <li><a>Package</a></li></Link>
 
                             {authData.logged_in ?
-                                <Link href={'/videos'}> <li><a>Videos</a></li></Link> : ''
+                                <>
+                                    <Link href={'/videos'}> <li><a>Videos</a></li></Link>
+
+                                    <li className='lg:hidden md:block sm:block max-sm:block' onClick={() => { document.getElementById('my_modal_4').showModal() }}><a>Watchlist</a></li>
+                                </>
+                                : ''
                             }
 
                         </ul>
@@ -197,6 +215,23 @@ function Navbar() {
                 </div>
 
             </div>
+
+            <dialog id="my_modal_4" className="modal z-[1000]">
+                <div className="modal-box w-11/12 max-w-5xl min-h-[70vh] flex justify-center items-center bg-[#0B1215] text-black ">
+                    <form method="dialog" onClick={() => setPlaying(false)}>
+                        {/* if there is a button in form, it will close the modal */}
+                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-white">✕</button>
+                    </form>
+
+                    <Rates />
+
+
+                </div>
+
+                <form method="dialog" className="modal-backdrop" >
+                    <button>close</button>
+                </form>
+            </dialog>
         </div>
 
 

@@ -8,3 +8,7 @@ export const Urls=()=>{
 
     }
 }
+
+
+const x='6'
+console.log(Array(x).keys())

@@ -140,6 +140,7 @@
   font-style: normal;
   position: relative;
   cursor: pointer;
+  /* border: 1px solid red; */
 }
 .section{
   font-family: 'Martian Mono';
