@@ -6,7 +6,7 @@ function AdminDashboard() {
     return (
         <>
             <Hero>
-                <div className='bg-[#0B1215] p-20  min-h-[100vh] w-full'>
+                <div className='bg-[#0B1215] p-10  min-h-[100vh] w-full'>
 
                     <div className='w-[100%] min-h-[20%] grid grid-cols-3  max-sm:grid-cols-1 gap-4'>
                         <div className="card w-[100%] bg-base-100 shadow-xl">
@@ -41,18 +41,16 @@ function AdminDashboard() {
 
                     <div className='w-[100%] min-h-[80%] bg-slate-200  rounded-lg mt-10'>
                         <div className="overflow-x-auto overflow-y-scroll  h-[70vh] ">
-                            <table className="table ">
+                            <table className="table max-sm:w-[100%]">
                                 {/* head */}
                                 <thead>
                                     <tr>
                                         <th>
-                                            <label>
-                                                <input type="checkbox" className="checkbox" />
-                                            </label>
+                                           
                                         </th>
                                         <th>Name</th>
                                         <th>Job</th>
-                                        <th>Favorite Color</th>
+                                        <th>Email</th>
                                         <th></th>
                                     </tr>
                                 </thead>

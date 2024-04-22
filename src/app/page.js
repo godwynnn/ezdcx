@@ -24,6 +24,8 @@ export default function Home() {
   const section_3_ref = useRef()
   const feature_holder = useRef()
   const feature_holder_img = useRef()
+  const anime_ref_holder = useRef()
+  const anime_ref = useRef()
   // useEffect(()=>{
   //   new Vara(header_ref,[{
   //     text:'Begin your journey to financial freedom with',
@@ -61,7 +63,7 @@ export default function Home() {
       scrollTrigger: {
         trigger: feature_holder_img.current,
         start: '-40%top top',
-        end: 'top top',
+        // end: 'top top',
         // markers:true,
 
       },
@@ -76,7 +78,7 @@ export default function Home() {
       scrollTrigger: {
         trigger: feature_holder.current,
         start: '-50%top top',
-        end: 'top top',
+        // end: 'top top',
         // markers:true,
 
       },
@@ -90,7 +92,7 @@ export default function Home() {
       scrollTrigger: {
         trigger: img10_ref.current,
         start: '-70%top top',
-        end: 'top top',
+        // end: 'top top',
         // markers: true,
 
       },
@@ -104,7 +106,7 @@ export default function Home() {
       scrollTrigger: {
         trigger: section_3_ref.current,
         start: '-170%top top',
-        end: 'top top',
+        // end: 'top top',
         // markers: true,
 
       },
@@ -119,7 +121,7 @@ export default function Home() {
       scrollTrigger: {
         trigger: img12_ref.current,
         start: '-90%top top',
-        end: 'top top',
+        // end: 'top top',
         // markers: true,
 
       },
@@ -130,6 +132,42 @@ export default function Home() {
       opacity: 0,
       scale: 0.5,
 
+    })
+    const anime_refs = gsap.utils.toArray('.anime_ref')
+    const animeTl = gsap.timeline();
+    // animeTl.to(anime_refs[0], { xPercent: -100, opacity: 1, duration: 4 })
+    // animeTl.to(anime_refs[1], { xPercent: -200, opacity: 1, duration: 4 })
+    // animeTl.to(anime_refs[2], { xPercent: -300, opacity: 1, duration: 4 })
+    // ScrollTrigger.create({
+
+    //   animation: animeTl,
+    //   trigger: anime_ref_holder.current,
+    //   markers: true,
+    //   start: "50%top center",
+    //   end: '+=500',
+    //   scrub: true,
+    //   pin: "main",
+    //   pinSpacing: false,
+    //   // toggleActions:'restart pause reverse pause',
+    // })
+
+
+    gsap.to(anime_refs,{
+      scrollTrigger:{
+        trigger:anime_ref_holder.current,
+        markers:true,
+        start:"50%top center",
+        end:'+=800',
+        scrub:1,
+        pin:'main',
+        // snap:1/(anime_refs.length-1)
+        // toggleActions:'restart pause reverse pause',
+      },
+      xPercent:-100 *(anime_refs.length-1),
+      duration:10,
+      ease:'none',
+      delay:6,
+      // opacity:0
     })
 
 
@@ -144,12 +182,12 @@ export default function Home() {
 
           <header className="header relative w-[100%] h-[120vh] flex lg:flex-row md:flex-row sm:flex-col max-sm:flex-col justify-center items-center  bg-[#101720] p-[2%]"   >
             <section className="h-full max-lg:w-[60%] lg:w-[60%] max-md:w-[40%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] text-white flex flex-col justify-center lg:p-[5%] md:p-[10%] header_caption "  >
-              <p ref={header_ref} className=" lg:text-[60px] md:text-[40px] sm:text-[30px] max-sm:text-[30px] max-sm:text-center font-[400] text-gray-200  lg:text-left" id="header_text">Begin your journey to financial freedom with <span className="text-white font-[700]">EZFRX</span> </p>
+              <p ref={header_ref} className=" lg:text-[60px] md:text-[40px] sm:text-[40px] max-sm:text-[30px] max-sm:text-center font-[400] text-gray-200  lg:text-left md:text-left sm:text-center" id="header_text">Begin your journey to financial freedom with <span className="text-white font-[700]">EZFRX</span> </p>
               {/* <p className="text-[15px] font-thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, dignissimos.</p> */}
               {/* <p className="text-[15px]">Gain a competitive edge with our cutting-edge trading signals designed to guide you towards success in the currency markets.</p> */}
 
             </section>
-            <section className="h-full lg:w-[40%] md:w-[80%] sm:w-[60%]  relative">
+            <section className="h-full lg:w-[40%] md:w-[100%] sm:w-[60%]  relative">
               <svg ref={svg_ref} id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="md:hidden lg:block sm:hidden">                   <defs>                         <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">                            <stop id="stop1" stop-color="rgba(212.951, 212.951, 212.951, 1)" offset="0%"></stop>                            <stop id="stop2" stop-color="rgba(237.995, 235.936, 232.537, 1)" offset="100%"></stop>                        </linearGradient>                    </defs>                <path fill="url(#sw-gradient)" d="M28,-32.5C35.8,-26.9,41.1,-17.5,42.9,-7.6C44.6,2.4,42.8,13.1,37.9,22.1C32.9,31.2,24.9,38.6,16.7,38.4C8.5,38.3,0.1,30.4,-9.8,26.8C-19.7,23.2,-31.1,23.9,-35.4,19.2C-39.6,14.4,-36.6,4.2,-32.4,-3.3C-28.2,-10.9,-22.8,-15.8,-17.2,-21.8C-11.6,-27.9,-5.8,-34.9,2.2,-37.5C10.1,-40.1,20.3,-38.2,28,-32.5Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style={{ transition: ' all 0.3s ease 0s;' }} stroke="url(#sw-gradient)"></path>              </svg>
               {/* <svg id="sw-js-blob-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">                    <defs>                         <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">                            <stop id="stop1" stop-color="rgba(212.951, 212.951, 212.951, 1)" offset="0%"></stop>                            <stop id="stop2" stop-color="rgba(237.995, 235.936, 232.537, 1)" offset="100%"></stop>                        </linearGradient>                    </defs>                <path fill="url(#sw-gradient)" d="M23.5,-24.7C29.6,-22.9,33.1,-14.7,32.7,-7.2C32.3,0.3,28,7,22.9,10.6C17.7,14.2,11.6,14.6,4.9,19.7C-1.7,24.9,-9,34.7,-16.4,35.9C-23.8,37.2,-31.4,29.8,-34.2,21.5C-36.9,13.1,-34.9,3.7,-29.7,-1.7C-24.5,-7,-16.2,-8.2,-10.8,-10.1C-5.3,-12,-2.6,-14.6,3,-18.2C8.7,-21.8,17.4,-26.5,23.5,-24.7Z" width="100%" height="100%" transform="translate(50 50)" stroke-width="0" style={{ transition: 'all 0.3s ease 0s;' }} stroke="url(#sw-gradient)"></path>              </svg> */}
 
@@ -174,23 +212,24 @@ export default function Home() {
             <div ref={feature_holder} className="  w-[100%] relative lg:min-h-[100%] md:h-[100%] sm:h-[100%] grid  lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1 bg-[#101720]  gap-0 justify-center items-center text-white"   >
 
 
-              <div className="feature p-[4%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%] bg-transparent   " >
+              <div className="feature p-[5%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%] bg-transparent   " >
                 <FontAwesomeIcon icon={faGlobeAfrica} className='feature_icon text-[30px] max-sm:text-[20px]' />
                 <div className="desc">
-                  <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[35px]  font-semibold">World Class Platform.</p>
-                  <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[20px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum voluptates nihil?</p>
+                  <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[30px] font-light">World Class Platform.</p>
+                  <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[17px] font-light ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum voluptates nihil?</p>
                 </div>
               </div>
 
 
 
-              <div className="feature p-[4%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%] bg-transparent   " >
+              <div className="feature p-[5%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%] bg-transparent   " >
                 <FontAwesomeIcon icon={faGlobeAfrica} className='feature_icon text-[30px] max-sm:text-[20px]' />
                 <div className="desc">
-                  <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[35px]  font-semibold">World Class Platform.</p>
-                  <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[20px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum voluptates nihil?</p>
+                  <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[30px] font-light">World Class Platform.</p>
+                  <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[17px] font-light ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum voluptates nihil?</p>
                 </div>
               </div>
+
 
 
 
@@ -216,7 +255,7 @@ export default function Home() {
             <Image src={require('../../assets/img10.png')} className="lg:w-[80%] h-[100%] md:w-[60%] sm:w-[80%] " ref={img10_ref} />
 
             <div ref={section_3_ref} className="lg:mt-0 sm:mt-5 max-sm:mt-20">
-              <p className="lg:text-[30px] max-sm:text-[20px]">Lorem ipsum dolor sit amet consectetur.</p><br />
+              <p className="lg:text-[30px] max-sm:text-[20px] md:text-[30px] sm:text-[30px]">Lorem ipsum dolor.</p><br />
               <p className=" lg:text-[15px] max-sm:text-[12px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem? Ullam unde maxime cumque nihil qui?</p>
             </div>
 
@@ -224,19 +263,40 @@ export default function Home() {
 
 
 
-          <section className="section w-[100%] h-[150vh]  bg-[#0B1215] flex flex-col  justify-center items-center text-white p-[8%]">
-            <Image src={require('../../assets/img14.png')} className="w-[60%] h-[100%] mt-[20%] " />
+          <section className="section w-[300%] h-[150vh]    bg-[#0B1215]  justify-center items-center text-white p-[8%]" ref={anime_ref_holder}>
 
-            <div className=" text-center mt-[3%] p-[10%]">
-              <p className="text-[50px]">Lorem ipsum dolor</p>
-              <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p>
+
+
+            <div className="flex flex-nowrap h-[100%] w-[90%] relative overflow-hidden ">
+
+              <div className="anime_ref text-center w-[100%] relative top-0 left-0  p-24" ref={anime_ref}   >
+                <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
+                <p className="text-[50px] absolute top-[50%] text-center flex flex-col">What You Need To Know About Us</p>
+                {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+              </div>
+
+
+              <div className="anime_ref text-center w-[100%] relative top-0 left-0 p-24" ref={anime_ref} >
+                <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
+                <p className="text-[50px] absolute top-[50%] text-center">What You Need To Know</p>
+                {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+              </div>
+
+
+              <div className="anime_ref text-center w-[100%] relative top-0 left-0 p-24" ref={anime_ref} >
+                <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
+                <p className="text-[50px] absolute top-[50%] text-center">What You Need </p>
+                {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+              </div>
+
             </div>
+
 
           </section>
 
 
 
-          <section className="relative section w-[100%] h-[150vh]  bg-gray-200 grid lg:grid-cols-2 md:grid-cols-1 justify-center items-center text-[#0B1215]  p-[5%]">
+          <section className="relative section w-[100%] h-[150vh]   bg-gray-200 grid lg:grid-cols-2 md:grid-cols-2 max-md:grid-cols-1 sm:grid-cols-1 justify-center items-center text-[#0B1215]  p-[5%]">
             <div class="wave2">
               <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
@@ -245,15 +305,15 @@ export default function Home() {
 
 
 
-            <div className="bg-[#101720] text-white p-10 rounded-lg">
-              <p className="text-[60px]">About Us.</p>
-              <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem? Ullam unde maxime cumque nihil qui?
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem? Ullam unde maxime cumque nihil qui?
+            <div className=" text-[#101720] p-10 rounded-lg">
+              <p className="lg:text-[60px] md:text-[40px] max-md:text-[40px] sm:text-[30px]  text-[#101720] p-1 rounded-lg">About Us.</p>
+              <p className="lg:text-[15px] md:text-[13px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem? Ullam unde maxime cumque nihil qui?
+                Lorem ipsum dolor sit amet
               </p>
             </div>
 
 
-            <Image src={require('../../assets/img12.png')} className="w-[100%] h-[90%] -translate-y-2 " ref={img12_ref} />
+            <Image src={require('../../assets/img7.png')} className="lg:w-[100%] h-[90%] sm:w-[80%] max-sm:w-[90%] -translate-y-2 " ref={img12_ref} />
 
 
           </section>

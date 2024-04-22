@@ -1,12 +1,31 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import { CldUploadWidget } from "next-cloudinary";
+import { Urls } from "@/app/urls";
 import Hero from "@/app/hero";
 
 
+const url=Urls()
+
 function Create() {
     const [imgData, setImgData] = useState({})
-    console.log(imgData)
+
+    const sendData = (e) => {
+        e.preventDefault()
+        fetch(url.create,{
+            method: "POST", 
+        
+            headers: {
+              "Content-Type": "application/json",
+              // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(imgData), // body data type must match "Content-Type" header
+         
+        }).then(res=>res.json())
+        .then(data=>console.log(data))
+
+    }
+
 
     return (
 
@@ -15,25 +34,33 @@ function Create() {
             <Hero>
                 <div className='bg-[#101720]  p-20 flex flex-col justify-center items-center min-h-[100vh] '>
 
-                    <div className="hero h-[90vh] w-[60%] bg-base-200 ">
-                        <div className="hero-content text-left p-10 flex flex-col w-[100%]">
-                        <input type="text" placeholder="Title" className="input input-bordered w-[100%]" />
-                        <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Description"></textarea>
-                        <CldUploadWidget uploadPreset="ezfrx_lib" onSuccess={(results, options) => console.log("from cloudinary", results)} >
+                    <div className="hero h-[90vh] w-[60%] bg-base-200  rounded-lg">
+                        <form className="hero-content text-left p-10 flex flex-col w-[100%]" onSubmit={sendData} method="POST"  >
+                            <CldUploadWidget uploadPreset="ezfrx_lib" on onSuccess={(results, options) => setImgData({ ...imgData, 'img_info': results.info })}  >
                                 {({ open }) => {
                                     return (
-                                        <button className=" bg-gray-500  text-white rounded-md p-3" onClick={() => open()}  >
+                                        <button className=" bg-gray-500  text-white rounded-md p-3" onClick={() => open()} type="button"   >
                                             Upload an Image
                                         </button>
 
                                     );
                                 }}
                             </CldUploadWidget>
-                        <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Price details"></textarea>
-                            
+
+
+                            <input type="text" placeholder="Title" className="input input-bordered w-[100%]" name="title" onChange={(e) => setImgData({ ...imgData, 'name': e.target.value })} value={imgData.title} />
+                            <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Description" name="description" onChange={(e) => setImgData({ ...imgData, 'description': e.target.value })} value={imgData.description}></textarea>
+
+
+
+                            {/* <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Price details"></textarea> */}
+                            <input type="text" placeholder="Daily Plan" name="daily" className="input input-bordered w-[100%]" onChange={(e) => setImgData({ ...imgData, 'daily_price': e.target.value })} value={imgData.daily} />
+                            <input type="text" placeholder="Weekly Plan" name="weekly" className="input input-bordered w-[100%]" onChange={(e) => setImgData({ ...imgData, 'weekly_price': e.target.value })} value={imgData.weekly} />
+                            <input type="text" placeholder="Monthly Plan" name="monthly" className="input input-bordered w-[100%]" onChange={(e) => setImgData({ ...imgData, 'monthly_price': e.target.value })} value={imgData.monthly} />
+
                             <button className="btn btn-md bg-gray-500  text-white rounded-md" type="submit">Submit</button>
 
-                        </div>
+                        </form>
                     </div>
 
                 </div>

@@ -50,13 +50,13 @@ function Navbar() {
             </div> */}
 
 
-            
+
             <div className="navbar-end">
-            <ul className="menu menu-vertical lg:flex md:hidden sm:hidden max-sm:hidden flex-row bg-transparent rounded-box w-[60%] font-bold justify-evenly ">
-                <li><a>Home</a></li>
-                <li><a>Package</a></li>
-                <li><a>About Us</a></li>
-            </ul>
+                <ul className="menu menu-vertical lg:flex md:hidden sm:hidden max-sm:hidden flex-row bg-transparent rounded-box w-[60%] font-bold justify-evenly ">
+                    <Link href={'/'}> <li><a>Home</a></li></Link>
+                    <Link href={'/packages'}> <li><a>Package</a></li></Link>
+                    <li><a>About Us</a></li>
+                </ul>
 
                 <button className="btn btn-ghost btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -185,17 +185,20 @@ function Navbar() {
                 </dialog>
 
 
-                <div className="drawer navbar-end z-[1000] w-[10%] lg:hidden md:visible sm:visible max-sm:visible max-md:visible">
-                    <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+                <div className="drawer drawer-end navbar-end z-[1000] w-[10%] lg:hidden md:visible sm:visible max-sm:visible max-md:visible">
+                    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+
                     <div className="drawer-content">
                         {/* Page content here */}
 
-                        <label tabIndex={0} htmlFor='my-drawer' role="button" className="btn btn-ghost btn-circle">
+                        <label tabIndex={0} htmlFor='my-drawer-4' role="button" className="btn btn-ghost btn-circle">
                             <svg xmlns="http://www.w3.org/2000/svg" className=" h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                         </label>
                     </div>
+
+
                     <div className="drawer-side " >
-                        <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+                        <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                         <ul className="menu p-4 w-80 min-h-[90%] bg-[#101720] relative top-[12.5%] text-white" >
                             {/* Sidebar content here */}
                             <Link href={'/'}> <li><a>Home</a></li></Link>

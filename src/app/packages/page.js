@@ -1,13 +1,30 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { UseSelector, useSelector } from 'react-redux'
 import Link from 'next/link'
 import Hero from '../hero'
+import { Urls } from '../urls'
 
+
+const url=Urls()
 
 function Packages() {
+
+    
     const data = useSelector(state => state.reducer.chartreducer)
     console.log(data)
+    const [allPackages,setPackage]=useState([])
+
+
+
+    useEffect(()=>{
+        fetch(url.packages,{
+            method: 'GET'
+        }).then(res=>res.json())
+        .then(data=>console.log(data))
+    },[])
+
+
     return (
         <>
         <Hero>
