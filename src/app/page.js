@@ -296,7 +296,7 @@ export default function Home() {
 
 
 
-          <section className="relative section w-[100%] h-[150vh]   bg-gray-200 grid lg:grid-cols-2 md:grid-cols-2 max-md:grid-cols-1 sm:grid-cols-1 justify-center items-center text-[#0B1215]  p-[5%]">
+          <section className="relative section w-[100%] h-[150vh] max-sm:h-[200vh]   bg-gray-200 grid lg:grid-cols-2 md:grid-cols-2 max-md:grid-cols-1 sm:grid-cols-1 justify-center items-center text-[#0B1215]  p-[5%]">
             <div class="wave2">
               <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
@@ -306,14 +306,14 @@ export default function Home() {
 
 
             <div className=" text-[#101720] p-10 rounded-lg">
-              <p className="lg:text-[60px] md:text-[40px] max-md:text-[40px] sm:text-[30px]  text-[#101720] p-1 rounded-lg">About Us.</p>
-              <p className="lg:text-[15px] md:text-[13px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem? Ullam unde maxime cumque nihil qui?
+              <p className="lg:text-[60px] md:text-[40px] max-md:text-[40px] sm:text-[30px] max-sm:text-[30px]  text-[#101720] p-1 rounded-lg">About Us.</p>
+              <p className="lg:text-[15px] md:text-[13px] max-sm:text-[20px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem? Ullam unde maxime cumque nihil qui?
                 Lorem ipsum dolor sit amet
               </p>
             </div>
 
 
-            <Image src={require('../../assets/img7.png')} className="lg:w-[100%] h-[90%] sm:w-[80%] max-sm:w-[90%] -translate-y-2 " ref={img12_ref} />
+            <Image src={require('../../assets/img7.png')} className="lg:w-[100%] h-[90%] sm:w-[80%] max-sm:w-[90%] -translate-y-2" ref={img12_ref} />
 
 
           </section>

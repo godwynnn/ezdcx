@@ -3,43 +3,43 @@ import React, { useState, useEffect } from "react";
 import { CldUploadWidget } from "next-cloudinary";
 import { Urls } from "@/app/urls";
 import Hero from "@/app/hero";
-import { useRouter,redirect } from 'next/navigation'
+import { useRouter, redirect } from 'next/navigation'
 
-const url=Urls()
+const url = Urls()
 
-function Create() {
+function Edit({params}) {
     const router = useRouter()
 
     const [imgData, setImgData] = useState({})
-    const [imgInfo, setImgInfo]=useState()
+    const [imgInfo, setImgInfo] = useState()
 
-    const sendData = (e) => {
-        e.preventDefault()
-        // setImgData(imgData,{'img_info':imgInfo})
-        console.log(imgData,{'img_info':imgInfo})
-        fetch(url.create,{
-            method: "POST", 
-        
-            headers: {
-              "Content-Type": "application/json",
-              // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: JSON.stringify(imgData,{'img_info':imgInfo}), // body data type must match "Content-Type" header
-         
-        }).then(res=>res.json())
-        .then(data=>
-            
-            {
-                console.log(data);
-                if (data.status==='success'){
-                    router.push('/packages')
+    // const sendData = (e) => {
+    //     e.preventDefault()
+    //     // setImgData(imgData,{'img_info':imgInfo})
+    //     console.log(imgData,{'img_info':imgInfo})
+    //     fetch(url.create,{
+    //         method: "POST", 
 
-                }
-            }
-            
-            )
+    //         headers: {
+    //           "Content-Type": "application/json",
+    //           // 'Content-Type': 'application/x-www-form-urlencoded',
+    //         },
+    //         body: JSON.stringify(imgData,{'img_info':imgInfo}), // body data type must match "Content-Type" header
 
-    }
+    //     }).then(res=>res.json())
+    //     .then(data=>
+
+    //         {
+    //             console.log(data);
+    //             if (data.status==='success'){
+    //                 router.push('/packages')
+
+    //             }
+    //         }
+
+    //         )
+
+    // }
 
 
     return (
@@ -50,18 +50,18 @@ function Create() {
                 <div className='bg-[#101720]  p-20 flex flex-col justify-center items-center min-h-[100vh] '>
 
                     <div className="hero h-[90vh] w-[60%] bg-base-200  rounded-lg">
-                        <form className="hero-content text-left p-10 flex flex-col w-[100%]" onSubmit={sendData} method="POST"  >
-                            
-                        
+                        <form className="hero-content text-left p-10 flex flex-col w-[100%]" method="POST"  >
+
+
 
                             <input type="text" placeholder="Title" className="input input-bordered w-[100%]" name="title" onChange={(e) => setImgData({ ...imgData, 'name': e.target.value })} value={imgData.title} />
                             <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Description" name="description" onChange={(e) => setImgData({ ...imgData, 'description': e.target.value })} value={imgData.description}></textarea>
 
-                            <CldUploadWidget uploadPreset="ezfrx_lib"  onSuccess={(results, options) => setImgInfo(results.info)} >
+                            <CldUploadWidget uploadPreset="ezfrx_lib" onSuccess={(results, options) => setImgInfo(results.info)} >
                                 {({ open }) => {
                                     return (
-                                        <input className=" bg-gray-500  text-white rounded-md p-3" onClick={() => open()} type="button" value='upload image'   />
-                                           
+                                        <input className=" bg-gray-500  text-white rounded-md p-3 cursor-pointer" onClick={() => open()} type="button" value='upload image' />
+
 
                                     );
                                 }}
@@ -84,4 +84,4 @@ function Create() {
     )
 }
 
-export default Create
+export default Edit

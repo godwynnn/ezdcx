@@ -3,16 +3,21 @@ import React, { useState, useRef, useEffect } from 'react'
 import { PaystackConsumer } from 'react-paystack'
 import Hero from '@/app/hero';
 import { CldUploadWidget } from "next-cloudinary";
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 
-
-function Packages() {
+function Packages({params}) {
+    const router = useRouter()
 
     const [interval, setDurationInterval] = useState('DAILY')
     const [duration, setDuration] = useState(1)
     const [imgData, setImgData] = useState({})
     const upload_btn_ref = useRef()
-    const modal_3_ref=useRef()
+    const modal_3_ref = useRef()
+
+
+    console.log('ROUTER',params)
 
     const handleSetDurationChange = (e) => {
         if (e.target.value < 0 || e.target.value % 1 !== 0) {
@@ -59,15 +64,17 @@ function Packages() {
 
 
     useEffect(() => {
-        upload_btn_ref.current.addEventListener('click', (e) => {
-            document.getElementById('my_modal_3').style.visibility='hidden'
-            document.getElementById('my_modal_3').style.display='none'
-            // document.getElementById('my_modal_3').removeAttribute('open')
-            
-            // document.getElementById('my_modal_3').style.opacity='0'
-        })
+       
     }, [])
 
+
+     // upload_btn_ref.current.addEventListener('click', (e) => {
+        //     // document.getElementById('my_modal_3').style.visibility='hidden'
+        //     // document.getElementById('my_modal_3').style.display='none'
+        //     document.getElementById('my_modal_3').removeAttribute('open')
+
+        //     // document.getElementById('my_modal_3').style.opacity='0'
+        // })
 
     return (
 
@@ -108,7 +115,11 @@ function Packages() {
 
                                 </PaystackConsumer>
 
-                                <button className="btn bg-gray-500 text-white" type='button' onClick={() => document.getElementById('my_modal_3').showModal()}>Edit</button>
+                                <Link href={`/packages/${params.id}/edit`} >
+                                    <button className="btn bg-gray-500 text-white" type='button' >Edit</button>
+                                </Link>
+
+                                {/* <button className="btn bg-gray-500 text-white" type='button' onClick={() => document.getElementById('my_modal_3').showModal()}>Edit</button> */}
 
 
 
@@ -117,7 +128,7 @@ function Packages() {
                     </div>
                 </div>
 
-
+                {/* 
                 <dialog id="my_modal_3" className="modal " ref={modal_3_ref} >
                     <div className="modal-box">
                         <form method='post' className='justify-center items-center grid  grid-cols-1 gap-5 p-2' onSubmit={sendData} >
@@ -140,7 +151,7 @@ function Packages() {
                                 }}
                             </CldUploadWidget>
 
-                            {/* <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Price details"></textarea> */}
+                            <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Price details"></textarea>
                             <input type="text" placeholder="Daily Plan" name="daily" className="input input-bordered w-[100%]" onChange={(e) => setImgData({ ...imgData, 'daily_price': e.target.value })} value={imgData.daily} />
                             <input type="text" placeholder="Weekly Plan" name="weekly" className="input input-bordered w-[100%]" onChange={(e) => setImgData({ ...imgData, 'weekly_price': e.target.value })} value={imgData.weekly} />
                             <input type="text" placeholder="Monthly Plan" name="monthly" className="input input-bordered w-[100%]" onChange={(e) => setImgData({ ...imgData, 'monthly_price': e.target.value })} value={imgData.monthly} />
@@ -151,12 +162,12 @@ function Packages() {
                         </form>
 
                         <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
+                            if there is a button in form, it will close the modal
                             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                         </form>
 
                     </div>
-                </dialog>
+                </dialog> */}
             </Hero>
         </>
     )
