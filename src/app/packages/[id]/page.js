@@ -35,7 +35,7 @@ function Packages({ params }) {
     const config = {
         reference: (new Date()).getTime().toString(),
         email: "user@example.com",
-        amount: 10000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
+        amount: 100*imgData.daily_price, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
         publicKey: 'pk_test_0a42290d278ce8ae73a6d894989c87fa3889f21a',
     };
 
@@ -63,9 +63,39 @@ function Packages({ params }) {
 
 
 
-    const sendData = () => {
-        console.log(imgData)
+    // const sendData = () => {
+    //     console.log(imgData)
+    // }
+
+    const changePriceByInterval=(val)=>{
+        setDurationInterval(val)
+        fetch(`${url.change_price}/${params.id}?duration=${duration}&interval=${val}`,{
+            method: "GET",
+        }).then((res)=>res.json())
+        .then(data=>{
+            console.log(data);
+            setImgData({...imgData,'daily_price':data.data})
+          
+           
+        })
+        
     }
+
+
+    const changePriceByduration=(val)=>{
+        setDuration(val)
+        fetch(`${url.change_price}/${params.id}?duration=${val}&interval=${interval}`,{
+            method: "GET",
+        }).then((res)=>res.json())
+        .then(data=>{
+            console.log(data);
+            setImgData({...imgData,'daily_price':data.data})
+            
+        })
+        
+    }
+
+    
 
 
     useEffect(() => {
@@ -111,18 +141,18 @@ function Packages({ params }) {
                                 <div className='w-[50%] sm:w-[100%] max-sm:w-full bg-base-200 p-20 max-sm:p-10 rounded-lg'>
                                     <h1 className="text-5xl font-bold">{imgData.name}</h1>
                                     <p className="py-6">{imgData.description}</p>
-                                    <h2>N {imgData.daily_price}</h2>
+                                    <h2 className='font-bold'>N {imgData.daily_price}</h2>
 
                                     <br />
 
                                     <label className="input input-bordered flex items-center gap-2" name='duration'>
                                         Duration
-                                        <input type="number" className="grow" placeholder="Duration" name='duration' min={1} value={duration} onChange={handleSetDurationChange} />
+                                        <input type="number" className="grow" placeholder="Duration" name='duration' min={1} value={duration} onChange={e=>changePriceByduration(e.target.value)} />
                                     </label>
                                     <br />
 
 
-                                    <select className="select select-bordered w-full max-w-xs" name='interval' value={interval} onChange={(e) => setDurationInterval(e.target.value)}>
+                                    <select className="select select-bordered w-full max-w-xs" name='interval' value={interval} onChange={(e) =>changePriceByInterval(e.target.value)}>
                                         <option disabled selected>Interval?</option>
                                         <option value={'DAILY'}>daily</option>
                                         <option value={'WEEKLY'}>weekly</option>

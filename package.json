@@ -24,6 +24,7 @@
     "react": "^18",
     "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
+    "react-loading-skeleton": "^3.4.0",
     "react-paystack": "^5.0.0",
     "react-player": "^2.15.1",
     "react-plotly.js": "^2.6.0",
