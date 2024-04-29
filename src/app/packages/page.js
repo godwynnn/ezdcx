@@ -24,7 +24,7 @@ function Packages() {
             method: 'GET'
         }).then(res=>res.json())
         .then(data=>
-           { setPackage(data) 
+           { setPackage(data.data) 
             console.log('packages:',data)}
             )
        

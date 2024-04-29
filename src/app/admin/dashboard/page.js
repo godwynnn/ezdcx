@@ -8,10 +8,10 @@ function AdminDashboard() {
             <Hero>
                 <div className='bg-[#0B1215] p-10  min-h-[100vh] w-full'>
 
-                    <div className='w-[100%] min-h-[20%] grid grid-cols-3  max-sm:grid-cols-1 gap-4'>
+                    <div className='w-[100%] min-h-[20%] grid grid-cols-4  max-sm:grid-cols-1 gap-4'>
                         <div className="card w-[100%] bg-base-100 shadow-xl">
                             <div className="card-body">
-                                <h2 className="card-title">Card title!</h2>
+                                <h2 className="card-title">Total Active Users</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
                                 <div className="card-actions justify-end">
                                 </div>
@@ -21,7 +21,7 @@ function AdminDashboard() {
 
                         <div className="card w-[100%] bg-base-100 shadow-xl">
                             <div className="card-body">
-                                <h2 className="card-title">Card title!</h2>
+                                <h2 className="card-title">Total Users</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
                                 <div className="card-actions justify-end">
                                 </div>
@@ -30,7 +30,16 @@ function AdminDashboard() {
 
                         <div className="card w-[100%] bg-base-100 shadow-xl">
                             <div className="card-body">
-                                <h2 className="card-title">Card title!</h2>
+                                <h2 className="card-title">Payments(daily)</h2>
+                                <p>If a dog chews shoes whose shoes does he choose?</p>
+                                <div className="card-actions justify-end">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="card w-[100%] bg-base-100 shadow-xl">
+                            <div className="card-body">
+                                <h2 className="card-title">Payments(overrall)</h2>
                                 <p>If a dog chews shoes whose shoes does he choose?</p>
                                 <div className="card-actions justify-end">
                                 </div>
@@ -49,8 +58,8 @@ function AdminDashboard() {
                                            
                                         </th>
                                         <th>Name</th>
-                                        <th>Job</th>
                                         <th>Email</th>
+                                        <th>Status</th>
                                         <th></th>
                                     </tr>
                                 </thead>

@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Martian+Mono:wght@100..800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jersey+20+Charted&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200..700&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,11 +37,30 @@ body{
 }
 
 .header{
-  background-image: url(../../assets/blob1.png);
-  /* background: url(../../assets/img15.png); */
+  
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-position: bottom 10%; */
+  background-image: url(/img21.jpg);
+  scale: 1;
+  transition: 0.8s ease;
+
+ 
+}
+.header section:first-child{
+  /* background-color: ; */
+  background: linear-gradient(to right, #101720 60%,transparent);
+
+  opacity: 80%;
+  border: none;
+  
+}
+.navbar{
+  position:  absolute;
+  top: 0;
+  left: 0;
+  /* background-color: white; */
+  z-index: 1000;
 
 }
 .grow{
@@ -84,10 +107,13 @@ body{
 }
 .header_caption{
   font-family: 'Bebas Neue';
-  font-family: 'EB Garamond';
-  font-family: 'Martian Mono';
-
-  font-optical-sizing: auto;
+  /* font-family: 'EB Garamond'; */
+  /* font-family: 'Martian Mono'; */
+  font-family: "Oswald", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Kanit", sans-serif;
+  /* font-family: 'Martian Mono'; */
   /* font-weight: 700; */
   font-style: normal;
   /* font-style: italic; */
@@ -117,7 +143,7 @@ body{
 }
 
 .wave2 .shape-fill {
-  fill: #0B1215;
+  fill: #101720;
 }
 
 .wave1 {
@@ -137,22 +163,36 @@ body{
 }
 
 .wave1 .shape-fill {
-  fill: #0B1215;
+  fill: #101720;
 }
 .feature{
-  font-family: 'Martian Mono';
+  font-family: 'Bebas Neue';
   font-style: normal;
   position: relative;
   cursor: pointer;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: start;
+  font-family: "Kanit", sans-serif;
+  border: 5px solid #101720;
+  border-radius: 20px;
   /* border: 1px solid red; */
 }
-.section{
-  font-family: 'Martian Mono';
+section{
+  font-family: 'Bebas Neue';
+  font-family: "Kanit", sans-serif;
   font-style: normal;
 }
-.section:nth-child(2) div{
-  border: 1px solid red;
+.desc{
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
 }
+
 /* .feature::before{
   content: "";
 
@@ -182,4 +222,70 @@ body{
 /* CLOUDINARY */
 .widget.upload_pop{
   z-index: 999999;
+}
+
+/* SWIPER STYLES */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  /* border-top: 1px solid #e6e6e6; */
+  /* border-left:  1px solid #e6e6e6; */
+  /* border-radius: 10px; */
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+
+  width: 100%;
+  height: 100%;
+
+
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+
+}
+.swiper-slide:nth-child(1){
+  background-image: url(/img21.jpg);
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(2){
+  background-image: url(/img22.jpg);
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.swiper-slide:nth-child(3){
+  background-image: url(/img23.jpg);
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* object-fit: contain; */
+  
+} 
+
+
+.section1{
+  /* background-image: url(/header.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
 }

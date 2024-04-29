@@ -5,19 +5,24 @@ import Hero from '@/app/hero';
 import { CldUploadWidget } from "next-cloudinary";
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { Urls } from '@/app/urls';
 
 
-function Packages({params}) {
+
+const url = Urls()
+function Packages({ params }) {
     const router = useRouter()
+
 
     const [interval, setDurationInterval] = useState('DAILY')
     const [duration, setDuration] = useState(1)
     const [imgData, setImgData] = useState({})
+    const [imgInfo, setImgInfo] = useState({})
     const upload_btn_ref = useRef()
     const modal_3_ref = useRef()
 
 
-    console.log('ROUTER',params)
+    console.log('ROUTER', params)
 
     const handleSetDurationChange = (e) => {
         if (e.target.value < 0 || e.target.value % 1 !== 0) {
@@ -64,69 +69,89 @@ function Packages({params}) {
 
 
     useEffect(() => {
-       
+
+        fetch(`${url.packages}/${params.id}`, {
+            method: "GET",
+        }).then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    console.log(data)
+                    setImgData(data.data)
+                    setImgInfo(data.data.image_metadata)
+                } else {
+                    console.log('package not found')
+                }
+            })
+
     }, [])
 
 
-     // upload_btn_ref.current.addEventListener('click', (e) => {
-        //     // document.getElementById('my_modal_3').style.visibility='hidden'
-        //     // document.getElementById('my_modal_3').style.display='none'
-        //     document.getElementById('my_modal_3').removeAttribute('open')
+    // upload_btn_ref.current.addEventListener('click', (e) => {
+    //     // document.getElementById('my_modal_3').style.visibility='hidden'
+    //     // document.getElementById('my_modal_3').style.display='none'
+    //     document.getElementById('my_modal_3').removeAttribute('open')
 
-        //     // document.getElementById('my_modal_3').style.opacity='0'
-        // })
+    //     // document.getElementById('my_modal_3').style.opacity='0'
+    // })
 
     return (
 
         <>
             <Hero>
-                <div className='bg-[#0B1215] p-20  min-h-[100vh] w-full'>
 
-                    <div className="hero min-h-full lg:w-full md:w-full sm:w-full max-sm:w-full">
-                        <form className="hero-content w-[100%] flex-col items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center  lg:justify-between">
-                            <img src="https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg" className=" h-[90%] max-w-lg sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
+              
 
+                    <div className='bg-[#0B1215] p-20  min-h-[100vh] w-full'>
 
-                            <div className='w-[50%] sm:w-[100%] max-sm:w-full bg-base-200 p-20 max-sm:p-10 rounded-lg'>
-                                <h1 className="text-5xl font-bold">Level1</h1>
-                                <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem</p>
-
-                                <br />
-
-                                <label className="input input-bordered flex items-center gap-2" name='duration'>
-                                    Duration
-                                    <input type="number" className="grow" placeholder="Duration" name='duration' min={1} value={duration} onChange={handleSetDurationChange} />
-                                </label>
-                                <br />
+                        <div className="hero min-h-full lg:w-full md:w-full sm:w-full max-sm:w-full">
+                            <form className="hero-content w-[100%] flex-col items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center  lg:justify-between">
+                                <img src={imgInfo.secure_url} className=" h-[90%] max-w-lg sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
 
 
-                                <select className="select select-bordered w-full max-w-xs" name='interval' value={interval} onChange={(e) => setDurationInterval(e.target.value)}>
-                                    <option disabled selected>Interval?</option>
-                                    <option value={'DAILY'}>daily</option>
-                                    <option value={'WEEKLY'}>weekly</option>
-                                    <option value={'MONTHLY'}>monthly</option>
-                                </select>
-                                <br />
+                                <div className='w-[50%] sm:w-[100%] max-sm:w-full bg-base-200 p-20 max-sm:p-10 rounded-lg'>
+                                    <h1 className="text-5xl font-bold">{imgData.name}</h1>
+                                    <p className="py-6">{imgData.description}</p>
+                                    <h2>N {imgData.daily_price}</h2>
+
+                                    <br />
+
+                                    <label className="input input-bordered flex items-center gap-2" name='duration'>
+                                        Duration
+                                        <input type="number" className="grow" placeholder="Duration" name='duration' min={1} value={duration} onChange={handleSetDurationChange} />
+                                    </label>
+                                    <br />
 
 
-                                <PaystackConsumer {...componentProps}>
-
-                                    {({ initializePayment }) => <button className="btn btn-primary mt-5" type='submit' onClick={(e) => { e.preventDefault(); initializePayment(handleSuccess, handleClose) }}>Proceed</button>}
-
-                                </PaystackConsumer>
-
-                                <Link href={`/packages/${params.id}/edit`} >
-                                    <button className="btn bg-gray-500 text-white" type='button' >Edit</button>
-                                </Link>
-
-                                {/* <button className="btn bg-gray-500 text-white" type='button' onClick={() => document.getElementById('my_modal_3').showModal()}>Edit</button> */}
+                                    <select className="select select-bordered w-full max-w-xs" name='interval' value={interval} onChange={(e) => setDurationInterval(e.target.value)}>
+                                        <option disabled selected>Interval?</option>
+                                        <option value={'DAILY'}>daily</option>
+                                        <option value={'WEEKLY'}>weekly</option>
+                                        <option value={'MONTHLY'}>monthly</option>
+                                    </select>
+                                    <br />
 
 
+                                    <PaystackConsumer {...componentProps}>
 
-                            </div>
-                        </form>
+                                        {({ initializePayment }) => <button className="btn btn-primary mt-5" type='submit' onClick={(e) => { e.preventDefault(); initializePayment(handleSuccess, handleClose) }}>Proceed</button>}
+
+                                    </PaystackConsumer>
+
+                                    <Link href={`/packages/${params.id}/edit`} >
+                                        <button className="btn bg-gray-500 text-white" type='button' >Edit</button>
+                                    </Link>
+
+                                    {/* <button className="btn bg-gray-500 text-white" type='button' onClick={() => document.getElementById('my_modal_3').showModal()}>Edit</button> */}
+
+
+
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
+
+               
+
 
                 {/* 
                 <dialog id="my_modal_3" className="modal " ref={modal_3_ref} >

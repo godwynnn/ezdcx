@@ -12,11 +12,14 @@ function Create() {
 
     const [imgData, setImgData] = useState({})
     const [imgInfo, setImgInfo]=useState()
+    console.log(url.create)
 
     const sendData = (e) => {
         e.preventDefault()
         // setImgData(imgData,{'img_info':imgInfo})
-        console.log(imgData,{'img_info':imgInfo})
+        
+        const obj_data={'imgData':imgData,'img_info':imgInfo}
+        console.log(obj_data)
         fetch(url.create,{
             method: "POST", 
         
@@ -24,7 +27,7 @@ function Create() {
               "Content-Type": "application/json",
               // 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: JSON.stringify(imgData,{'img_info':imgInfo}), // body data type must match "Content-Type" header
+            body: JSON.stringify(obj_data), // body data type must match "Content-Type" header
          
         }).then(res=>res.json())
         .then(data=>
