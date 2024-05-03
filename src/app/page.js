@@ -36,7 +36,10 @@ export default function Home() {
   const img3_ref = useRef()
   const img10_ref = useRef()
   const img12_ref = useRef()
+  const img20_ref=useRef()
+  const section_4_ref=useRef()
   const section_3_ref = useRef()
+  const img20_ref_holder=useRef()
   const feature_holder = useRef()
   const feature_holder_img = useRef()
   const anime_ref_holder = useRef()
@@ -58,7 +61,7 @@ export default function Home() {
 
 
 
-    console.log(count)
+    // console.log(count)
 
 
     document.getElementById('bg_header').style.backgroundImage = `url(${bg_images[count]})`
@@ -146,6 +149,50 @@ export default function Home() {
     gsap.from(section_3_ref.current, {
       scrollTrigger: {
         trigger: section_3_ref.current,
+        start: '-50%top top',
+        // end: 'top top',
+        // markers: true,
+
+      },
+      x: -30,
+      delay: 0.2,
+      duration: 0.2,
+
+      opacity: 0,
+    })
+
+    gsap.from(img20_ref.current, {
+      scrollTrigger: {
+        trigger: img20_ref_holder.current,
+        start: '-45%top top',
+        // end: 'top top',
+        // markers: true,
+
+      },
+      x: -30,
+      delay: 0.21,
+      duration: 0.2,
+      opacity: 0,
+      ease:'elastic.in'
+    })
+
+    gsap.from(img20_ref_holder.current, {
+      scrollTrigger: {
+        trigger: img20_ref_holder.current,
+        start: '-70%top top',
+        // end: 'top top',
+        // markers: true,
+
+      },
+      x: -30,
+      delay: 0.2,
+      duration: 0.2,
+      opacity: 0,
+    })
+
+    gsap.from(section_4_ref.current, {
+      scrollTrigger: {
+        trigger: section_4_ref.current,
         start: '-170%top top',
         // end: 'top top',
         // markers: true,
@@ -376,11 +423,11 @@ export default function Home() {
 
 
 
-        <section className="section1 relative w-[100%] lg:h-[100vh] md:h-[120vh] bg-[#101720] grid lg:grid-cols-2 md:grid-cols-1 justify-center items-center text-white p-[8%]">
+        <section className="section_1 relative w-[100%] lg:h-[100vh] md:h-[120vh] bg-[#101720] grid lg:grid-cols-2 md:grid-cols-2 max-sm:grid-cols-1 justify-center items-center text-white p-[6%]">
 
-          <Image src={require('../../assets/img10.png')} className="lg:w-[80%] h-[100%] md:w-[60%] sm:w-[80%] " ref={img10_ref} />
+          <Image src={require('../../assets/img10.png')} className="lg:w-[80%] h-[100%] md:w-[90%] sm:w-[80%] " ref={img10_ref} />
 
-          <div ref={section_3_ref} className="lg:mt-0 sm:mt-5 max-sm:mt-20">
+          <div ref={section_3_ref} className="lg:mt-0 sm:mt-5 max-sm:mt-20 max-sm:row-start-1">
             <p className="lg:text-[40px] max-sm:text-[25px] md:text-[30px] sm:text-[30px]">Learn & Earn on the go</p><br />
             <p className=" lg:text-[18px] max-sm:text-[15px] font-extralight">Get ideas to follow trade on your device, stay connected and never miss an opportunity to make profit,
               with potential for substantial returns and accessibility to global markets,
@@ -405,16 +452,46 @@ export default function Home() {
 
 
 
-        <section className="section w-[300%] h-[150vh]    bg-[#101720] justify-center items-center text-white p-[8%]" ref={anime_ref_holder}>
 
 
+        <section className="section_2 relative w-[100%] lg:min-h-[100vh] md:min-h-[120vh] gap-20 bg-[#101720] grid lg:grid-cols-2 md:grid-cols-2 justify-center items-center text-white p-[4%]">
+
+          <div ref={section_4_ref} className="lg:mt-0 sm:mt-5 max-sm:mt-20">
+            <p className="lg:text-[50px] max-sm:text-[25px] md:text-[30px] sm:text-[30px]">Your security is our priority
+            </p><br />
+
+            <p className=" lg:text-[18px] max-sm:text-[15px] font-extralight">Get ideas to follow trade on your device, stay connected and never miss an opportunity to make profit,
+              with potential for substantial returns and accessibility to global markets,
+              grasp key concepts such as currency pairs, pips, leverage, and margin to make informed trading decisions.</p>
+
+       
+
+          </div>
+
+          <div className="relative lg:bg-slate-100 max-sm:bg-transparent lg:w-[80%] h-[100vh] md:w-[100%] sm:w-[100%] " ref={img20_ref_holder}  >
+            <Image src={require('../../assets/img20.jpg')} className="absolute top-[15%] lg:left-[-15%] md:left-[-15%] sm:left-[-15%] max-sm:left-0 lg:w-[100%] h-[100%] md:w-[100%] sm:w-[100%] " ref={img20_ref} />
+
+          </div>
+
+
+
+
+
+        </section>
+
+
+
+        <section className="section w-[300%] h-[150vh]   bg-[#101720] justify-center items-center text-white p-[8%]" ref={anime_ref_holder}>
+        
 
           <div className="flex flex-nowrap h-[100%] w-[90%] relative overflow-hidden ">
 
-            <div className="anime_ref  text-center w-[100%] relative top-0 left-0  p-24" ref={anime_ref}   >
-              {/* <p className="text-[50px]   text-center flex flex-col"><span>What You Need</span><span>To Know About Us</span></p> */}
+          
 
-              <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
+            <div className="anime_ref  flex flex-col text-center w-[100%] relative top-0 left-0  p-24 " ref={anime_ref}   >
+              
+            <p className="text-[50px]   text-center "><span>Who We Are</span></p>
+              <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[85%] mt-[0%] " />
               {/* <p className=" absolute top-0 left-0 text-[15px] text-center font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
             </div>
 

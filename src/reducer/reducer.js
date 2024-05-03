@@ -7,7 +7,8 @@ const State={
     accessToken:null,
     refreshToken:null,
     logged_in:false,
-    email:''
+    email:'',
+    // subscription_type=null
 
 }
 
@@ -17,9 +18,13 @@ export const AuthenticationSlice=createSlice({
 
     reducers:{
         Login:(state,action)=>{
-            console.log('dispatch values',action.payload.email)
+            // console.log('dispatch values',action.payload)
             state.logged_in=true
             state.email=action.payload.email
+            state.accessToken=action.payload.data.access_token
+            state.refreshToken=action.payload.data.refresh_token
+            
+
             // cookies().set('logged_in',true)
 
         },

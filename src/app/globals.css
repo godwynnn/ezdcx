@@ -55,7 +55,7 @@ body{
   border: none;
   
 }
-.navbar{
+.navbar_header{
   position:  absolute;
   top: 0;
   left: 0;
@@ -285,8 +285,29 @@ section{
 } 
 
 
-.section1{
+.section_1{
   /* background-image: url(/header.png); */
   background-repeat: no-repeat;
   background-size: cover;
+  /* border: 1px solid red; */
 }
+.section_2 div:first-child{
+  /* border: 1px solid red; */
+}
+.section_2 div:last-child{
+  /* border: 1px solid red; */
+  /* background-color: aliceblue; */
+  padding: 2%;
+  /* background-image: url(/img24.jpg); */
+  /* background: whitesmoke; */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  /* align-self:flex-end; */
+  
+}
+.section_2 div:last-child img{
+  border: 10px solid white;
+}
+

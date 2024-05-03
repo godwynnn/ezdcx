@@ -16,6 +16,7 @@
     "@gsap/react": "^2.1.0",
     "@reduxjs/toolkit": "^2.2.2",
     "apexcharts": "^3.48.0",
+    "cookies-next": "^4.1.1",
     "formik": "^2.4.5",
     "gsap": "^3.12.5",
     "next": "^14.1.4",

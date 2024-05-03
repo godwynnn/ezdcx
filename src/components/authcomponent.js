@@ -8,11 +8,15 @@ import { AuthencticationAction } from '@/reducer/reducer'
 import { redirect } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 import { Urls } from '@/app/urls'
+import { useSearchParams } from 'next/navigation'
+
 
 
 const url = Urls()
 function AuthComponent() {
   const authData = useSelector(state => state.reducer.authreducer)
+  const searchParams=useSearchParams()
+  const next=searchParams.get('next')
 
 
   const dispatch = useDispatch()
@@ -39,7 +43,8 @@ function AuthComponent() {
       })
       const data = await res.json()
       if (data.status === 'success') {
-        router.push('/')
+        router.push('/auth')
+        console.log(data.message)
 
       }
       else{
@@ -78,9 +83,11 @@ function AuthComponent() {
       }).then(res => res.json()).then(data => {
         console.log(data)
         if (data.status === 'success') {
+          
           console.log(data)
-          dispatch(AuthencticationAction.Login(values))
-          router.push('/dashboard')
+          
+          dispatch(AuthencticationAction.Login({...values,data}))
+          router.push(next??'/dashboard')
         } else {
           console.log(data.message)
         }

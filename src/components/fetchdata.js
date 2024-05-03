@@ -78,7 +78,9 @@ export const fetchChartData = async (data, dispatch) => {
 
         }
         // let obj_data=val.slice(1,val.length)
+        // console.log('hartDta',val)
         val.splice(0,1)
+        // console.log('hartDta',val)
         return val
 
 

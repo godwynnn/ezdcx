@@ -22,13 +22,13 @@ function Navbar() {
     const Logout = () => {
 
         dispatch(AuthencticationAction.Logout())
-        router.push('/auth')
+        router.push('')
 
 
     }
     return (
 
-        <div className="navbar  text-white  justify-between p-4 pl-[5%] pr-[5%]">
+        <div className="navbar navbar_header text-white  justify-between p-4 pl-[5%] pr-[5%]">
 
             <div className="navbar-left">
                 <a className="btn btn-ghost text-xl">EZFRX</a>

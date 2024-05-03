@@ -12,7 +12,7 @@ function page() {
                 <div className='bg-[#101720]  p-20 grid gap-3 lg:grid-cols-3 min-h-[100vh] md:grid-cols-2'>
 
                     <div className="card card-compact w-[100%] lg:h-[60%] md:h-[90%] sm:h-[90%] max-sm:h-[100%] shadow-xl bg-[#0B1215] text-white " onClick={() =>{ document.getElementById('my_modal_3').showModal();setPlaying(true)}}>
-                        {/* <figure className='h-[70%]'><ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={'100%'} height={'100%'} className='mt-0' playing={playing} muted/></figure> */}
+                        <figure className='h-[70%]'><ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={'100%'} height={'100%'} className='mt-0' playing={playing} muted/></figure>
                         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
 
                         <div className="card-body">
@@ -24,7 +24,7 @@ function page() {
 
 
                     <div className="card card-compact w-[100%] lg:h-[60%] md:h-[90%] sm:h-[90%] max-sm:h-[100%] shadow-xl bg-[#0B1215] text-white " onClick={() =>{ document.getElementById('my_modal_3').showModal();setPlaying(true)}}>
-                        {/* <figure className='h-[70%]'><ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={'100%'} height={'100%'} className='mt-0' playing={playing} muted/></figure> */}
+                        <figure className='h-[70%]'><ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={'100%'} height={'100%'} className='mt-0' playing={playing} muted/></figure>
                         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
 
                         <div className="card-body">
@@ -36,7 +36,7 @@ function page() {
 
 
                     <div className="card card-compact w-[100%] lg:h-[60%] md:h-[90%] sm:h-[90%] max-sm:h-[100%] shadow-xl bg-[#0B1215] text-white " onClick={() =>{ document.getElementById('my_modal_3').showModal();setPlaying(true)}}>
-                        {/* <figure className='h-[70%]'><ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={'100%'} height={'100%'} className='mt-0' playing={playing} muted/></figure> */}
+                        <figure className='h-[70%]'><ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={'100%'} height={'100%'} className='mt-0' playing={playing} muted/></figure>
                         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
 
                         <div className="card-body">

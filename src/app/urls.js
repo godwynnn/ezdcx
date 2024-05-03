@@ -10,6 +10,10 @@ export const Urls=()=>{
         create:`${local}/add_plan`,
         packages:`${local}/get_services`,
         change_price:`${local}/get_prices`,
+        payment:`${local}/subscribe_user`,
+        test:`${local}/test`,
+        subscription_data:`${local}/get_subscription`,
+        create_video:  `${local}/videos`,
 
         logout:''
 

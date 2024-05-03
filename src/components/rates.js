@@ -106,7 +106,7 @@ function Rates(props) {
             </div>
 
             <div className='min-w-[200%] h-[100%]  bg-[#0B1215] float-right'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint optio earum maiores dolor voluptatem dolore voluptate vitae repellat adipisci, assumenda, ab officiis est aut necessitatibus accusamus beatae. Mollitia, officiis placeat.
+              {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint optio earum maiores dolor voluptatem dolore voluptate vitae repellat adipisci, assumenda, ab officiis est aut necessitatibus accusamus beatae. Mollitia, officiis placeat. */}
             </div>
           </>
 

@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation'
 import { Urls } from '../urls'
 import AuthComponent from '@/components/authcomponent'
 import AuthValidator from '@/components/authValidator'
+import { useSearchParams } from 'next/navigation'
 
 
 const url = Urls()

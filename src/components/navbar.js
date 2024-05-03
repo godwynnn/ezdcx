@@ -7,6 +7,7 @@ import { AuthencticationAction, AuthenticationReducer } from '@/reducer/reducer'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Rates from './rates'
+import { redirect } from 'next/navigation'
 
 
 
@@ -22,7 +23,7 @@ function Navbar() {
     const Logout = () => {
 
         dispatch(AuthencticationAction.Logout())
-        router.push('/auth')
+        redirect(' ')
 
 
     }

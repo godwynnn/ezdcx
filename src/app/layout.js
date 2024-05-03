@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 // import { Provider } from "react-redux";
 import { Providers } from "@/components/provider";
 import { store, Persistor } from "@/store/store";
+import Skeleton,{SkeletonTheme} from "react-loading-skeleton";
 // import { PersistGate } from "redux-persist/integration/react";
 import Persist from "./persist";
 
@@ -25,9 +26,12 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Providers store={store}>
           <Persist>
+            <SkeletonTheme>
+
+            {children}
+            </SkeletonTheme>
 
           
-            {children}
           </Persist>
         </Providers>
 
