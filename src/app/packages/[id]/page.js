@@ -180,8 +180,8 @@ function Packages({ params }) {
 
                                 <div className='w-[50%] sm:w-[100%] max-sm:w-full bg-base-200 p-20 max-sm:p-10 rounded-lg'>
                                     {loading?<Skeleton/>:<h1 className="text-5xl font-bold">{imgData.name }</h1>}
-                                    {/* <p className="py-6">{loading?<Skeleton />:imgData.description}</p>
-                                    <h2 className='font-bold'>N {loading?<Skeleton />:imgData.daily_price}</h2> */}
+                                    <p className="py-6">{loading?<Skeleton />:imgData.description}</p>
+                                    <h2 className='font-bold'>N {loading?<Skeleton />:imgData.daily_price}</h2>
 
                                     <br />
 

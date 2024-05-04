@@ -17,6 +17,9 @@ function AuthComponent() {
   const authData = useSelector(state => state.reducer.authreducer)
   const searchParams=useSearchParams()
   const next=searchParams.get('next')
+  const user_admin=searchParams.get('admin')
+
+  console.log(user_admin)
 
 
   const dispatch = useDispatch()
@@ -32,7 +35,14 @@ function AuthComponent() {
     },
     onSubmit: async (values) => {
       console.log(values)
-      const res = await fetch(url.signup, {
+      if (user_admin !==''){
+        var auth_url=`${url.signup}/admin=${user_admin}`
+      }else{
+        var auth_url=url.signup
+      }
+
+
+      const res = await fetch(auth_url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
