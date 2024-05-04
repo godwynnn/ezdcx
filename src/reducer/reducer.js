@@ -8,6 +8,7 @@ const State={
     refreshToken:null,
     logged_in:false,
     email:'',
+    is_admin:false
     // subscription_type=null
 
 }

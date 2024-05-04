@@ -76,6 +76,7 @@ function Navbar() {
 
                 {authData.logged_in ?
                     <>
+                    
                         <div className="dropdown dropdown-end text-black">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
@@ -210,6 +211,8 @@ function Navbar() {
                                     <Link href={'/videos'}> <li><a>Videos</a></li></Link>
 
                                     <li className='lg:hidden md:block sm:block max-sm:block' onClick={() => { document.getElementById('my_modal_4').showModal() }}><a>Watchlist</a></li>
+                                    <Link href={'/packages/create'}> <li><a>Add Package</a></li></Link>
+                                    <Link href={'/videos/create'}> <li><a>Add Video</a></li></Link>
                                 </>
                                 : ''
                             }

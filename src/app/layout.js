@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Providers store={store}>
           <Persist>
-            <SkeletonTheme>
+            <SkeletonTheme baseColor='gray' highlightColor='black' >
 
             {children}
             </SkeletonTheme>

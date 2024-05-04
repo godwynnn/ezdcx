@@ -300,6 +300,30 @@ export default function Home() {
 
   })
 
+ useEffect(()=>{
+   // INTERSECTION OBSERVER
+  
+   var video_1=document.getElementById('video_1')
+   var video_2=document.getElementById('video_2')
+   let autoplayVideo=new IntersectionObserver((entries,observer)=>{
+     entries.forEach(entry=>{
+       if(entry.isIntersecting){
+        entry.target.children[0].muted=false
+         console.log(entry.target)
+         entry.target.children[0].play()
+         
+       }else{
+        console.log(entry.target)
+        entry.target.children[0].pause()
+       }
+     })
+   })
+ 
+   autoplayVideo.observe(video_1)
+   autoplayVideo.observe(video_2)
+ 
+ })
+
 
 
 
@@ -367,10 +391,12 @@ export default function Home() {
         </header>
 
 
-        <section className=" w-[100%] relative lg:min-h-[120vh] md:h-[90vh] sm:h-[190vh]  flex lg:flex-row md:flex-row sm:flex-col-reverse  max-sm:flex-col-reverse  bg-[#0B1215]  p-[10%] gap-0 justify-center items-center text-white">
-          <div className=" z-[105] rounded-md lg:min-h-[100%] md:h-[100%] sm:h-[100%] w-[100%] max-sm:w-[60%] sm:w-[70%]  max-sm:mb-[15%]  " ref={feature_holder_img}>
+        <section className=" w-[100%] relative lg:min-h-[120vh] md:h-[90vh] sm:h-[190vh]  flex lg:flex-row md:flex-row sm:flex-col  max-sm:flex-col  bg-[#0B1215]  p-[10%] gap-0 justify-center items-center text-white">
+          <div className=" z-[105] rounded-md lg:min-h-[100%] md:h-[100%] sm:h-[100%] w-[100%] max-sm:w-[60%] sm:w-[70%]  max-sm:mb-[15%] flex justify-left items-center p-2 max-sm:text-center lg:text-left md:text-left sm:text-left " ref={feature_holder_img}>
 
-            <Image src={require('../../assets/img16.webp')} className="w-[100%] " />
+            {/* <Image src={require('../../assets/img16.webp')} className="w-[100%] " /> */}
+
+            <p className="lg:text-[45px]">Lorem ipsum dolor sit amet consectetur </p>
           </div>
 
 
@@ -497,7 +523,7 @@ export default function Home() {
 
 
             <div className="anime_ref text-center w-[100%] relative top-0 left-0 p-24" ref={anime_ref} >
-              <ReactPlayer url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className='mt-0 intro_video max-sm:w-[100%] max-sm:h-[100%]' controls />
+              <ReactPlayer id='video_1' muted url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className='mt-0 intro_video max-sm:w-[100%] max-sm:h-[100%]' controls={true} />
               {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
                 <p className="text-[50px] absolute top-[50%] text-center">What You Need To Know</p> */}
               {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
@@ -505,7 +531,7 @@ export default function Home() {
 
 
             <div className="anime_ref text-center w-[100%] relative top-0 left-0 p-24" ref={anime_ref} >
-              <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={'100%'} height={'100%'} className='mt-0 intro_video' controls />
+              <ReactPlayer id='video_2' url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={'100%'} height={'100%'} className='mt-0 intro_video' controls />
 
               {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] intro_video" />
                 <p className="text-[50px] absolute top-[50%] text-center">What You Need </p> */}

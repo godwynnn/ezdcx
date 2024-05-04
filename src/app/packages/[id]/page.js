@@ -26,6 +26,7 @@ function Packages({ params }) {
     const [duration, setDuration] = useState(1)
     const [imgData, setImgData] = useState({})
     const [imgInfo, setImgInfo] = useState({})
+    const [loading, setLoading]=useState(true)
 
     const [paystackKey, setPaystackKey] = useState({})
     const upload_btn_ref = useRef()
@@ -125,9 +126,8 @@ function Packages({ params }) {
 
     }, [])
 
-
-    useEffect(() => {
-
+    const getData=()=>{
+        setLoading(true)
         fetch(`${url.packages}/${params.id}`, {
             method: "GET",
         }).then(res => res.json())
@@ -137,10 +137,17 @@ function Packages({ params }) {
                     setImgData(data.data)
                     setImgInfo(data.data.image_metadata)
                     setPaystackKey({ 'pk': data.pkey, 'sk': data.skey })
+                    setLoading(false)
                 } else {
                     console.log('package not found')
                 }
             })
+    }
+
+
+    useEffect(() => {
+
+        getData()
 
     }, [])
 
@@ -168,13 +175,13 @@ function Packages({ params }) {
 
                         <div className="hero min-h-full lg:w-full md:w-full sm:w-full max-sm:w-full">
                             <form className="hero-content w-[100%] flex-col items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center  lg:justify-between">
-                                <img src={imgInfo.secure_url || <Skeleton />} className=" h-[90%] max-w-lg sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
+                                <img src={imgInfo.secure_url } className=" h-[90%] max-w-lg sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
 
 
                                 <div className='w-[50%] sm:w-[100%] max-sm:w-full bg-base-200 p-20 max-sm:p-10 rounded-lg'>
-                                    <h1 className="text-5xl font-bold">{imgData.name || <Skeleton />}</h1>
-                                    <p className="py-6">{imgData.description || <Skeleton />}</p>
-                                    <h2 className='font-bold'>N {imgData.daily_price || <Skeleton />}</h2>
+                                    {loading?<Skeleton/>:<h1 className="text-5xl font-bold">{imgData.name }</h1>}
+                                    {/* <p className="py-6">{loading?<Skeleton />:imgData.description}</p>
+                                    <h2 className='font-bold'>N {loading?<Skeleton />:imgData.daily_price}</h2> */}
 
                                     <br />
 
