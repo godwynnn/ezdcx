@@ -13,7 +13,8 @@ export const Urls=()=>{
         payment:`${local}/subscribe_user`,
         test:`${local}/test`,
         subscription_data:`${local}/get_subscription`,
-        create_video:  `${local}/videos`,
+        create_video:  `${local}/add_video`,
+        videos:`${local}/videos`,
 
         logout:''
 

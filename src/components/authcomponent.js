@@ -19,7 +19,7 @@ function AuthComponent() {
   const next=searchParams.get('next')
   const user_admin=searchParams.get('admin')
 
-  console.log(user_admin)
+  // console.log(user_admin)
 
 
   const dispatch = useDispatch()

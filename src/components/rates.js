@@ -56,7 +56,7 @@ function Rates(props) {
   }
 
 
-  console.log('ticker', tickerData)
+  // console.log('ticker', tickerData)
 
   useLayoutEffect(() => {
 
