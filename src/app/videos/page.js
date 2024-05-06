@@ -80,7 +80,7 @@ function page() {
 
                     </div>
 
-                    {logged_in ?
+                    {logged_in && authData.is_admin ?
                         <Link href={`/videos/create`} >
                             <button className="btn bg-gray-500 outline-none border-none">Add Video</button>
 

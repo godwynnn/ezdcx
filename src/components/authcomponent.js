@@ -35,8 +35,8 @@ function AuthComponent() {
     },
     onSubmit: async (values) => {
       console.log(values)
-      if (user_admin !==''){
-        var auth_url=`${url.signup}/admin=${user_admin}`
+      if (user_admin !==null){
+        var auth_url=`${url.signup}/?admin=${user_admin}`
       }else{
         var auth_url=url.signup
       }
@@ -52,6 +52,7 @@ function AuthComponent() {
 
       })
       const data = await res.json()
+      console.log(data.message)
       if (data.status === 'success') {
         router.push('/auth')
         console.log(data.message)

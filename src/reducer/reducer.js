@@ -8,7 +8,13 @@ const State={
     refreshToken:null,
     logged_in:false,
     email:'',
-    is_admin:false
+    is_admin:false,
+    email:'',
+    first_name:'',
+    curr_package:null,
+    is_subscribed:false,
+    last_name:'',
+    id:null
     // subscription_type=null
 
 }
@@ -24,6 +30,19 @@ export const AuthenticationSlice=createSlice({
             state.email=action.payload.email
             state.accessToken=action.payload.data.access_token
             state.refreshToken=action.payload.data.refresh_token
+            state.first_name=action.payload.data.user.first_name
+            state.last_name=action.payload.data.user.last_name
+            state.curr_package=action.payload.data.user.current_subscription
+            state.email=action.payload.data.user.email
+            state.id=action.payload.data.user.id
+
+
+            if (action.payload.data.user.role === 'ADMIN'){
+                state.is_admin=true
+            }else{
+                state.is_admin=false
+            }
+
             
 
             // cookies().set('logged_in',true)

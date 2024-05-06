@@ -4,11 +4,15 @@ import { CldUploadWidget } from "next-cloudinary";
 import { Urls } from "@/app/urls";
 import Hero from "@/app/hero";
 import { useRouter, redirect } from 'next/navigation'
+import { useSelector } from 'react-redux'
 
 const url = Urls()
 
 function Create() {
     const router = useRouter()
+
+    const authData = useSelector(state => state.reducer.authreducer)
+    const logged_in = authData.logged_in
 
     const [itemData, setitemData] = useState({})
     const [vidInfo, setvidInfo] = useState('')
@@ -38,6 +42,7 @@ function Create() {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
+                "Authorization":`Bearer ${authData.accessToken}`
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify(data), // body data type must match "Content-Type" header
@@ -45,7 +50,7 @@ function Create() {
         }).then(res => res.json())
             .then(data =>{
                 if(data.status==='success'){
-                    redirect('/videos')
+                    router.push('/videos')
                 }
             })
 

@@ -74,7 +74,7 @@ function Packages() {
 
 
                     </div>
-                    {logged_in ?
+                    {logged_in && authData.is_admin ?
                         <Link href={`/packages/create`} >
                             <button className="btn bg-gray-500 outline-none border-none">Add package</button>
 
