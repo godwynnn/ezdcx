@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { CldUploadWidget } from "next-cloudinary";
 import { Urls } from "@/app/urls";
 import Hero from "@/app/hero";
@@ -17,8 +17,22 @@ function Create() {
     const [itemData, setitemData] = useState({})
     const [vidInfo, setvidInfo] = useState('')
     const [packages, setPackages] = useState([])
+
+
     // console.log(url.create)
+
+
+    // useLayoutEffect(()=>{
+    //     if(!authData.is_admin){
+    //         router.push('/dashboard')
+    //     }
+
+    // },[])
     useEffect(() => {
+
+        
+
+
         fetch(url.packages, {
             method: 'GET',
         }).then(res => res.json())
@@ -26,6 +40,8 @@ function Create() {
                 // console.log(data.data)
                 setPackages(data.data)
             })
+
+
     })
 
 
@@ -62,44 +78,49 @@ function Create() {
     return (
 
         <>
+        {authData.is_admin && authData.logged_in?
+        <Hero>
+        <div className='bg-[#101720]  p-20 flex flex-col justify-center items-center min-h-[100vh] '>
 
-            <Hero>
-                <div className='bg-[#101720]  p-20 flex flex-col justify-center items-center min-h-[100vh] '>
+            <div className="hero h-[90vh] w-[60%] bg-base-200 ">
+                <form className="hero-content text-left p-10 flex flex-col w-[100%]" method="POST" onSubmit={sendData} >
+                    <input type="text" placeholder="Title" className="input input-bordered w-[100%]" onChange={(e) => setitemData({ ...itemData, 'name': e.target.value })} />
+                    <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Description" onChange={(e) => setitemData({ ...itemData, 'description': e.target.value })}></textarea>
+                    <CldUploadWidget uploadPreset="ezfrx_lib" onSuccess={(results, options) => setvidInfo(results.info)} >
+                        {({ open }) => {
+                            return (
+                                <button className=" bg-gray-500  text-white rounded-md p-3" onClick={() => open()}  >
+                                    Upload Video
+                                </button>
 
-                    <div className="hero h-[90vh] w-[60%] bg-base-200 ">
-                        <form className="hero-content text-left p-10 flex flex-col w-[100%]" method="POST" onSubmit={sendData} >
-                            <input type="text" placeholder="Title" className="input input-bordered w-[100%]" onChange={(e) => setitemData({ ...itemData, 'name': e.target.value })} />
-                            <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Description" onChange={(e) => setitemData({ ...itemData, 'description': e.target.value })}></textarea>
-                            <CldUploadWidget uploadPreset="ezfrx_lib" onSuccess={(results, options) => setvidInfo(results.info)} >
-                                {({ open }) => {
-                                    return (
-                                        <button className=" bg-gray-500  text-white rounded-md p-3" onClick={() => open()}  >
-                                            Upload Video
-                                        </button>
+                            );
+                        }}
+                    </CldUploadWidget>
 
-                                    );
-                                }}
-                            </CldUploadWidget>
-
-                            <select className="select select-bordered w-full max-w-xs align-middle" name='graph' onChange={(e) => setitemData({ ...itemData, 'package': e.target.value })} >
-                            <option disabled selected>Select Package</option>
-                                {packages.map((val) => {
-                                    // console.log(val.name);
-                                   return <option  key={val.id} selected value={val.id}>{val.name}</option>
-                                })}
+                    <select className="select select-bordered w-full max-w-xs align-middle" name='graph' onChange={(e) => setitemData({ ...itemData, 'package': e.target.value })} >
+                    <option disabled selected>Select Package</option>
+                        {packages.map((val) => {
+                            // console.log(val.name);
+                           return <option  key={val.id} selected value={val.id}>{val.name}</option>
+                        })}
 
 
-                            </select>
+                    </select>
 
-                            {/* <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Price details"></textarea> */}
+                    {/* <textarea className="textarea textarea-bordered  w-[100%]" placeholder="Price details"></textarea> */}
 
-                            <button className="btn btn-md bg-gray-500  text-white rounded-md" type="submit">Submit</button>
+                    <button className="btn btn-md bg-gray-500  text-white rounded-md" type="submit">Submit</button>
 
-                        </form>
-                    </div>
+                </form>
+            </div>
 
-                </div>
-            </Hero>
+        </div>
+    </Hero>
+        :   
+        
+        router.push('/dashboard')
+    }
+            
         </>
 
     )
