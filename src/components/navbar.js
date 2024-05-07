@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Rates from './rates'
 import { redirect } from 'next/navigation'
+import Image from 'next/image'
 
 
 
@@ -32,7 +33,7 @@ function Navbar() {
         <div className="navbar  bg-[#101720] text-white  justify-between p-4 pl-[5%] pr-[5%]">
 
             <div className="navbar-left">
-                <a className="btn btn-ghost text-xl">EZFRX</a>
+                <Image src={require('../../assets/icon2.png')} className='w-[10%] ' />
             </div>
 
 
@@ -53,15 +54,21 @@ function Navbar() {
 
 
             <div className="navbar-end">
-                <ul className="menu menu-vertical lg:flex md:hidden sm:hidden max-sm:hidden flex-row bg-transparent rounded-box w-[60%] font-bold justify-evenly ">
+                <ul className="menu menu-vertical lg:flex md:hidden sm:hidden max-sm:hidden flex-row bg-transparent rounded-box w-[70%] font-bold justify-evenly ">
                     <Link href={'/'}> <li><a>Home</a></li></Link>
                     <Link href={'/packages'}> <li><a>Package</a></li></Link>
+                    {authData.logged_in ?
+                        <Link href={'/videos'}> <li><a>Videos</a></li></Link>
+
+                        :
+                        ''
+                        }
                     <li><a>About Us</a></li>
                 </ul>
 
-                <button className="btn btn-ghost btn-circle">
+                {/* <button className="btn btn-ghost btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                </button>
+                </button> */}
                 {/* <button className="btn btn-ghost btn-circle">
                     <div className="indicator">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
@@ -94,7 +101,7 @@ function Navbar() {
                                 <li onClick={Logout}><a >Logout</a></li>
                             </ul>
                         </div>
-                        <button class="btn btn-outline btn-warning float-right btn-sm " onClick={() => document.getElementById('my_modal_2').showModal()}>Get data</button>
+                        <button class="btn btn-outline btn-warning float-right btn-sm lg:hidden md:visible sm:visible max-sm:visible" onClick={() => document.getElementById('my_modal_2').showModal()}>Get data</button>
 
                     </>
                     :

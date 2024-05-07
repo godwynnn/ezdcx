@@ -311,3 +311,9 @@ section{
   border: 10px solid white;
 }
 
+.bg_default{
+  background: url(/image25.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

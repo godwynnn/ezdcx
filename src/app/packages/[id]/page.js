@@ -65,7 +65,8 @@ function Packages({ params }) {
             },
             body: JSON.stringify({ ...reference, 'service_id': params.id, 'duration': duration, 'interval': interval }), // body data type must match "Content-Type" header
 
-        })
+        }).then((res)=>res-json())
+        .then(data=>console.log(data))
     };
 
     // you can call this function anything

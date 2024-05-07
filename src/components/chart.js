@@ -53,7 +53,9 @@ function Chart(props) {
 
   let chart_Data = {
     series: [{
-      data: data
+      data: data,
+
+
     }],
     options: {
       chart: {
@@ -66,13 +68,32 @@ function Chart(props) {
 
 
       },
+      grid: {
+        // position: 'front',
+        borderColor: 'white',
+        strokeDashArray: 1,
+        
+        xaxis: {
+          lines: {
+            show: true
+          }
+        }
+      },
+
       xaxis: {
-        type: 'datetime'
+        type: 'datetime',
+
+
       },
       yaxis: {
         tooltip: {
           enabled: false
-        }
+        },
+        axisBorder: {
+          show: true,
+          color: '#78909C',
+          
+      },
       },
       plotOptions: {
         candlestick: {
@@ -82,11 +103,13 @@ function Chart(props) {
           }
         }
       },
-      
-      
-      
+
+
+
+
+
     },
-    
+
 
   }
 
