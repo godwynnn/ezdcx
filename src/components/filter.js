@@ -5,7 +5,10 @@ function Filter() {
         <>
 
 
+            {/* SELECT CHECKBOX FEATURE */}
+            {/* 
             <div className="dropdown dropdown-end">
+
                 <div tabIndex={0} role="button" className="btn m-1 font-extrabold  translate-y-[35%]">+</div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box w-52 p-3">
                     <li className='flex flex-row justify-between'>
@@ -40,7 +43,7 @@ function Filter() {
                         <input type="checkbox" className="checkbox checkbox-success" />
                     </li>
                 </ul>
-            </div>
+            </div> */}
 
 
             <label className="form-control w-[80%] max-w-xs">

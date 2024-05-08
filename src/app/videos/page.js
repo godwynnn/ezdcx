@@ -58,12 +58,12 @@ function page() {
         <>
             <Hero>
                 <div className='bg-[#101720] min-h-[100vh] flex flex-col justify-center items-center'>
-                    <div className='bg-[#101720]  p-20 grid gap-3 lg:grid-cols-3 min-h-[100vh] md:grid-cols-2'>
+                    <div className='bg-[#101720] p-2 grid gap-4 lg:grid-cols-3 min-h-[100vh] md:grid-cols-2'>
 
 
                         {
                             videos.map((val) => {
-                                return (<div className="card card-compact cursor-pointer w-[100%] lg:h-[60%] md:h-[70%] sm:h-[70%] max-sm:h-[60%] p-4 shadow-xl bg-[#0B1215] text-white " onClick={(e) => { e.preventDefault(); setCurrentVideo(val); }}>
+                                return (<div className="card card-compact cursor-pointer w-[100%] lg:h-[70vh] md:h-[70vh] sm:h-[70vh] max-sm:h-[70vh] p-4 shadow-xl bg-[#0B1215] text-white " onClick={(e) => { e.preventDefault(); setCurrentVideo(val); }}>
                                     <figure className='h-[70%]'><ReactPlayer url={val.video_meta.url} width={'100%'} height={'100%'} className='mt-0' muted /></figure>
                                     {/* <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> */}
 

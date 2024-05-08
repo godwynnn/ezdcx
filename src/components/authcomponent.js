@@ -10,14 +10,16 @@ import { useRouter } from 'next/navigation'
 import { Urls } from '@/app/urls'
 import { useSearchParams } from 'next/navigation'
 
+import { Toaster, toast } from 'sonner'
+
 
 
 const url = Urls()
 function AuthComponent() {
   const authData = useSelector(state => state.reducer.authreducer)
-  const searchParams=useSearchParams()
-  const next=searchParams.get('next')
-  const user_admin=searchParams.get('admin')
+  const searchParams = useSearchParams()
+  const next = searchParams.get('next')
+  const user_admin = searchParams.get('admin')
 
   // console.log(user_admin)
 
@@ -35,10 +37,10 @@ function AuthComponent() {
     },
     onSubmit: async (values) => {
       console.log(values)
-      if (user_admin !==null){
-        var auth_url=`${url.signup}/?admin=${user_admin}`
-      }else{
-        var auth_url=url.signup
+      if (user_admin !== null) {
+        var auth_url = `${url.signup}/?admin=${user_admin}`
+      } else {
+        var auth_url = url.signup
       }
 
 
@@ -58,11 +60,11 @@ function AuthComponent() {
         console.log(data.message)
 
       }
-      else{
+      else {
         console.log(data.message)
       }
 
-      
+
 
     },
 
@@ -94,13 +96,14 @@ function AuthComponent() {
       }).then(res => res.json()).then(data => {
         console.log(data)
         if (data.status === 'success') {
-          
+
           console.log(data)
-          
-          dispatch(AuthencticationAction.Login({...values,data}))
-          router.push(next??'/dashboard')
+          toast.success(data.message)
+
+          dispatch(AuthencticationAction.Login({ ...values, data }))
+          router.push(next ?? '/dashboard')
         } else {
-          console.log(data.message)
+          toast.error(data.message)
         }
 
       })
@@ -147,6 +150,9 @@ function AuthComponent() {
 
 
   useEffect(() => {
+
+   
+
     toggleBtn()
   }, [])
 
@@ -155,8 +161,8 @@ function AuthComponent() {
 
 
     <div className=' flex flex-col justify-center  items-center bg_default '>
-
-      <div className=' bg-slate-100 rounded-lg flex flex-col lg:h-[90%] lg:w-[40%] md:h-[90%] md:w-[50%] sm:h-[90%] sm:w-[60%] max-sm:h-[90%] max-sm:w-[80%]  p-5  auth_holder relative'>
+    <Toaster position="top-right" expand={true} richColors/>
+      <div className=' bg-slate-100 opacity-[80%] rounded-lg flex flex-col lg:h-[90%] lg:w-[40%] md:h-[90%] md:w-[50%] sm:h-[90%] sm:w-[60%] max-sm:h-[90%] max-sm:w-[80%]  p-5  auth_holder relative'>
         <div className='flex flex-row justify-evenly h-[10%] w-[100%] relative'>
           <div className="btn_selector absolute top-0 left-0 h-full w-[50%]  bg-[#101720] rounded-md" ref={select_btn}></div>
           <button className='relative w-[50%] btn_active' ref={login_btn}>Login</button>

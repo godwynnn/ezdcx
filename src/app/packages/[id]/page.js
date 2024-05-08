@@ -176,7 +176,7 @@ function Packages({ params }) {
 
                         <div className="hero min-h-full lg:w-full md:w-full sm:w-full max-sm:w-full">
                             <form className="hero-content w-[100%] flex-col items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center  lg:justify-between">
-                                <img src={imgInfo.secure_url } className=" h-[90%] max-w-lg sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
+                                <img src={imgInfo.url } className=" h-[90%] max-w-lg sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
 
 
                                 <div className='w-[50%] sm:w-[100%] max-sm:w-full bg-base-200 p-20 max-sm:p-10 rounded-lg'>
@@ -207,10 +207,15 @@ function Packages({ params }) {
                                         {({ initializePayment }) => <button className="btn btn-primary mt-5" type='submit' onClick={(e) => { e.preventDefault(); initializePayment(handleSuccess, handleClose) }}>Proceed</button>}
 
                                     </PaystackConsumer>
-
-                                    <Link href={`/packages/${params.id}/edit`} >
+                                    {authData.is_admin?
+                                        <Link href={`/packages/${params.id}/edit`} >
                                         <button className="btn bg-gray-500 text-white" type='button' >Edit</button>
                                     </Link>
+                                    :
+                                    ''
+                                }
+
+                                    
 
                                     {/* <button className="btn bg-gray-500 text-white" type='button' onClick={() => document.getElementById('my_modal_3').showModal()}>Edit</button> */}
 

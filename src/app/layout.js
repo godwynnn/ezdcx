@@ -5,9 +5,11 @@ import Navbar from "@/components/navbar";
 // import { Provider } from "react-redux";
 import { Providers } from "@/components/provider";
 import { store, Persistor } from "@/store/store";
-import Skeleton,{SkeletonTheme} from "react-loading-skeleton";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 // import { PersistGate } from "redux-persist/integration/react";
 import Persist from "./persist";
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,11 +29,12 @@ export default function RootLayout({ children }) {
         <Providers store={store}>
           <Persist>
             <SkeletonTheme baseColor='gray' highlightColor='black' >
+              
 
-            {children}
+              {children}
             </SkeletonTheme>
 
-          
+
           </Persist>
         </Providers>
 

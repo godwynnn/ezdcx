@@ -4,6 +4,8 @@ import { CldUploadWidget } from "next-cloudinary";
 import { Urls } from "@/app/urls";
 import Hero from "@/app/hero";
 import { useRouter, redirect } from 'next/navigation'
+import { Toaster,toast } from "sonner";
+import {  useSelector } from "react-redux";
 
 const url = Urls()
 
@@ -12,6 +14,9 @@ function Edit({params}) {
 
     const [imgData, setImgData] = useState({})
     const [imgInfo, setImgInfo] = useState({})
+    const authData = useSelector(state => state.reducer.authreducer)
+
+    console.log(authData)
 
     const sendData = (e) => {
         e.preventDefault()
@@ -22,6 +27,7 @@ function Edit({params}) {
 
             headers: {
               "Content-Type": "application/json",
+              'Authorization':`Bearer ${authData.accessToken}`
               // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify(obj_data), // body data type must match "Content-Type" header
@@ -32,8 +38,11 @@ function Edit({params}) {
             {
                 console.log(data);
                 if (data.status==='success'){
+                    toast.success(data.message)
                     router.push(`/packages/${params.id}`)
 
+                }else{
+                    toast.error(data.message)
                 }
             }
 
@@ -66,7 +75,7 @@ function Edit({params}) {
 
             <Hero>
                 <div className='bg-[#101720]  p-20 flex flex-col justify-center items-center min-h-[100vh] '>
-
+                <Toaster position="top-right" expand={true} richColors/>
                     <div className="hero h-[90vh] w-[60%] bg-base-200  rounded-lg">
                         <form className="hero-content text-left p-10 flex flex-col w-[100%]" method="POST" onSubmit={sendData}  >
 

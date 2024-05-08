@@ -9,6 +9,7 @@ import Link from 'next/link'
 import Rates from './rates'
 import { redirect } from 'next/navigation'
 import Image from 'next/image'
+import { Toaster,toast } from 'sonner'
 
 
 
@@ -22,15 +23,17 @@ function Navbar() {
 
 
     const Logout = () => {
-
-        dispatch(AuthencticationAction.Logout())
         router.push('/')
+        dispatch(AuthencticationAction.Logout())
+        toast.warning('logged out')
+
 
 
     }
     return (
 
         <div className="navbar  bg-[#101720] text-white  justify-between p-4 pl-[5%] pr-[5%]">
+            <Toaster position="top-right" expand={true} richColors />
 
             <div className="navbar-left">
                 <Image src={require('../../assets/icon2.png')} className='w-[10%] ' />
@@ -62,7 +65,7 @@ function Navbar() {
 
                         :
                         ''
-                        }
+                    }
                     <li><a>About Us</a></li>
                 </ul>
 
@@ -156,7 +159,10 @@ function Navbar() {
                         </label>
 
 
-                        <div className="form-control flex flex-row">
+                        {/* SELECT CHECKBOX FEATURE */}
+
+
+                        {/* <div className="form-control flex flex-row">
 
                             <label className="cursor-pointer label">
                                 <span className="label-text">Gartley</span>
@@ -179,12 +185,12 @@ function Navbar() {
                                 <input type="checkbox" className="checkbox checkbox-success" name='abcd' />
                             </label>
 
-                        </div><br />
+                        </div><br /> */}
 
-                        <label className="cursor-pointer label flex flex-col">
+                        {/* <label className="cursor-pointer label flex flex-col">
                             <span className="label-text">Bollinger Bands</span>
                             <input type="checkbox" className="checkbox checkbox-success" name='bollinger' onChange={e => setData({ ...data, 'bollinger': e.target.value })} />
-                        </label>
+                        </label> */}
 
                         <button class="btn btn-active btn-neutral" type='submit'>Submit</button>
                     </form>

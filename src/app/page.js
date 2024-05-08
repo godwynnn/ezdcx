@@ -18,6 +18,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Navbar from "@/components/headernav";
 
 
+
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
@@ -451,7 +452,7 @@ export default function Home() {
 
         <section className="section_1 relative w-[100%] lg:h-[100vh] md:h-[120vh] bg-[#101720] grid lg:grid-cols-2 md:grid-cols-2 max-sm:grid-cols-1 justify-center items-center text-white p-[6%]">
 
-          <Image src={require('../../assets/img10.png')} className="lg:w-[80%] h-[100%] md:w-[90%] sm:w-[100%] " ref={img10_ref} />
+          <Image src={require('../../assets/img24.jpg')} className="lg:w-[80%] h-[100%] md:w-[90%] sm:w-[100%] " ref={img10_ref} />
 
           <div ref={section_3_ref} className="lg:mt-0 sm:mt-5 max-sm:mt-20 max-sm:row-start-1">
             <p className="lg:text-[40px] max-sm:text-[25px] md:text-[30px] sm:text-[30px]">Learn & Earn on the go</p><br />

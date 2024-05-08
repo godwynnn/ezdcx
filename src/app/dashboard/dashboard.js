@@ -74,7 +74,7 @@ function Dashboard() {
 
                             <div className={'flex lg:flex-row p-4 lg:w-[100%] lg:h-full md:w-[100%] md:h-[100%] sm:w-[100%] sm:h-[100%] max-sm:w-[100%] max-sm:h-[100%]  border-white bg-[#101720] max-md:flex-col max-xl:flex-col md:flex-col'}>
                                 <div className='flex flex-col w-[100%] h-[100%]'>
-                                    <div className='w-[100%] h-[20%] p-2 grid grid-cols-6 justify-center items-center' >
+                                    <div className='w-[100%] h-[20%] p-2 grid grid-cols-5 justify-center items-center' >
                                         <Filter />
                                     </div>
                                     <div className='flex justify-center items-center lg:w-[100%] lg:h-[80%] max-lg:w-[100%] max-lg:h-[70%] md:w-[100%] md:h-[70%] max-md:h-[100%] sm:w-[100%] sm:h-[100%] max-sm:w-[100%] max-sm:h-[100%]  '>
@@ -97,7 +97,7 @@ function Dashboard() {
                 </Hero>
 
                 :
-                router.push('/dashboard')
+                router.push('/')
 
             }
 
