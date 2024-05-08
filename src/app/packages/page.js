@@ -41,13 +41,15 @@ function Packages() {
         <>
             <Hero>
                 <div className='bg-[#101720] min-h-[100vh] flex flex-col justify-center items-center'>
-                    <div className=' p-20 grid gap-3 lg:grid-cols-4 min-h-[100%] md:grid-cols-2'>
+                    <div className=' p-20 grid gap-3 lg:grid-cols-4 min-h-[100%] md:grid-cols-2 sm:grid-cols-2 max-sm:grid-cols-1'>
 
 
                         {allPackages.map((val, idx) =>
 
 
-                            <div className="card lg:w-[100%] md:h-[70vh] md:w-[90%] bg-base-100 shadow-xl" key={val.id} >
+                            <div className="card card-compact lg:w-[100%] md:h-[70vh] md:w-[90%] bg-base-100 shadow-xl" key={val.id} >
+                                  <figure><img src={val.image_metadata.url} alt="Shoes" /></figure>
+
                                 <div className="card-body flex   items-center ">
                                     <h2 className="card-title text-[25px] p-0 text-center">{val.name}</h2>
                                     <p className='text-[14px] text-center'>
