@@ -9,7 +9,12 @@ import Link from 'next/link'
 import Rates from './rates'
 import { redirect } from 'next/navigation'
 import Image from 'next/image'
-import { Toaster,toast } from 'sonner'
+import { Toaster, toast } from 'sonner'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown'
+import '@leenguyen/react-flip-clock-countdown/dist/index.css';
+
 
 
 
@@ -30,13 +35,14 @@ function Navbar() {
 
 
     }
+    console.log('date ',new Date().getTime() )
     return (
 
         <div className="navbar  bg-[#101720] text-white  justify-between p-4 pl-[5%] pr-[5%]">
             <Toaster position="top-right" expand={true} richColors />
 
-            <div className="navbar-left">
-                <Image src={require('../../assets/icon2.png')} className='w-[10%] ' />
+            <div className="navbar-left w-[10%] h-[10vh]">
+                <Image src={require('../../assets/logo.png')} className='w-[100%] ' />
             </div>
 
 
@@ -72,12 +78,34 @@ function Navbar() {
                 {/* <button className="btn btn-ghost btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button> */}
-                {/* <button className="btn btn-ghost btn-circle">
+                <button className="btn btn-ghost btn-circle" onClick={() => document.getElementById('my_modal_5').showModal()}>
                     <div className="indicator">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
-                        <span className="badge badge-xs badge-primary indicator-item"></span>
+                        <FontAwesomeIcon icon={faClock} className='w-[50%] h-full' />
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+                        <span className="badge badge-xs badge-primary indicator-item"></span> */}
                     </div>
-                </button> */}
+                </button>
+
+                <dialog id="my_modal_5" className="modal">
+                    <div className="modal-box z-50">
+                        <form method="dialog">
+                            {/* if there is a button in form, it will close the modal */}
+                            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-black">✕</button>
+                        </form>
+                        <FlipClockCountdown  
+                        
+                        to={new Date('05/15/2024').getTime()+ 24 * 3600 * 1000 + 5000}
+                         className='h-full ' title='Count-Down'
+                         labels={['DAYS', 'HOURS', 'MINUTES', 'SECONDS']}
+                         labelStyle={{ fontSize: 15, fontWeight: 500, textTransform: 'uppercase', color:'black',marginTop:'10%' }}
+                         />;
+                    </div>
+
+
+                    <form method="dialog" className="modal-backdrop">
+                        <button>close</button>
+                    </form>
+                </dialog>
 
 
 

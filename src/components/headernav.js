@@ -7,6 +7,7 @@ import { AuthencticationAction, AuthenticationReducer } from '@/reducer/reducer'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import Rates from './rates'
+import Image from 'next/image'
 
 
 
@@ -30,10 +31,9 @@ function Navbar() {
 
         <div className="navbar navbar_header text-white  justify-between p-4 pl-[5%] pr-[5%]">
 
-            <div className="navbar-left">
-                <a className="btn btn-ghost text-xl">EZFRX</a>
+            <div className="navbar-left w-[10%] h-[10vh]">
+                <Image src={require('../../assets/logo.png')} className='w-[100%] ' />
             </div>
-
 
             {/* <div className="navbar-start">
                 <div className="dropdown">

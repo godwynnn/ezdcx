@@ -272,7 +272,7 @@ function Packages({ params }) {
                 </Hero>
                 :
 
-                redirect(`/auth?next=${pathname}`)
+                router.push(`/auth?next=${pathname}`)
 
             }
 

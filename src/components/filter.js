@@ -90,7 +90,7 @@ function Filter() {
 
             <label className="form-control w-[80%] max-w-xs">
                 <div className="label">
-                    <span className="label-text text-white">interval?</span>
+                    <span className="label-text text-white">Period?</span>
 
                 </div>
                 <input type="text" placeholder="Type here" className="input border-slate-100 text-white  w-[100%] max-w-xs bg-transparent" />
