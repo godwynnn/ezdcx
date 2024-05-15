@@ -41,7 +41,7 @@ function Navbar() {
         <div className="navbar  bg-[#101720] text-white  justify-between p-4 pl-[5%] pr-[5%]">
             <Toaster position="top-right" expand={true} richColors />
 
-            <div className="navbar-left w-[10%] h-[10vh]">
+            <div className="navbar-left lg:w-[10%] md:w-[20%] sm:w-[20%]  max-sm:w-[40%] h-[10vh]">
                 <Image src={require('../../assets/logo.png')} className='w-[100%] ' />
             </div>
 
@@ -92,6 +92,7 @@ function Navbar() {
                             {/* if there is a button in form, it will close the modal */}
                             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-black">✕</button>
                         </form>
+                        <p className='text-center text-black font-semibold'>Remaining</p><br />
                         <FlipClockCountdown  
                         
                         to={new Date('05/15/2024').getTime()+ 24 * 3600 * 1000 + 5000}
@@ -132,7 +133,7 @@ function Navbar() {
                                 <li onClick={Logout}><a >Logout</a></li>
                             </ul>
                         </div>
-                        <button class="btn btn-outline btn-warning float-right btn-sm lg:hidden md:visible sm:visible max-sm:visible" onClick={() => document.getElementById('my_modal_2').showModal()}>Get data</button>
+                        {/* <button class="btn btn-outline btn-warning float-right btn-sm lg:hidden md:visible sm:visible max-sm:visible" onClick={() => document.getElementById('my_modal_2').showModal()}>Get data</button> */}
 
                     </>
                     :

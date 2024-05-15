@@ -62,7 +62,7 @@ function Create() {
     return (
 
         <>
-            {authData.is_admin ?
+            {authData.logged_in ?
                 <Hero>
                     <div className='bg-[#101720]  p-20 flex flex-col justify-center items-center min-h-[100vh] '>
 

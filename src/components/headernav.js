@@ -31,9 +31,10 @@ function Navbar() {
 
         <div className="navbar navbar_header text-white  justify-between p-4 pl-[5%] pr-[5%]">
 
-            <div className="navbar-left w-[10%] h-[10vh]">
+            <div className="navbar-left lg:w-[10%] md:w-[20%] sm:w-[20%]  max-sm:w-[30%] h-[10vh]">
                 <Image src={require('../../assets/logo.png')} className='w-[100%] ' />
             </div>
+
 
             {/* <div className="navbar-start">
                 <div className="dropdown">

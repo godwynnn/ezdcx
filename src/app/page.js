@@ -462,7 +462,7 @@ export default function Home() {
 
             <br /><br />
             <button className="btn bg-[#D8D8D8] border-none text-[#101720] w-[20%]">Explore</button>
-
+            
           </div>
 
 
@@ -476,6 +476,7 @@ export default function Home() {
           </div>
 
         </section>
+        
 
 
 
