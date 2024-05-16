@@ -162,7 +162,7 @@ function AuthComponent() {
 
     <div className=' flex flex-col justify-center  items-center bg_default '>
     <Toaster position="top-right" expand={true} richColors/>
-      <div className=' bg-slate-100 opacity-[80%] rounded-lg flex flex-col lg:h-[90%] lg:w-[40%] md:h-[90%] md:w-[50%] sm:h-[90%] sm:w-[60%] max-sm:h-[90%] max-sm:w-[80%]  p-5  auth_holder relative'>
+      <div className=' bg-slate-100 opacity-[80%] rounded-lg flex flex-col lg:h-[90%] lg:w-[40%] md:h-[90%] md:w-[50%] sm:h-[90%] sm:w-[60%] max-sm:h-[90%] max-sm:w-[80%]  p-3  auth_holder relative'>
         <div className='flex flex-row justify-evenly h-[10%] w-[100%] relative'>
           <div className="btn_selector absolute top-0 left-0 h-full w-[50%]  bg-[#101720] rounded-md" ref={select_btn}></div>
           <button className='relative w-[50%] btn_active' ref={login_btn}>Login</button>
