@@ -58,22 +58,22 @@ export const fetchChartData = async (data, dispatch) => {
         })
 
         if (idx === all_opens.indexOf(all_opens[idx])) {
-            val[2] = parseFloat(all_opens[idx][1]).toFixed(4)
+            val[2] = parseFloat(all_opens[idx][1])
             
 
         }
         if (idx === all_highs.indexOf(all_highs[idx])) {
-            val[3] = parseFloat(all_highs[idx][1]).toFixed(4)
+            val[3] = parseFloat(all_highs[idx][1])
             
         }
 
         if (idx === all_lows.indexOf(all_lows[idx])) {
-            val[4] = parseFloat(all_lows[idx][1]).toFixed(4)
+            val[4] = parseFloat(all_lows[idx][1])
             
 
         }
         if (idx === all_closes.indexOf(all_closes[idx])) {
-            val[5] = parseFloat(all_closes[idx][1]).toFixed(4)
+            val[5] = parseFloat(all_closes[idx][1])
             
 
         }

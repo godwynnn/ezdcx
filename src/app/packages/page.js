@@ -39,7 +39,7 @@ function Packages() {
 
     }, [])
 
-    console.log(allPackages)
+    // console.log('packages:',allPackages)
 
 
 
@@ -64,7 +64,7 @@ function Packages() {
 
                             :
 
-                            <div className=' p-20 grid gap-3 lg:grid-cols-4 min-h-[100%] md:grid-cols-2 sm:grid-cols-2 max-sm:grid-cols-1'>
+                            <div className=' lg:p-20 md:p-20 sm:p-20 max-sm:p-5  grid gap-3 lg:grid-cols-4 min-h-[100%] md:grid-cols-2 sm:grid-cols-2 max-sm:grid-cols-1'>
 
 
                             {allPackages.map((val, idx) =>

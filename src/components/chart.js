@@ -94,7 +94,20 @@ function Chart(props) {
           color: '#78909C',
           
       },
+      labels:{
+        formatter: function (value) {
+          return (value/10000).toFixed(4);
+        },
+        // offsetX:-1,
       },
+      dataLabels:{
+        enabled:false,
+      },
+      opposite: true
+
+      
+      },
+    
       plotOptions: {
         candlestick: {
           colors: {
@@ -192,7 +205,7 @@ function Chart(props) {
                   }} />
 
                 :
-                <ApexCharts series={chart_Data.series} options={chart_Data.options} type='candlestick' width={'100%'} height={500} className={'p-0  m-0 lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] max-md:h-[100%] sm:h-[100%] max-sm:h-[100%] '} />
+                <ApexCharts series={chart_Data.series} options={chart_Data.options} type='candlestick' width={'100%'} height={500} className={'p-0  m-0 lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] max-md:h-[100%] sm:h-[100%] max-sm:h-[100%] max-sm:w-[100%] '} />
 
 
               }

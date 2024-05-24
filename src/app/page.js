@@ -397,7 +397,7 @@ export default function Home() {
 
             {/* <Image src={require('../../assets/img16.webp')} className="w-[100%] " /> */}
 
-            <p className="lg:text-[45px]">Lorem ipsum dolor sit amet consectetur </p>
+            <p className="lg:text-[45px] sm:text-[30px] max-sm:text-[22px] md:text-[25px] md:text-left sm:text-center max-sm:text-center"> Discover the art of forex trading with us</p>
           </div>
 
 
@@ -407,8 +407,8 @@ export default function Home() {
             <div className="feature p-[5%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%]   " >
               <FontAwesomeIcon icon={faGlobeAfrica} className='feature_icon text-[30px] max-sm:text-[20px]' />
               <div className="desc">
-                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">World Class Platform.</p>
-                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum voluptates nihil?</p>
+                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">Prompt Trading Signals.</p>
+                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light "> We specialize in delivering timely and accurate market insights to empower traders to make informed decisions and capitalize on opportunities.</p>
               </div>
             </div>
 
@@ -417,16 +417,16 @@ export default function Home() {
             <div className="feature p-[5%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%]    " >
               <FontAwesomeIcon icon={faGlobeAfrica} className='feature_icon text-[30px] max-sm:text-[20px]' />
               <div className="desc">
-                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">World Class Platform.</p>
-                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum voluptates nihil?</p>
+                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">Prompt Trading Signals.</p>
+                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light "> We specialize in delivering timely and accurate market insights to empower traders to make informed decisions and capitalize on opportunities.</p>
               </div>
             </div>
 
             <div className="feature p-[5%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%]    " >
               <FontAwesomeIcon icon={faGlobeAfrica} className='feature_icon text-[30px] max-sm:text-[20px]' />
               <div className="desc">
-                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">World Class Platform.</p>
-                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum voluptates nihil?</p>
+                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">Prompt Trading Signals.</p>
+                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light "> We specialize in delivering timely and accurate market insights to empower traders to make informed decisions and capitalize on opportunities.</p>
               </div>
             </div>
 
@@ -434,8 +434,8 @@ export default function Home() {
             <div className="feature p-[5%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%]     " >
               <FontAwesomeIcon icon={faGlobeAfrica} className='feature_icon text-[30px] max-sm:text-[20px]' />
               <div className="desc">
-                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">World Class Platform.</p>
-                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum voluptates nihil?</p>
+                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">Prompt Trading Signals.</p>
+                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light "> We specialize in delivering timely and accurate market insights to empower traders to make informed decisions and capitalize on opportunities.</p>
               </div>
             </div>
 
@@ -488,9 +488,9 @@ export default function Home() {
             <p className="lg:text-[50px] max-sm:text-[25px] md:text-[30px] sm:text-[30px]">Your security is our priority
             </p><br />
 
-            <p className=" lg:text-[18px] max-sm:text-[15px] font-extralight">Get ideas to follow trade on your device, stay connected and never miss an opportunity to make profit,
-              with potential for substantial returns and accessibility to global markets,
-              grasp key concepts such as currency pairs, pips, leverage, and margin to make informed trading decisions.</p>
+            <p className=" lg:text-[18px] max-sm:text-[15px] font-extralight">At EZFRX, safeguarding your information isn't just a commitment; it's our foremost priority.
+             We understand that in today's digital landscape, trust is paramount.
+              That's why we've implemented rigorous measures to ensure the highest level of security across all facets of our operations.</p>
 
        
 
@@ -518,7 +518,7 @@ export default function Home() {
 
             <div className="anime_ref  flex flex-col text-center w-[100%] relative top-0 left-0  p-24 " ref={anime_ref}   >
               
-            <p className="text-[50px]   text-center "><span>Who We Are</span></p>
+            <p className="lg:text-[50px]  max-sm:text-[25px]  text-center "><span>Who We Are</span></p>
               <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[85%] mt-[0%] " />
               {/* <p className=" absolute top-0 left-0 text-[15px] text-center font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
             </div>
@@ -558,13 +558,13 @@ export default function Home() {
 
           <div className=" text-[#101720] p-10 rounded-lg">
             <p className="lg:text-[50px] md:text-[40px] max-md:text-[40px] sm:text-[30px] max-sm:text-[30px]  text-[#101720] p-1 rounded-lg">Grow With Us.</p>
-            <p className="lg:text-[20px] md:text-[20px] max-sm:text-[20px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem? Ullam unde maxime cumque nihil qui?
-              Lorem ipsum dolor sit amet
+            <p className="lg:text-[20px] md:text-[20px] max-sm:text-[20px] font-extralight">
+            Your financial goals are our primary focus. We invite you to embark on a journey of wealth creation and prosperity by investing with us. Whether you're an experienced investor or just starting out, our platform offers the tools, expertise, and opportunities you need to thrive in today's dynamic markets.
             </p>
           </div>
 
 
-          <Image src={require('../../assets/img7.png')} className="lg:w-[100%] h-[90%] sm:w-[80%] max-sm:w-[90%] -translate-y-2" ref={img12_ref} />
+          <Image src={require('../../assets/img27.png')} className="lg:w-[100%] h-[60%] sm:w-[80%] max-sm:w-[90%] translate-y-0" ref={img12_ref} />
 
 
         </section>

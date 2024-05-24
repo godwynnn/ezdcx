@@ -21,12 +21,12 @@ function Rates(props) {
         'Content-Type': 'application/json'
         // 'Content-Type': 'application/form-data',
       },
-      body: JSON.stringify({ 'q': tickerQuery })
+      body: JSON.stringify({ 'ticker': tickerQuery })
     })
     const data = await res.json()
 
-    // console.log('ticker data', data)
-    setTickerData(data)
+    console.log('ticker data', data.data)
+    setTickerData(data.data)
     setTickerStatus({ loading: false })
 
 

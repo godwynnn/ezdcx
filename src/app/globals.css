@@ -312,8 +312,11 @@ section{
 }
 
 .bg_default{
-  background: url(/image25.jpg);
+  background: url(/img28.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+/* .apexcharts-yaxis{
+  color: red;
+} */

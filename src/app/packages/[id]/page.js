@@ -172,14 +172,14 @@ function Packages({ params }) {
 
 
 
-                    <div className='bg-[#0B1215] p-20  min-h-[100vh] w-full'>
+                    <div className='bg-[#0B1215] lg:p-20 md:p-20 sm:p-20 max-sm:p-0  min-h-[100vh] w-full'>
 
-                        <div className="hero min-h-full lg:w-full md:w-full sm:w-full max-sm:w-full">
-                            <form className="hero-content w-[100%] flex-col items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center  lg:justify-between">
-                                <img src={imgInfo.url } className=" h-[90%] max-w-lg sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
+                        <div className="hero min-h-full lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%]">
+                            <form className="hero-content max-sm:w-[100%] flex  items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center  lg:justify-between">
+                                <img src={imgInfo.url } className=" h-[90%] sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
 
 
-                                <div className='w-[50%] sm:w-[100%] max-sm:w-full bg-base-200 p-20 max-sm:p-10 rounded-lg'>
+                                <div className='w-[50%] sm:w-[100%] max-sm:w-[100%] bg-base-200 p-20 max-sm:p-10 rounded-lg'>
                                     {loading?<Skeleton/>:<h1 className="text-5xl font-bold">{imgData.name }</h1>}
                                     <p className="py-6">{loading?<Skeleton />:imgData.description}</p>
                                     <h2 className='font-bold'>N {loading?<Skeleton />:imgData.daily_price}</h2>

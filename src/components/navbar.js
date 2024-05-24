@@ -41,7 +41,7 @@ function Navbar() {
         <div className="navbar  bg-[#101720] text-white  justify-between p-4 pl-[5%] pr-[5%]">
             <Toaster position="top-right" expand={true} richColors />
 
-            <div className="navbar-left lg:w-[10%] md:w-[20%] sm:w-[20%]  max-sm:w-[40%] h-[10vh]">
+            <div className="navbar-left lg:w-[10%] md:w-[20%] sm:w-[20%]  max-sm:w-[30%] h-[10vh]">
                 <Image src={require('../../assets/logo.png')} className='w-[100%] ' />
             </div>
 
@@ -87,7 +87,7 @@ function Navbar() {
                 </button>
 
                 <dialog id="my_modal_5" className="modal">
-                    <div className="modal-box z-50">
+                    <div className="modal-box z-50 lg:w-[50%] max-sm:w-[100%]">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
                             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-black">✕</button>
@@ -95,9 +95,12 @@ function Navbar() {
                         <p className='text-center text-black font-semibold'>Remaining</p><br />
                         <FlipClockCountdown  
                         
-                        to={new Date('05/15/2024').getTime()+ 24 * 3600 * 1000 + 5000}
+                        to={new Date('05/17/2024').getTime()+ 24 * 3600 * 1000 + 5000}
                          className='h-full ' title='Count-Down'
                          labels={['DAYS', 'HOURS', 'MINUTES', 'SECONDS']}
+                         digitBlockStyle={{ height: 60, fontSize: 25 }}
+                         dividerStyle={{ color: 'white', height: 1 }}
+                        //  separatorStyle={{ color: 'red', size: '6px' }}
                          labelStyle={{ fontSize: 15, fontWeight: 500, textTransform: 'uppercase', color:'black',marginTop:'10%' }}
                          />;
                     </div>
