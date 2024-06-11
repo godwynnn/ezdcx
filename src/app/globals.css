@@ -23,6 +23,9 @@
   /* .modebar{
     @apply grid grid-cols-6
   } */
+  .social_icons{
+    @apply border-slate-300 border-2 p-2 rounded-md
+  }
 
   
 }
@@ -320,3 +323,8 @@ section{
 /* .apexcharts-yaxis{
   color: red;
 } */
+
+.t_c{
+  margin-top: 10px;
+  background-color: transparent;
+}

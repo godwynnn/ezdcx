@@ -1,5 +1,5 @@
 "use client"
-import {Persistor } from "@/store/store";
+import { Persistor } from "@/store/store";
 import { PersistGate } from "redux-persist/integration/react";
 import dynamic from "next/dynamic";
 
@@ -8,11 +8,12 @@ import dynamic from "next/dynamic";
 
 import React from 'react'
 
-function Persist({children}) {
+function Persist({ children }) {
+
   return (
     <PersistGate loading={null} persistor={Persistor}>
 
-        {children}
+      {children}
     </PersistGate>
   )
 }

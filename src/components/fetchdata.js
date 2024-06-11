@@ -11,7 +11,7 @@ const url = Urls()
 export const fetchChartData = async (data, dispatch) => {
 
 
-    // console.log('fetch data', data)
+   
     console.log('fetching post..')
     dispatch(ChartAction.setQuery({ loading: true }))
 
@@ -32,7 +32,7 @@ export const fetchChartData = async (data, dispatch) => {
     console.log('fetch data', obj)
 
     // APEXCHARTS
-    if (obj.status===200){
+    if (obj.status==="success"){
 
     
     const entry = ''
@@ -147,8 +147,9 @@ export const fetchChartData = async (data, dispatch) => {
             all_low.push(val[1])
 
         })
+        
 
-
+        console.log('fetch data', data)
 
         const chart_data = {
             dates: all_date,
@@ -159,9 +160,14 @@ export const fetchChartData = async (data, dispatch) => {
             searched_with_post: true,
             loading: false,
             symbol: data.ticker,
-            data:all_data
+            data:all_data,
+            interval:data.interval,
+            interval_duration:data.interval_duration,
+            period:data.period,
+            period_duration:data.period_duration,
 
         }
+        console.log(chart_data)
         dispatch(ChartAction.setQuery(chart_data))
 
 

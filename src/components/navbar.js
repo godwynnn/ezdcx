@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import { useState } from 'react'
+import { useState, useLayoutEffect } from 'react'
 import { fetchChartData } from './fetchdata'
 import { UseDispatch, useDispatch, useSelector } from 'react-redux'
 import { AuthencticationAction, AuthenticationReducer } from '@/reducer/reducer'
@@ -14,17 +14,39 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import FlipClockCountdown from '@leenguyen/react-flip-clock-countdown'
 import '@leenguyen/react-flip-clock-countdown/dist/index.css';
+import { Urls } from '@/app/urls'
 
 
 
 
+const url = Urls()
 function Navbar() {
     const [data, setData] = useState(null)
+    const [expiry, setExpiry] = useState(null)
     const dispatch = useDispatch()
     const chartData = useSelector(state => state.reducer.chartreducer)
     const authData = useSelector(state => state.reducer.authreducer)
     const router = useRouter()
 
+
+    const getSubscriptionData = () => {
+        fetch(`${url.subscription_data}`, {
+            method: 'GET',
+            headers: {
+                "Authorization": `Bearer ${authData.accessToken}`
+            },
+        }).then(res => res.json())
+            .then(data => {
+                console.log('subscription_Data', data.data[0])
+                setExpiry(data.data[0].end_date)
+                // dispatch(AuthencticationAction.Login({...authData,'expiry':data.data[0].end_date}))
+            })
+    }
+
+    useLayoutEffect(() => {
+        getSubscriptionData()
+
+    }, [])
 
 
     const Logout = () => {
@@ -35,7 +57,7 @@ function Navbar() {
 
 
     }
-    console.log('date ',new Date().getTime() )
+    console.log('date ', authData)
     return (
 
         <div className="navbar  bg-[#101720] text-white  justify-between p-4 pl-[5%] pr-[5%]">
@@ -78,13 +100,17 @@ function Navbar() {
                 {/* <button className="btn btn-ghost btn-circle">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </button> */}
-                <button className="btn btn-ghost btn-circle" onClick={() => document.getElementById('my_modal_5').showModal()}>
-                    <div className="indicator">
-                        <FontAwesomeIcon icon={faClock} className='w-[50%] h-full' />
-                        {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+
+                {authData.logged_in ?
+                    <button className="btn btn-ghost btn-circle" onClick={() => document.getElementById('my_modal_5').showModal()}>
+                        <div className="indicator">
+                            <FontAwesomeIcon icon={faClock} className='w-[50%] h-full' />
+                            {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
                         <span className="badge badge-xs badge-primary indicator-item"></span> */}
-                    </div>
-                </button>
+                        </div>
+                    </button>
+
+                    : ''}
 
                 <dialog id="my_modal_5" className="modal">
                     <div className="modal-box z-50 lg:w-[50%] max-sm:w-[100%]">
@@ -93,16 +119,16 @@ function Navbar() {
                             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 text-black">✕</button>
                         </form>
                         <p className='text-center text-black font-semibold'>Remaining</p><br />
-                        <FlipClockCountdown  
-                        
-                        to={new Date('05/17/2024').getTime()+ 24 * 3600 * 1000 + 5000}
-                         className='h-full ' title='Count-Down'
-                         labels={['DAYS', 'HOURS', 'MINUTES', 'SECONDS']}
-                         digitBlockStyle={{ height: 60, fontSize: 25 }}
-                         dividerStyle={{ color: 'white', height: 1 }}
-                        //  separatorStyle={{ color: 'red', size: '6px' }}
-                         labelStyle={{ fontSize: 15, fontWeight: 500, textTransform: 'uppercase', color:'black',marginTop:'10%' }}
-                         />;
+                        <FlipClockCountdown
+
+                            to={new Date(expiry).getTime() + 24 * 3600 * 1000 + 5000}
+                            className='h-full ' title='Count-Down'
+                            labels={['DAYS', 'HOURS', 'MINUTES', 'SECONDS']}
+                            digitBlockStyle={{ height: 60, fontSize: 25 }}
+                            dividerStyle={{ color: 'white', height: 1 }}
+                            //  separatorStyle={{ color: 'red', size: '6px' }}
+                            labelStyle={{ fontSize: 15, fontWeight: 500, textTransform: 'uppercase', color: 'black', marginTop: '10%' }}
+                        />;
                     </div>
 
 
@@ -132,7 +158,18 @@ function Navbar() {
 
                                     </a>
                                 </li>
-                                <li><a>Settings</a></li>
+
+                                {authData.is_admin ?
+
+                                    <Link href={'/admin/dashboard'}>
+                                        <li><a>Admin</a></li>
+
+                                    </Link>
+
+                                    :
+                                    ''
+
+                                }
                                 <li onClick={Logout}><a >Logout</a></li>
                             </ul>
                         </div>

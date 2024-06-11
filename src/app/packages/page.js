@@ -39,7 +39,7 @@ function Packages() {
 
     }, [])
 
-    // console.log('packages:',allPackages)
+    console.log('packages:',allPackages)
 
 
 
@@ -71,7 +71,7 @@ function Packages() {
 
 
                                 <div className="card card-compact lg:w-[100%] md:h-[70vh] md:w-[90%] bg-base-100 shadow-xl" key={val.id} >
-                                    <figure><img src={val.image_metadata.url} alt="Shoes" /></figure>
+                                    <figure><img src={val.image_meta.secure_url} alt="Shoes" /></figure>
 
                                     <div className="card-body flex   items-center ">
                                         <h2 className="card-title text-[25px] p-0 text-center">{val.name}</h2>

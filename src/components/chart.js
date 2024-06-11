@@ -130,7 +130,7 @@ function Chart(props) {
 
 
   useEffect(() => {
-    dispatch(ChartAction.setQuery({ loading: true }))
+    // dispatch(ChartAction.setQuery({ loading: true }))
     // fetchChartData(null,dispatch)
 
   }, [])

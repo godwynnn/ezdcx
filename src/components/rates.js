@@ -13,6 +13,9 @@ function Rates(props) {
   const dispatch = useDispatch()
   const chartData = useSelector((state) => state.reducer.chartreducer)
 
+
+  
+
   async function getTickerData() {
     setTickerStatus({ loading: true })
     const res = await fetch(url.ticker, {
@@ -35,7 +38,7 @@ function Rates(props) {
   const handleClick = (val) => {
     console.log(val)
     // setTickerSymbol(val)
-    fetchChartData({ ...chartData, 'ticker': val }, dispatch, console.log('hello', { val }))
+    fetchChartData({ ...chartData, ticker: val }, dispatch, console.log('hello', { val }))
   }
 
 
@@ -56,12 +59,17 @@ function Rates(props) {
   }
 
 
-  // console.log('ticker', tickerData)
+  console.log('ticker', chartData.ticker)
+  console.log('chartdata',chartData)
+  // fetchChartData({ ...chartData, ticker: chartData.symbol }, dispatch)
 
-  useLayoutEffect(() => {
 
+  useEffect(() => {
+
+    fetchChartData({ ...chartData, ticker: chartData.symbol }, dispatch)
+
+    
     getTickerData()
-    fetchChartData({ ...chartData, 'ticker': chartData.symbol }, dispatch)
 
   }, [])
 

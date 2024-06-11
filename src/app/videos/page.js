@@ -14,6 +14,7 @@ function page() {
     const [videos, setVideos] = useState([])
     const [currentVideo, setCurrentPlayingVideo] = useState([])
     const [loading, setLoading] = useState(false)
+    const [fetchLoading, setfetchLoading] = useState(true)
 
 
     const authData = useSelector(state => state.reducer.authreducer)
@@ -24,8 +25,11 @@ function page() {
             method: 'GET'
         }).then(res => res.json())
             .then(data => {
+                console.log('videos', data.data)
                 if (data.status === 'success') {
                     setVideos(data.data)
+                    setfetchLoading(false)
+
                 }
 
 
@@ -58,12 +62,23 @@ function page() {
         <>
             <Hero>
                 <div className='bg-[#101720] min-h-[100vh] flex flex-col justify-center items-center'>
+                    {fetchLoading ?
+                        <span className="loading loading-bars text-white loading-lg"></span>
+
+                        :
+
+                (videos.length===0?
+
+                    <p className=' text-[35px] text-white font-semibold'>🤭oops no content yet</p>
+
+                    :
+              
                     <div className='bg-[#101720] p-0 grid gap-4 lg:grid-cols-3 min-h-[100vh] md:grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1'>
 
 
                         {
                             videos.map((val) => {
-                                return (<div className="card card-compact cursor-pointer w-[100%] lg:h-[70vh] md:h-[70vh] sm:h-[70vh] max-sm:h-[70vh] p-4 shadow-xl bg-[#0B1215] text-white " onClick={(e) => { e.preventDefault(); setCurrentVideo(val); }}>
+                                 return(<div className="card card-compact cursor-pointer w-[100%] lg:h-[70vh] md:h-[70vh] sm:h-[70vh] max-sm:h-[70vh] p-4 shadow-xl bg-[#0B1215] text-white " onClick={(e) => { e.preventDefault(); setCurrentVideo(val); }}>
                                     <figure className='h-[70%]'><ReactPlayer url={val.video_meta.url} width={'100%'} height={'100%'} className='mt-0' muted /></figure>
                                     {/* <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> */}
 
@@ -79,7 +94,12 @@ function page() {
 
 
                     </div>
-
+               
+                   
+                    
+                    )
+                    
+                }
                     {logged_in && authData.is_admin ?
                         <Link href={`/videos/create`} >
                             <button className="btn bg-gray-500 outline-none border-none">Add Video</button>

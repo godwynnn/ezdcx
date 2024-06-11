@@ -62,7 +62,7 @@ export default function Home() {
 
 
 
-    // console.log(count)
+    console.log(count)
 
 
     document.getElementById('bg_header').style.backgroundImage = `url(${bg_images[count]})`
@@ -301,22 +301,25 @@ export default function Home() {
 
   })
 
- useEffect(()=>{
+ useLayoutEffect(()=>{
    // INTERSECTION OBSERVER
+   
   
    var video_1=document.getElementById('video_1')
    var video_2=document.getElementById('video_2')
    let autoplayVideo=new IntersectionObserver((entries,observer)=>{
      entries.forEach(entry=>{
-       if(entry.isIntersecting){
-        entry.target.children[0].muted=false
-         console.log(entry.target)
-         entry.target.children[0].play()
-         
-       }else{
-        console.log(entry.target)
+       if(!entry.isIntersecting){
+        // entry.target.children[0].muted=false
+        //  console.log(entry.target)
+        //  entry.target.children[0].play()
         entry.target.children[0].pause()
+         
        }
+      //  else{
+      //   console.log(entry.target)
+      //   entry.target.children[0].pause()
+      //  }
      })
    })
  
@@ -516,24 +519,24 @@ export default function Home() {
 
           
 
-            <div className="anime_ref  flex flex-col text-center w-[100%] relative top-0 left-0  p-24 " ref={anime_ref}   >
+            <div className="anime_ref  flex flex-col justify-center items-center text-center w-[100%] relative top-0 left-0 lg:p-24 md:p-24 sm:p-24 max-sm:p-2 " ref={anime_ref}   >
               
-            <p className="lg:text-[50px]  max-sm:text-[25px]  text-center "><span>Who We Are</span></p>
-              <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[85%] mt-[0%] " />
+            <p className="lg:text-[120px] md:text-[100px] sm:text-[80px]  max-sm:text-[50px] max  text-center "><span>About Us</span></p>
+              {/* <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[85%] mt-[0%] " /> */}
               {/* <p className=" absolute top-0 left-0 text-[15px] text-center font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
             </div>
 
 
-            <div className="anime_ref text-center w-[100%] relative top-0 left-0 p-24" ref={anime_ref} >
-              <ReactPlayer id='video_1' muted url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className='mt-0 intro_video max-sm:w-[100%] max-sm:h-[100%]' controls={true} />
+            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%] relative top-0 left-0 lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+              <ReactPlayer id='video_1'  url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'}  className=' intro_video ' controls={true} />
               {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
                 <p className="text-[50px] absolute top-[50%] text-center">What You Need To Know</p> */}
               {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
             </div>
 
 
-            <div className="anime_ref text-center w-[100%] relative top-0 left-0 p-24" ref={anime_ref} >
-              <ReactPlayer id='video_2' url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={'100%'} height={'100%'} className='mt-0 intro_video' controls />
+            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%] relative top-0 left-0 lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+              <ReactPlayer id='video_2' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls />
 
               {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] intro_video" />
                 <p className="text-[50px] absolute top-[50%] text-center">What You Need </p> */}
@@ -558,13 +561,13 @@ export default function Home() {
 
           <div className=" text-[#101720] p-10 rounded-lg">
             <p className="lg:text-[50px] md:text-[40px] max-md:text-[40px] sm:text-[30px] max-sm:text-[30px]  text-[#101720] p-1 rounded-lg">Grow With Us.</p>
-            <p className="lg:text-[20px] md:text-[20px] max-sm:text-[20px] font-extralight">
+            <p className="lg:text-[20px] md:text-[20px] max-sm:text-[15px] font-extralight">
             Your financial goals are our primary focus. We invite you to embark on a journey of wealth creation and prosperity by investing with us. Whether you're an experienced investor or just starting out, our platform offers the tools, expertise, and opportunities you need to thrive in today's dynamic markets.
             </p>
           </div>
 
 
-          <Image src={require('../../assets/img27.png')} className="lg:w-[100%] h-[60%] sm:w-[80%] max-sm:w-[90%] translate-y-0" ref={img12_ref} />
+          <Image src={require('../../assets/img27.png')} className="lg:w-[100%] h-[60%] sm:w-[100%] max-sm:w-[100%] translate-y-0" ref={img12_ref} />
 
 
         </section>

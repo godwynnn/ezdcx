@@ -97,7 +97,7 @@ function AuthComponent() {
         console.log(data)
         if (data.status === 'success') {
 
-          console.log(data)
+          console.log('authdata_login',data)
           toast.success(data.message)
 
           dispatch(AuthencticationAction.Login({ ...values, data }))

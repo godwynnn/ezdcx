@@ -136,7 +136,7 @@ function Packages({ params }) {
                 if (data.status === 'success') {
                     console.log(data)
                     setImgData(data.data)
-                    setImgInfo(data.data.image_metadata)
+                    setImgInfo(data.data.image_meta)
                     setPaystackKey({ 'pk': data.pkey, 'sk': data.skey })
                     setLoading(false)
                 } else {
@@ -172,7 +172,7 @@ function Packages({ params }) {
 
 
 
-                    <div className='bg-[#0B1215] lg:p-20 md:p-20 sm:p-20 max-sm:p-0  min-h-[100vh] w-full'>
+                    <div className='bg-[#0B1215] lg:p-20 md:p-20 sm:p-20 max-sm:p-0  min-h-[100vh] max-sm:w-[100%] lg:w-[100%] md:w-[100%] sm:w-[100%]'>
 
                         <div className="hero min-h-full lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%]">
                             <form className="hero-content max-sm:w-[100%] flex  items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center  lg:justify-between">
@@ -180,7 +180,7 @@ function Packages({ params }) {
 
 
                                 <div className='w-[50%] sm:w-[100%] max-sm:w-[100%] bg-base-200 p-20 max-sm:p-10 rounded-lg'>
-                                    {loading?<Skeleton/>:<h1 className="text-5xl font-bold">{imgData.name }</h1>}
+                                    {loading?<Skeleton/>:<h1 className="lg:text-5xl md:text-[30px] sm:text-[30px] max-sm:text-[25px] font-bold">{imgData.name }</h1>}
                                     <p className="py-6">{loading?<Skeleton />:imgData.description}</p>
                                     <h2 className='font-bold'>N {loading?<Skeleton />:imgData.daily_price}</h2>
 

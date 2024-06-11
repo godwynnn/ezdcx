@@ -31,3 +31,5 @@ export const store=configureStore({
 })
 
 export const Persistor = persistStore(store)
+// Persistor.purge(); // optional: clear storage if needed
+// Persistor.flush(); // optional: flush storage to make sure state is persisted immediately

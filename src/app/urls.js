@@ -1,7 +1,7 @@
 export const Urls=()=>{
 
-    // const local='https://tradingapi-74d6.onrender.com'
-    const local='https://x6w53ch2-5000.euw.devtunnels.ms/'
+    const local='https://tradingapi-74d6.onrender.com'
+    // const local='https://x6w53ch2-5000.euw.devtunnels.ms/'
     return{
         login:`${local}/login`,
         signup:`${local}/signup`,
@@ -15,6 +15,9 @@ export const Urls=()=>{
         subscription_data:`${local}/get_subscription`,
         create_video:  `${local}/add_videos`,
         videos:`${local}/videos`,
+        get_users:`${local}/get_users`,
+        get_user:`${local}/get_user`,
+        manage_user:`${local}/manage_user`,
 
         logout:''
 

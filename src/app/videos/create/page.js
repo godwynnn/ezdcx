@@ -65,6 +65,7 @@ function Create() {
 
         }).then(res => res.json())
             .then(data =>{
+                console.log(data)
                 if(data.status==='success'){
                     router.push('/videos')
                 }
@@ -98,10 +99,10 @@ function Create() {
                     </CldUploadWidget>
 
                     <select className="select select-bordered w-full max-w-xs align-middle" name='graph' onChange={(e) => setitemData({ ...itemData, 'package': e.target.value })} >
-                    <option disabled selected>Select Package</option>
+                    <option disabled selected >Select Package</option>
                         {packages.map((val) => {
                             // console.log(val.name);
-                           return <option  key={val.id} selected value={val.id}>{val.name}</option>
+                           return <option   key={val.id}  value={val.id}>{val.name}</option>
                         })}
 
 
