@@ -56,7 +56,7 @@ function Navbar() {
                 <ul className="menu menu-vertical lg:flex md:hidden sm:hidden max-sm:hidden flex-row bg-transparent rounded-box w-[60%] font-bold justify-evenly ">
                     <Link href={'/'}> <li><a>Home</a></li></Link>
                     <Link href={'/packages'}> <li><a>Package</a></li></Link>
-                    <li><a>About Us</a></li>
+                    <li><a>Contact</a></li>
                 </ul>
 
                 {/* <button className="btn btn-ghost btn-circle">

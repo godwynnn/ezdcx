@@ -94,7 +94,7 @@ function Navbar() {
                         :
                         ''
                     }
-                    <li><a>About Us</a></li>
+                    {/* <li><a>About Us</a></li> */}
                 </ul>
 
                 {/* <button className="btn btn-ghost btn-circle">

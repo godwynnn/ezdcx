@@ -7,6 +7,7 @@ function Footer() {
   return (
     <section className="footer_section w-[100%] min-h-[150vh]  bg-[#0B1215] flex flex-col    text-white p-[8%]" >
       <hr />
+      <br />
       <p className='text-[30px] text-left'>Terms & Conditions</p>
 
       <div tabIndex={0} className="collapse t_c collapse-arrow border border-base-300 bg-base-200">
@@ -222,7 +223,7 @@ function Footer() {
 
       <hr />
 
-      <section className='flex lg:flex-row md:flex-row sm:flex-col max-sm:flex-col lg:gap-8 md:gap-6 sm:gap-4 max-sm:gap-4 h-[80vh] p-4'>
+      <section className='flex lg:flex-row md:flex-row sm:flex-col max-sm:flex-col lg:gap-8 md:gap-6 sm:gap-4 max-sm:gap-4 h-[80vh] p-4 mt-[8%]'>
         <form className='text-white flex flex-col gap-10 lg:w-[50%] md:w-[50%] sm:w-[100%] max-sm:w-[100%] h-[100%]'>
           <label className="input input-bordered flex items-center gap-2 bg-transparent" style={{ borderBottom: '1px solid white' }} >
             Name
@@ -276,7 +277,7 @@ function Footer() {
 
       </section>
       <hr />
-      <p className='font-thin'>copyright EZFRX</p>
+      <p className='font-thin'>© EZFRX All Right Reserved</p>
 
 
     </section>

@@ -79,8 +79,11 @@ function Rates(props) {
 
       <select className="select select-bordered w-full max-w-xs align-middle" name='graph' onChange={e=>props.handleGraphChange(e)}>
         <option disabled selected>Select Graph</option>
-        <option value='APEX'>Graph 1</option>
-        <option value='PLOTLY'>Graph 2</option>
+        <option value='candlestick'>Candlestick</option>
+        <option value='bar'>Bar</option>
+        <option value='line'>Line</option>
+        <option value='rangeArea'>Range Area</option>
+        <option value='rangeBar'>Range Bar</option>
       </select>
 
       <label className="input input-bordered flex items-center gap-2 mt-5">

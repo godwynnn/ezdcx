@@ -22,7 +22,7 @@ const url = Urls()
 function Dashboard() {
 
     const router = useRouter()
-    const [graph, setGraph] = useState('APEX')
+    const [graph, setGraph] = useState('candlestick')
     const dispatch=useDispatch()
 
     const handleGraphChange = e => {

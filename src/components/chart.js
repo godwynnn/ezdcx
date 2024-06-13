@@ -29,6 +29,7 @@ function Chart(props) {
   // client=new wS3('');
 
   // const [loading, setLoading] = useState(true)
+  const [type,setType]=useState('candlestick')
 
 
   console.log('data', chartData)
@@ -59,7 +60,7 @@ function Chart(props) {
     }],
     options: {
       chart: {
-        type: 'candlestick',
+        type: props.graph,
         height: 350
       },
       title: {
@@ -143,7 +144,7 @@ function Chart(props) {
           <>
 
             <div className={'p-0  m-0 lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] max-md:h-[100%] sm:h-[100%] max-sm:h-[100%] '}>
-              {props.graph === 'PLOTLY' ?
+              {/* {props.graph === 'PLOTLY' ?
 
                 <Plot
                   className={'p-0  m-0 lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] '}
@@ -204,11 +205,11 @@ function Chart(props) {
                     }
                   }} />
 
-                :
+                : */}
                 <ApexCharts series={chart_Data.series} options={chart_Data.options} type='candlestick' width={'100%'} height={500} className={'p-0  m-0 lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] max-md:h-[100%] sm:h-[100%] max-sm:h-[100%] max-sm:w-[100%] '} />
 
 
-              }
+              {/* } */}
 
             </div>
           </>
