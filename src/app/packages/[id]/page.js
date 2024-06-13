@@ -95,6 +95,11 @@ function Packages({ params }) {
         setDurationInterval(val)
         fetch(`${url.change_price}?service_id=${params.id}&duration=${duration}&interval=${val}`, {
             method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization":`Bearer ${authData.accessToken}`
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
         }).then((res) => res.json())
             .then(data => {
                 console.log(data);
@@ -110,6 +115,11 @@ function Packages({ params }) {
         setDuration(val)
         fetch(`${url.change_price}?service_id=${params.id}&duration=${val}&interval=${interval}`, {
             method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization":`Bearer ${authData.accessToken}`
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
         }).then((res) => res.json())
             .then(data => {
                 console.log(data);

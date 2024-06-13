@@ -37,10 +37,10 @@ export default function Home() {
   const img3_ref = useRef()
   const img10_ref = useRef()
   const img12_ref = useRef()
-  const img20_ref=useRef()
-  const section_4_ref=useRef()
+  const img20_ref = useRef()
+  const section_4_ref = useRef()
   const section_3_ref = useRef()
-  const img20_ref_holder=useRef()
+  const img20_ref_holder = useRef()
   const feature_holder = useRef()
   const feature_holder_img = useRef()
   const anime_ref_holder = useRef()
@@ -94,7 +94,7 @@ export default function Home() {
   useGSAP(() => {
 
 
-    
+
     gsap.from(svg_ref.current, {
       opacity: 0,
       delay: .8,
@@ -177,7 +177,7 @@ export default function Home() {
       delay: 0.21,
       duration: 0.2,
       opacity: 0,
-      ease:'elastic.in'
+      ease: 'elastic.in'
     })
 
     gsap.from(img20_ref_holder.current, {
@@ -304,32 +304,32 @@ export default function Home() {
 
   })
 
- useLayoutEffect(()=>{
-   // INTERSECTION OBSERVER
-   
-  
-  //  var video_1=document.getElementById('video_1')
-  //  var video_2=document.getElementById('video_2')
-  //  let autoplayVideo=new IntersectionObserver((entries,observer)=>{
-  //    entries.forEach(entry=>{
-  //      if(!entry.isIntersecting){
-  //       // entry.target.children[0].muted=false
-  //       //  console.log(entry.target)
-  //       //  entry.target.children[0].play()
-  //       entry.target.children[0].pause()
-         
-  //      }
-  //     //  else{
-  //     //   console.log(entry.target)
-  //     //   entry.target.children[0].pause()
-  //     //  }
-  //    })
-  //  })
- 
-  //  autoplayVideo.observe(video_1)
-  //  autoplayVideo.observe(video_2)
- 
- })
+  useLayoutEffect(() => {
+    // INTERSECTION OBSERVER
+
+
+    var video_1 = document.getElementById('video_1')
+    var video_2 = document.getElementById('video_2')
+    let autoplayVideo = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          // entry.target.children[0].muted=false
+          //  console.log(entry.target)
+          //  entry.target.children[0].play()
+          entry.target.children[0].pause()
+
+        }
+        //  else{
+        //   console.log(entry.target)
+        //   entry.target.children[0].pause()
+        //  }
+      })
+    })
+
+    autoplayVideo.observe(video_1)
+    autoplayVideo.observe(video_2)
+
+  })
 
 
 
@@ -341,7 +341,7 @@ export default function Home() {
   return (
     <>
 
-      <main className="relative min-h-[100vh] w-[100%]">
+      <main className="relative min-h-[100vh] w-[100%] overflow-hidden">
         <Navbar />
         <header id="bg_header" className="header  relative w-[100%] h-[120vh] flex lg:flex-row md:flex-row sm:flex-col max-sm:flex-col justify-center items-center  "   >
           <section className="h-full absolute top-0 z-50 left-0 max-lg:w-[60%] lg:w-[100%] max-md:w-[40%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] text-white flex flex-col justify-center lg:p-[5%] md:p-[10%] header_caption "  >
@@ -468,7 +468,7 @@ export default function Home() {
 
             <br /><br />
             <button className="btn bg-[#D8D8D8] border-none text-[#101720] w-[20%]">Explore</button>
-            
+
           </div>
 
 
@@ -482,7 +482,7 @@ export default function Home() {
           </div>
 
         </section>
-        
+
 
 
 
@@ -495,10 +495,10 @@ export default function Home() {
             </p><br />
 
             <p className=" lg:text-[18px] max-sm:text-[15px] font-extralight">At EZFRX, safeguarding your information isn't just a commitment; it's our foremost priority.
-             We understand that in today's digital landscape, trust is paramount.
+              We understand that in today's digital landscape, trust is paramount.
               That's why we've implemented rigorous measures to ensure the highest level of security across all facets of our operations.</p>
 
-       
+
 
           </div>
 
@@ -514,7 +514,43 @@ export default function Home() {
         </section>
 
 
+       
+          <section className="section w-[300%] h-[150vh]    bg-[#101720] justify-center items-center text-white p-[8%]" ref={anime_ref_holder}>
 
+
+            <div className="flex flex-nowrap h-[100%] w-[90%]    ">
+
+
+
+              <div className="anime_ref  flex flex-col justify-center items-center text-center w-[100%]  lg:p-24 md:p-24 sm:p-24 max-sm:p-2 " ref={anime_ref}   >
+
+                <p className="lg:text-[120px] md:text-[100px] sm:text-[80px]  max-sm:text-[50px] max  text-center "><span>About Us</span></p>
+                {/* <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[85%] mt-[0%] " /> */}
+                {/* <p className=" absolute top-0 left-0 text-[15px] text-center font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+              </div>
+
+
+              <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%] lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+                <ReactPlayer id='video_1' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls={true} />
+                {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
+                <p className="text-[50px] absolute top-[50%] text-center">What You Need To Know</p> */}
+                {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+              </div>
+
+
+              <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%]  lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+                <ReactPlayer id='video_2' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls />
+
+                {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] intro_video" />
+                <p className="text-[50px] absolute top-[50%] text-center">What You Need </p> */}
+                {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+              </div>
+
+            </div>
+
+
+          </section>
+    
 
 
         <section className="relative section w-[100%] lg:h-[150vh] md:h-[200vh] sm:h-[200vh] max-sm:h-[200vh]   bg-gray-200 grid lg:grid-cols-2 md:grid-cols-1 max-md:grid-cols-1 sm:grid-cols-1 justify-center items-center text-[#0B1215]  p-[5%]">
@@ -529,7 +565,7 @@ export default function Home() {
           <div className=" text-[#101720] p-10 rounded-lg">
             <p className="lg:text-[50px] md:text-[40px] max-md:text-[40px] sm:text-[30px] max-sm:text-[30px]  text-[#101720] p-1 rounded-lg">Grow With Us.</p>
             <p className="lg:text-[20px] md:text-[20px] max-sm:text-[15px] font-extralight">
-            Your financial goals are our primary focus. We invite you to embark on a journey of wealth creation and prosperity by investing with us. Whether you're an experienced investor or just starting out, our platform offers the tools, expertise, and opportunities you need to thrive in today's dynamic markets.
+              Your financial goals are our primary focus. We invite you to embark on a journey of wealth creation and prosperity by investing with us. Whether you're an experienced investor or just starting out, our platform offers the tools, expertise, and opportunities you need to thrive in today's dynamic markets.
             </p>
           </div>
 
