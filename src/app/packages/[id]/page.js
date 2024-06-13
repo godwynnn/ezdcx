@@ -93,7 +93,7 @@ function Packages({ params }) {
 
     const changePriceByInterval = (val) => {
         setDurationInterval(val)
-        fetch(`${url.change_price}/${params.id}?duration=${duration}&interval=${val}`, {
+        fetch(`${url.change_price}/?service_id=${params.id}&duration=${duration}&interval=${val}`, {
             method: "GET",
         }).then((res) => res.json())
             .then(data => {
@@ -108,7 +108,7 @@ function Packages({ params }) {
 
     const changePriceByduration = (val) => {
         setDuration(val)
-        fetch(`${url.change_price}/${params.id}?duration=${val}&interval=${interval}`, {
+        fetch(`${url.change_price}/?service_id=${params.id}&duration=${val}&interval=${interval}`, {
             method: "GET",
         }).then((res) => res.json())
             .then(data => {

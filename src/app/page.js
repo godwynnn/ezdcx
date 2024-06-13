@@ -92,6 +92,8 @@ export default function Home() {
 
   useGSAP(() => {
 
+
+    ScrollTrigger.normalizeScroll(true)
     gsap.from(svg_ref.current, {
       opacity: 0,
       delay: .8,
@@ -512,7 +514,7 @@ export default function Home() {
 
 
 
-        <section className="section w-[300%] h-[150vh]   bg-[#101720] justify-center items-center text-white p-[8%]" ref={anime_ref_holder}>
+        <section className="section w-[300%] h-[150vh] overflow-x-hidden   bg-[#101720] justify-center items-center text-white p-[8%]" ref={anime_ref_holder}>
         
 
           <div className="flex flex-nowrap h-[100%] w-[90%] relative overflow-hidden ">
