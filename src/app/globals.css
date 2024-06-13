@@ -48,7 +48,7 @@ body{
   background-size: cover;
   background-image: url(/img21.jpg);
   scale: 1;
-  transition: 0.8s ease;
+  transition: 0.5s ease;
 
  
 }
