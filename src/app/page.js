@@ -81,6 +81,7 @@ export default function Home() {
 
 
   useLayoutEffect(() => {
+    ScrollTrigger.normalizeScroll(true)
 
     if (authData.logged_in) {
       redirect('/dashboard')
@@ -93,7 +94,7 @@ export default function Home() {
   useGSAP(() => {
 
 
-    ScrollTrigger.normalizeScroll(true)
+    
     gsap.from(svg_ref.current, {
       opacity: 0,
       delay: .8,
