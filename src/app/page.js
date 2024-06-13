@@ -515,7 +515,41 @@ export default function Home() {
 
 
 
-      
+        <section className="section w-[300%] h-[150vh] overflow-x-hidden   bg-[#101720] justify-center items-center text-white p-[8%]" ref={anime_ref_holder}>
+        
+
+          <div className="flex flex-nowrap h-[100%] w-[90%] relative overflow-hidden ">
+
+          
+
+            <div className="anime_ref  flex flex-col justify-center items-center text-center w-[100%] relative top-0 left-0 lg:p-24 md:p-24 sm:p-24 max-sm:p-2 " ref={anime_ref}   >
+              
+            <p className="lg:text-[120px] md:text-[100px] sm:text-[80px]  max-sm:text-[50px] max  text-center "><span>About Us</span></p>
+              {/* <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[85%] mt-[0%] " /> */}
+              {/* <p className=" absolute top-0 left-0 text-[15px] text-center font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+            </div>
+
+
+            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%] relative top-0 left-0 lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+              <ReactPlayer id='video_1'  url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'}  className=' intro_video ' controls={true} />
+              {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
+                <p className="text-[50px] absolute top-[50%] text-center">What You Need To Know</p> */}
+              {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+            </div>
+
+
+            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%] relative top-0 left-0 lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+              <ReactPlayer id='video_2' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls />
+
+              {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] intro_video" />
+                <p className="text-[50px] absolute top-[50%] text-center">What You Need </p> */}
+              {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+            </div>
+
+          </div>
+
+
+        </section>
 
 
 
