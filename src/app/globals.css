@@ -48,13 +48,14 @@ body{
   background-size: cover;
   background-image: url(/img21.jpg);
   scale: 1;
-  transition: 0.8s ease;
+  transition: 0.8s ;
+  transition-timing-function: linear;
 
  
 }
 .header section:first-child{
   /* background-color: ; */
-  /* background: linear-gradient(to right, #101720 60%,transparent); */
+  background: linear-gradient(to right, #101720 60%,transparent);
 
   opacity: 80%;
   border: none;
