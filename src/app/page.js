@@ -344,7 +344,9 @@ export default function Home() {
       <main className="relative min-h-[100vh] w-[100%] overflow-hidden">
         <Navbar />
         <header id="bg_header" className="header  relative w-[100%] h-[120vh] flex lg:flex-row md:flex-row sm:flex-col max-sm:flex-col justify-center items-center  "   >
-          <section className="h-full absolute top-0 z-50 left-0 max-lg:w-[60%] lg:w-[100%] max-md:w-[40%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] text-white flex flex-col justify-center lg:p-[5%] md:p-[10%] header_caption "  >
+          <section className="h-full absolute top-0 z-50 left-0 max-lg:w-[100%] lg:w-[100%] max-md:w-[40%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] text-white flex flex-col justify-center lg:p-[5%] md:p-[10%] header_caption "  >
+           
+           
             <div className="lg:w-[60%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] h-[100%] flex flex-col justify-center ">
               <ReactTyped
                 // startWhenVisible
