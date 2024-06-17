@@ -247,7 +247,7 @@ function Footer() {
 
 
 
-        <div className='lg:w-[50%] md:w-[50%] sm:w-[100%] max-sm:w-[100%] h-[100%]'>
+        <div className='lg:w-[50%] md:w-[50%] sm:w-[100%] max-sm:w-[100%] h-[100%]' >
 
           <div className='w-[100%] text-white flex flex-col gap-6'>
             <a href=""><FontAwesomeIcon icon={faLocationPin} />  <span>15 Osapaul Street
@@ -277,7 +277,7 @@ function Footer() {
 
       </section>
       <hr />
-      <p className='font-thin'>© EZFRX All Right Reserved</p>
+      <p className='font-thin'  id='contact_section'>© EZFRX All Right Reserved</p>
 
 
     </section>
