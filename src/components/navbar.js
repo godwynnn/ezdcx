@@ -154,10 +154,12 @@ function Navbar() {
                             <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                                 <li>
                                     <a className="justify-between">
-                                        Profile
-
+                                    <Link href={'/profile'}>
+                                            Profile
+                                        </Link>
                                     </a>
                                 </li>
+                                
 
                                 {authData.is_admin ?
 
@@ -170,6 +172,14 @@ function Navbar() {
                                     ''
 
                                 }
+
+<li>
+                                    <a className="justify-between">
+                                    <Link href={'/password/change'}>
+                                            Change Password
+                                        </Link>
+                                    </a>
+                                </li>
                                 <li onClick={Logout}><a >Logout</a></li>
                             </ul>
                         </div>

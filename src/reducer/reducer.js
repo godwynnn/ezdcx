@@ -38,7 +38,7 @@ export const AuthenticationSlice = createSlice({
             state.id = action.payload.data.user.id
 
 
-            if (action.payload.data.user.role === 'ADMIN') {
+            if (action.payload.data.user.role === 'ADMIN' || 'SUPERUSER') {
                 state.is_admin = true
             } else {
                 state.is_admin = false

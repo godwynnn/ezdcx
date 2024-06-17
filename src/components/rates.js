@@ -77,14 +77,14 @@ function Rates(props) {
   return (
     <div className={'w-full h-[100%] bg-[#101720] p-5'}>
 
-      <select className="select select-bordered w-full max-w-xs align-middle" name='graph' onChange={e=>props.handleGraphChange(e)}>
+      {/* <select className="select select-bordered w-full max-w-xs align-middle" name='graph' onChange={e=>props.handleGraphChange(e)}>
         <option disabled selected>Select Graph</option>
         <option value='candlestick'>Candlestick</option>
         <option value='bar'>Bar</option>
         <option value='line'>Line</option>
         <option value='rangeArea'>Range Area</option>
         <option value='rangeBar'>Range Bar</option>
-      </select>
+      </select> */}
 
       <label className="input input-bordered flex items-center gap-2 mt-5">
         <input type="text" className={'grow'} placeholder="Search" onChange={e => handleChange(e.target.value)} />

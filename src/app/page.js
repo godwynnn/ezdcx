@@ -20,11 +20,9 @@ import Navbar from "@/components/headernav";
 
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation,EffectFade} from 'swiper/modules';
 
 
-// Import Swiper styles
-import "swiper/css";
 
 
 
@@ -344,10 +342,9 @@ export default function Home() {
       <main className="relative min-h-[100vh] w-[100%] overflow-hidden">
         <Navbar />
         <header id="bg_header" className="header  relative w-[100%] h-[120vh] flex lg:flex-row md:flex-row sm:flex-col max-sm:flex-col justify-center items-center  "   >
-          <section className="h-full absolute top-0 z-50 left-0 max-lg:w-[100%] lg:w-[100%] max-md:w-[40%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] text-white flex flex-col justify-center lg:p-[5%] md:p-[10%] header_caption "  >
-           
-           
-            <div className="lg:w-[60%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] h-[100%] flex flex-col justify-center ">
+        <section className="h-full absolute top-0 z-50 left-0 max-lg:w-[100%] lg:w-[100%] max-md:w-[40%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] text-white flex flex-col justify-center lg:p-[5%] md:p-[10%] header_caption "  >
+
+        <div className="lg:w-[60%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] h-[100%] flex flex-col justify-center ">
               <ReactTyped
                 // startWhenVisible
                 className=" lg:text-[55px] md:text-[40px] sm:text-[40px] max-sm:text-[30px] max-sm:text-center font-[400] text-gray-200  lg:text-left md:text-left sm:text-center"
@@ -367,12 +364,37 @@ export default function Home() {
               />
 
             </div>
+        
+        </section>
+          <Swiper
+            spaceBetween={10}
+            effect={'fade'}
+         
+            loop={true}
 
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            
+            modules={[EffectFade,Autoplay]}
+            className="mySwiper"
+          >
 
-            {/* <p className="text-[15px] font-thin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, dignissimos.</p> */}
-            {/* <p className="text-[15px]">Gain a competitive edge with our cutting-edge trading signals designed to guide you towards success in the currency markets.</p> */}
+            <SwiperSlide>
 
-          </section>
+            </SwiperSlide>
+
+            <SwiperSlide>
+
+            </SwiperSlide>
+
+            <SwiperSlide>
+
+            </SwiperSlide>
+
+           
+          </Swiper>
 
 
 
@@ -516,43 +538,43 @@ export default function Home() {
         </section>
 
 
-       
-          <section className="section w-[300%] h-[150vh]    bg-[#101720] justify-center items-center text-white p-[8%]" ref={anime_ref_holder}>
+
+        <section className="section w-[300%] h-[150vh]    bg-[#101720] justify-center items-center text-white p-[8%]" ref={anime_ref_holder}>
 
 
-            <div className="flex flex-nowrap h-[100%] w-[90%]    ">
+          <div className="flex flex-nowrap h-[100%] w-[90%]    ">
 
 
 
-              <div className="anime_ref  flex flex-col justify-center items-center text-center w-[100%]  lg:p-24 md:p-24 sm:p-24 max-sm:p-2 " ref={anime_ref}   >
+            <div className="anime_ref  flex flex-col justify-center items-center text-center w-[100%]  lg:p-24 md:p-24 sm:p-24 max-sm:p-2 " ref={anime_ref}   >
 
-                <p className="lg:text-[120px] md:text-[100px] sm:text-[80px]  max-sm:text-[50px] max  text-center "><span>About Us</span></p>
-                {/* <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[85%] mt-[0%] " /> */}
-                {/* <p className=" absolute top-0 left-0 text-[15px] text-center font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
-              </div>
-
-
-              <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%] lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
-                <ReactPlayer id='video_1' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls={true} />
-                {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
-                <p className="text-[50px] absolute top-[50%] text-center">What You Need To Know</p> */}
-                {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
-              </div>
-
-
-              <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%]  lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
-                <ReactPlayer id='video_2' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls />
-
-                {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] intro_video" />
-                <p className="text-[50px] absolute top-[50%] text-center">What You Need </p> */}
-                {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
-              </div>
-
+              <p className="lg:text-[120px] md:text-[100px] sm:text-[80px]  max-sm:text-[50px] max  text-center "><span>About Us</span></p>
+              {/* <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[85%] mt-[0%] " /> */}
+              {/* <p className=" absolute top-0 left-0 text-[15px] text-center font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
             </div>
 
 
-          </section>
-    
+            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%] lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+              <ReactPlayer id='video_1' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls={true} />
+              {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
+                <p className="text-[50px] absolute top-[50%] text-center">What You Need To Know</p> */}
+              {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+            </div>
+
+
+            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%]  lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+              <ReactPlayer id='video_2' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls />
+
+              {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] intro_video" />
+                <p className="text-[50px] absolute top-[50%] text-center">What You Need </p> */}
+              {/* <p className=" text-[15px] font-extralight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat ipsa tempore facilis. Praesentium non corporis adipisci odit dicta quidem?</p> */}
+            </div>
+
+          </div>
+
+
+        </section>
+
 
 
         <section className="relative section w-[100%] lg:h-[150vh] md:h-[200vh] sm:h-[200vh] max-sm:h-[200vh]   bg-gray-200 grid lg:grid-cols-2 md:grid-cols-1 max-md:grid-cols-1 sm:grid-cols-1 justify-center items-center text-[#0B1215]  p-[5%]">

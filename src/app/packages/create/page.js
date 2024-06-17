@@ -30,7 +30,7 @@ function Create() {
         e.preventDefault()
         // setImgData(imgData,{'img_info':imgInfo})
 
-        const obj_data = { 'imgData': imgData, 'img_info': imgInfo }
+        const obj_data = { 'imgData': imgData, 'img_info': imgInfo, 'edit':false }
         console.log(obj_data)
         fetch(url.create, {
             method: "POST",

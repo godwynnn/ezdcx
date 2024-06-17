@@ -231,7 +231,9 @@ function AuthComponent() {
           {(signUpformik.errors.passWord && signUpformik.touched.passWord) &&
             <p className=' text-red-600 text-sm text-left'>{signUpformik.errors.passWord}</p>
           }
+          <br />
 
+            <a href="password/reset" className=' text-red-600'>Forgot Password?</a>
           <button class="btn btn-neutral mt-5" type='submit'>Signup</button>
 
 

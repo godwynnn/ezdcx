@@ -73,7 +73,7 @@ function page() {
 
                     :
               
-                    <div className='bg-[#101720] p-0 grid gap-4 lg:grid-cols-3 min-h-[100vh] md:grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1'>
+                    <div className='bg-[#101720] w-[100%] p-8 grid gap-4 lg:grid-cols-3 min-h-[100vh] md:grid-cols-2 sm:grid-cols-1 max-sm:grid-cols-1'>
 
 
                         {

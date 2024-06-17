@@ -265,7 +265,7 @@ function Footer() {
               <a href="" className='social_icons'><FontAwesomeIcon icon={faFacebook} /></a>
               <a href="" className='social_icons'><FontAwesomeIcon icon={faTwitter} /></a>
 
-              <a href="https://www.instagram.com/invites/contact/?igsh=MzY1YnlyZXVsMjJu&utm_content=lj2wrb8" target='_blank' className='social_icons'><FontAwesomeIcon icon={faInstagram} /></a>
+              <a href="https://www.instagram.com/ezfrx_live?utm_source=qr&igsh=MTg2cGEyYWVrdnNxYw==" target='_blank' className='social_icons'><FontAwesomeIcon icon={faInstagram} /></a>
 
 
             </div>
