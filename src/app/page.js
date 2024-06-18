@@ -447,16 +447,16 @@ export default function Home() {
             <div className="feature p-[5%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%]    " >
               <FontAwesomeIcon icon={faGlobeAfrica} className='feature_icon text-[30px] max-sm:text-[20px]' />
               <div className="desc">
-                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">Prompt Trading Signals.</p>
-                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light "> We specialize in delivering timely and accurate market insights to empower traders to make informed decisions and capitalize on opportunities.</p>
+                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">Education and Support.</p>
+                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light "> Access a wealth of educational materials, including tutorials, webinars, and articles to improve your trading skills and knowledge.</p>
               </div>
             </div>
 
             <div className="feature p-[5%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%]    " >
               <FontAwesomeIcon icon={faGlobeAfrica} className='feature_icon text-[30px] max-sm:text-[20px]' />
               <div className="desc">
-                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">Prompt Trading Signals.</p>
-                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light "> We specialize in delivering timely and accurate market insights to empower traders to make informed decisions and capitalize on opportunities.</p>
+                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">User-Friendly Interface</p>
+                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light "> An intuitive and easy-to-navigate dashboard where you can view all your signals, historical data, and performance metrics.</p>
               </div>
             </div>
 
@@ -464,8 +464,8 @@ export default function Home() {
             <div className="feature p-[5%] rounded-md lg:h-[100%] md:h-[100%] sm:h-[100%] w-[100%]     " >
               <FontAwesomeIcon icon={faGlobeAfrica} className='feature_icon text-[30px] max-sm:text-[20px]' />
               <div className="desc">
-                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">Prompt Trading Signals.</p>
-                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light "> We specialize in delivering timely and accurate market insights to empower traders to make informed decisions and capitalize on opportunities.</p>
+                <p className="text-[25px] max-sm:text-[20px] sm:text-[20px] lg:text-[20px] font-bold">Flexible Subscription Plans</p>
+                <p className="text-[15px] max-sm:text-[12px] sm:text-[12px]  lg:text-[15px] font-light ">Choose from a variety of subscription plans to suit your trading needs and budget. Monthly, quarterly, and annual plans are available.</p>
               </div>
             </div>
 

@@ -18,6 +18,9 @@ export const Urls=()=>{
         get_users:`${local}/get_users`,
         get_user:`${local}/get_user`,
         manage_user:`${local}/manage_user`,
+        forgot_password:`${local}/forgot_password`,
+        reset_token:`${local}/reset_password`,
+
 
         logout:''
 

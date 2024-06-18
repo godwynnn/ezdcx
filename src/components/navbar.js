@@ -174,11 +174,11 @@ function Navbar() {
                                 }
 
 <li>
-                                    <a className="justify-between">
+                                    {/* <a className="justify-between">
                                     <Link href={'/password/change'}>
                                             Change Password
                                         </Link>
-                                    </a>
+                                    </a> */}
                                 </li>
                                 <li onClick={Logout}><a >Logout</a></li>
                             </ul>

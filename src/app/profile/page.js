@@ -59,8 +59,14 @@ function Profile({ params }) {
                         <div className='w-[50%] sm:w-[100%] max-sm:w-[100%] bg-base-200 p-20 max-sm:p-10 rounded-lg'>
 
                             <label className="input input-bordered flex items-center gap-2">
-                                Name
-                                <input type="text" className="grow" name='name' value={`${user.first_name} ${user.last_name}`} onChange={(e) => { handleSetDurationChange(e) }} />
+                                Firstname
+                                <input type="text" className="grow" name='name' value={`${user.first_name}`} onChange={(e) => { handleSetDurationChange(e) }} />
+                            </label>
+                            <br />
+
+                            <label className="input input-bordered flex items-center gap-2">
+                                Lastname
+                                <input type="text" className="grow" name='name' value={`${user.last_name}`} onChange={(e) => { handleSetDurationChange(e) }} />
                             </label>
                             <br />
 
