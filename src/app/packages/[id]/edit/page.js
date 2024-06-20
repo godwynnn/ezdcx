@@ -74,7 +74,7 @@ function Edit({params}) {
         <>
 
             <Hero>
-                <div className='bg-[#101720]  p-20 flex flex-col justify-center items-center min-h-[100vh] '>
+                <div className='bg-[#101720]  md:p-20 sm:p-20 max-sm:p-0.5 flex flex-col justify-center items-center min-h-[100vh] '>
                 <Toaster position="top-right" expand={true} richColors/>
                     <div className="hero h-[90vh] w-[60%] bg-base-200  rounded-lg">
                         <form className="hero-content text-left p-10 flex flex-col w-[100%]" method="POST" onSubmit={sendData}  >

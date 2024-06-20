@@ -81,7 +81,7 @@ function Create() {
         <>
         {authData.is_admin && authData.logged_in?
         <Hero>
-        <div className='bg-[#101720]  p-20 flex flex-col justify-center items-center min-h-[100vh] '>
+        <div className='bg-[#101720]  lg:p-20  md:p-20 sm:p-20 max-sm:p-0.5 flex flex-col justify-center items-center min-h-[100vh] '>
 
             <div className="hero h-[90vh] lg:w-[60%] md:w-[80%] sm:w-[100%] max-sm:w-[100%] bg-base-200 ">
                 <form className="hero-content text-left p-10 flex flex-col w-[100%]" method="POST" onSubmit={sendData} >
