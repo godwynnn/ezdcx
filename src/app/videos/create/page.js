@@ -5,6 +5,7 @@ import { Urls } from "@/app/urls";
 import Hero from "@/app/hero";
 import { useRouter, redirect } from 'next/navigation'
 import { useSelector } from 'react-redux'
+import { Toaster, toast } from 'sonner'
 
 const url = Urls()
 
@@ -67,6 +68,7 @@ function Create() {
             .then(data =>{
                 console.log(data)
                 if(data.status==='success'){
+                    toast.success(data.message)
                     router.push('/videos')
                 }
             })
@@ -82,7 +84,7 @@ function Create() {
         {authData.is_admin && authData.logged_in?
         <Hero>
         <div className='bg-[#101720]  lg:p-20  md:p-20 sm:p-20 max-sm:p-0.5 flex flex-col justify-center items-center min-h-[100vh] '>
-
+        <Toaster position="top-right" expand={true} richColors/>
             <div className="hero h-[90vh] lg:w-[60%] md:w-[80%] sm:w-[100%] max-sm:w-[100%] bg-base-200 ">
                 <form className="hero-content text-left p-10 flex flex-col w-[100%]" method="POST" onSubmit={sendData} >
                     <input type="text" placeholder="Title" className="input input-bordered w-[100%]" onChange={(e) => setitemData({ ...itemData, 'name': e.target.value })} />
@@ -115,6 +117,7 @@ function Create() {
                 </form>
             </div>
 
+        <Toaster/>
         </div>
     </Hero>
         :   

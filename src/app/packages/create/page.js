@@ -5,6 +5,7 @@ import { Urls } from "@/app/urls";
 import Hero from "@/app/hero";
 import { useRouter, redirect } from 'next/navigation'
 import { useSelector } from 'react-redux'
+import { Toaster, toast } from 'sonner'
 
 const url = Urls()
 
@@ -48,6 +49,7 @@ function Create() {
                 console.log(data);
                 if (data.status === 'success') {
                     router.push('/packages')
+                    toast.success(data.message)
 
                 }
             }
@@ -65,7 +67,7 @@ function Create() {
             {authData.logged_in ?
                 <Hero>
                     <div className='bg-[#101720]  lg:p-20  md:p-20 sm:p-20 max-sm:p-0.5 flex flex-col justify-center items-center min-h-[100vh] '>
-
+                    <Toaster position="top-right" expand={true} richColors/>
                         <div className="hero h-[90vh] lg:w-[60%] md:w-[80%] sm:w-[100%] max-sm:w-[100%] bg-base-200  rounded-lg">
                             <form className="hero-content text-left p-10 flex flex-col w-[100%]" onSubmit={sendData} method="POST"  >
 
@@ -93,7 +95,7 @@ function Create() {
 
                             </form>
                         </div>
-
+                    <Toaster/>
                     </div>
                 </Hero>
 

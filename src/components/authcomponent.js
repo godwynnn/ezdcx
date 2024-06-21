@@ -56,11 +56,14 @@ function AuthComponent() {
       const data = await res.json()
       console.log(data.message)
       if (data.status === 'success') {
-        router.push('/auth')
-        console.log(data.message)
+        toast.success(data.message)
+        router.reload()
+        
+        // console.log(data.message)
 
       }
       else {
+        toast.error(data.message)
         console.log(data.message)
       }
 

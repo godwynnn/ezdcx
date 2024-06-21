@@ -10,6 +10,7 @@ import { Urls } from '@/app/urls';
 import Skeleton from 'react-loading-skeleton';
 import { useSelector } from 'react-redux'
 import { usePathname } from 'next/navigation';
+import { Toaster, toast } from 'sonner'
 
 
 
@@ -110,6 +111,24 @@ function Packages({ params }) {
 
     }
 
+    const deletePackage=(id)=>{
+        fetch(`${url.delete_package}/${id}`,{
+            method:'DELETE',
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization":`Bearer ${authData.accessToken}`
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+        }).then((res)=>res.json())
+        .then((data)=>{
+            // console.log(data)
+            toast.success(data.message)
+            router.push('/packages')
+        })
+    
+
+    }
+
 
     const changePriceByduration = (val) => {
         setDuration(val)
@@ -183,7 +202,7 @@ function Packages({ params }) {
 
 
                     <div className='bg-[#0B1215] lg:p-20 md:p-20 sm:p-20 max-sm:p-0  min-h-[100vh] max-sm:w-[100%] lg:w-[100%] md:w-[100%] sm:w-[100%]'>
-
+                    <Toaster position="top-right" expand={true} richColors/>
                         <div className="min-h-full lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%]">
                             <form className="hero-content max-sm:w-[100%] flex  items-center lg:flex-row md:flex-col sm:flex-col max-sm:flex-col max-sm:items-center max-sm:justify-center  lg:justify-between">
                                 <img src={imgInfo.url } className=" h-[90%] sm:w-[100%] max-sm:w-[100%] rounded-lg shadow-2xl" />
@@ -218,9 +237,20 @@ function Packages({ params }) {
 
                                     </PaystackConsumer>
                                     {authData.is_admin?
-                                        <Link href={`/packages/${params.id}/edit`} >
+                                    <>
+                                    <Link href={`/packages/${params.id}/edit`} >
                                         <button className="btn bg-gray-500 text-white" type='button' >Edit</button>
                                     </Link>
+
+                                    
+
+                                    <button className="btn bg-red-500 text-white" type='button' onClick={()=>deletePackage(params.id)} >Delete</button>
+
+
+                                    
+                                    </>
+                                        
+                                    
                                     :
                                     ''
                                 }
@@ -234,6 +264,7 @@ function Packages({ params }) {
                                 </div>
                             </form>
                         </div>
+                        <Toaster/>
                     </div>
 
 

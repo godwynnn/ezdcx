@@ -20,6 +20,7 @@ export const Urls=()=>{
         manage_user:`${local}/manage_user`,
         forgot_password:`${local}/forgot_password`,
         reset_token:`${local}/reset_password`,
+        delete_package:`${local}/delete_service`,
 
 
         logout:''
