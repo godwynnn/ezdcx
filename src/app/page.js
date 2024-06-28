@@ -268,7 +268,7 @@ export default function Home() {
         // markers:true,
         start: "10%left left",
         end: '40%right left',
-        scrub: 1,
+        scrub: 3,
         // pin:'main',
         // snap:1,
         // toggleActions:'restart pause reverse pause',
@@ -287,7 +287,7 @@ export default function Home() {
         // markers:true,
         start: "80%left left",
         end: '0%right left',
-        scrub: 1,
+        scrub: 3,
         // pin:'main',
         // snap:1,
         // toggleActions:'restart pause reverse pause',
@@ -344,15 +344,16 @@ export default function Home() {
         <header id="bg_header" className="header  relative w-[100%] h-[120vh] flex lg:flex-row md:flex-row sm:flex-col max-sm:flex-col justify-center items-center  "   >
         <section className="h-full absolute top-0 z-50 left-0 max-lg:w-[100%] lg:w-[100%] max-md:w-[40%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] text-white flex flex-col justify-center lg:p-[5%] md:p-[10%] header_caption "  >
 
-        <div className="lg:w-[60%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] h-[100%] flex flex-col justify-center ">
+        <div className="lg:w-[100%]  md:w-[100%] sm:w-[100%] max-sm:w-[100%] h-[100%] flex flex-col justify-center items-center ">
+              <p className="text-white p-[2%] lg:text-[65px] md:text-[50px] sm:text-[50px] max-sm:text-[35px] text-center">Profitable Trading,Your Trading Ally</p>
               <ReactTyped
                 // startWhenVisible
-                className=" lg:text-[55px] md:text-[40px] sm:text-[40px] max-sm:text-[30px] max-sm:text-center font-[400] text-gray-200  lg:text-left md:text-left sm:text-center"
+                className=" lg:text-[20px] md:text-[30px] sm:text-[20px] max-sm:text-[20px] max-sm:text-center font-[400] text-white lg:text-center md:text-center sm:text-center"
                 id="header_text"
                 strings={[
                   "<p>Begin your journey to financial freedom with <span className=text-white font-[700]>EZFRX</span> </p>",
                   "<p>Join the fastest growing global trading platform</p>",
-                  "<p>Our story is simple <br> <small>WE EMPOWER PEOPLE</small> </p>",
+                  "<p>Stay Ahead of the Market with Our Cutting-Edge Trading Signals.</p>",
                 ]}
                 typeSpeed={40}
                 startDelay={1000}
@@ -427,7 +428,7 @@ export default function Home() {
 
             {/* <Image src={require('../../assets/img16.webp')} className="w-[100%] " /> */}
 
-            <p className="lg:text-[45px] sm:text-[30px] max-sm:text-[22px] md:text-[25px] md:text-left sm:text-center max-sm:text-center"> Discover the art of forex trading with us</p>
+            <p className="lg:text-[45px] sm:text-[30px] max-sm:text-[30px] md:text-[35px] md:text-left sm:text-center max-sm:text-center"> Discover the art of forex trading with us</p>
           </div>
 
 
@@ -491,7 +492,7 @@ export default function Home() {
               grasp key concepts such as currency pairs, pips, leverage, and margin to make informed trading decisions.</p>
 
             <br /><br />
-            <button className="btn bg-[#D8D8D8] border-none text-[#101720] w-[20%]">Explore</button>
+            {/* <button className="btn bg-[#D8D8D8] border-none text-[#101720] w-[20%]">Explore</button> */}
 
           </div>
 
@@ -546,7 +547,7 @@ export default function Home() {
 
 
 
-            <div className="anime_ref  flex flex-col justify-center items-center text-center w-[100%]  lg:p-24 md:p-24 sm:p-24 max-sm:p-2 " ref={anime_ref}   >
+            <div className="anime_ref  flex flex-col justify-center items-center text-center w-[100%]  lg:p-28 md:p-28 sm:p-28 max-sm:p-4 " ref={anime_ref}   >
 
               <p className="lg:text-[120px] md:text-[100px] sm:text-[80px]  max-sm:text-[50px] max  text-center "><span>About Us</span></p>
               {/* <Image src={require('../../assets/image20.jpg')} className="w-[100%] h-[85%] mt-[0%] " /> */}
@@ -554,7 +555,7 @@ export default function Home() {
             </div>
 
 
-            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%] lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%] lg:p-28 md:p-28 sm:p-28 max-sm:p-4" ref={anime_ref} >
               <ReactPlayer id='video_1' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls={true} />
               {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] " />
                 <p className="text-[50px] absolute top-[50%] text-center">What You Need To Know</p> */}
@@ -562,7 +563,7 @@ export default function Home() {
             </div>
 
 
-            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%]  lg:p-24 md:p-24 sm:p-24 max-sm:p-2" ref={anime_ref} >
+            <div className="anime_ref text-center lg:w-[100%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] max-sm:h-[80%]  lg:p-28 md:p-28 sm:p-28 max-sm:p-4" ref={anime_ref} >
               <ReactPlayer id='video_2' url={'/videos/ezfrx1.mp4'} width={'100%'} height={'100%'} className=' intro_video ' controls />
 
               {/* <Image src={require('../../assets/image17.jpg')} className="w-[100%] h-[100%] mt-[0%] intro_video" />

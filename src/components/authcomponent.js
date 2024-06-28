@@ -197,6 +197,9 @@ function AuthComponent() {
           }
 
           <button class="btn btn-success mt-5" type='submit'>Login</button>
+          <br />
+
+          <a href="password/reset" className=' text-red-600'>Forgot Password?</a>
 
 
         </form>
@@ -236,7 +239,7 @@ function AuthComponent() {
           }
           <br />
 
-            <a href="password/reset" className=' text-red-600'>Forgot Password?</a>
+            
           <button class="btn btn-neutral mt-5" type='submit'>Signup</button>
 
 
