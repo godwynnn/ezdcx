@@ -71,7 +71,8 @@ function Chart(props) {
             zoomin: true,
             zoomout: true,
             pan: true,
-            reset: true
+            reset: true,
+            customIcons:[]
           },
         },
         type: props.graph,
@@ -98,6 +99,8 @@ function Chart(props) {
 
       xaxis: {
         type: 'datetime',
+        tickPlacement: 'on',
+        
 
 
       },
