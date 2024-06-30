@@ -34,9 +34,10 @@ export const fetchChartData = async (data, dispatch) => {
     // APEXCHARTS
     if (obj.status==="success"){
 
+        console.log('yes')
     
     const entry = ''
-    const all_dates = Object.entries(obj.prices.Datetime)
+    const all_dates = Object.entries(obj.prices.datetime)
     const all_highs = Object.entries(obj.prices.high)
     const all_opens = Object.entries(obj.prices.open)
     const all_closes = Object.entries(obj.prices.close)
@@ -109,7 +110,7 @@ export const fetchChartData = async (data, dispatch) => {
         let all_high = []
         let all_low = []
 
-        const dates_time = Object.entries(obj.prices.Datetime)
+        const dates_time = Object.entries(obj.prices.datetime)
         const closes = Object.entries(obj.prices.close)
         const opens = Object.entries(obj.prices.open)
         const highs = Object.entries(obj.prices.high)

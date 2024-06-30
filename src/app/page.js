@@ -344,11 +344,11 @@ export default function Home() {
         <header id="bg_header" className="header  relative w-[100%] h-[120vh] flex lg:flex-row md:flex-row sm:flex-col max-sm:flex-col justify-center items-center  "   >
         <section className="h-full absolute top-0 z-50 left-0 max-lg:w-[100%] lg:w-[100%] max-md:w-[40%] md:w-[100%] sm:w-[100%] max-sm:w-[100%] text-white flex flex-col justify-center lg:p-[5%] md:p-[10%] header_caption "  >
 
-        <div className="lg:w-[100%]  md:w-[100%] sm:w-[100%] max-sm:w-[100%] h-[100%] flex flex-col justify-center items-center ">
-              <p className="text-white p-[2%] lg:text-[65px] md:text-[50px] sm:text-[50px] max-sm:text-[35px] text-center">Profitable Trading,Your Trading Ally</p>
+        <div className="p-2 lg:w-[55%]  md:w-[100%] sm:w-[100%] max-sm:w-[100%] h-[100%] flex flex-col justify-center  ">
+              <p className="text-white p-[0%] lg:text-[60px] md:text-[50px] sm:text-[50px] max-sm:text-[35px]  lg:text-left md:text-center sm:text-center max-sm:text-center">Profitable Trading,Your Trading Ally</p>
               <ReactTyped
                 // startWhenVisible
-                className=" lg:text-[20px] md:text-[30px] sm:text-[20px] max-sm:text-[20px] max-sm:text-center font-[400] text-white lg:text-center md:text-center sm:text-center"
+                className=" lg:text-[20px] md:text-[25px] sm:text-[18px] max-sm:text-[18px] max-sm:text-center font-[400] text-white lg:text-left md:text-center sm:text-center"
                 id="header_text"
                 strings={[
                   "<p>Begin your journey to financial freedom with <span className=text-white font-[700]>EZFRX</span> </p>",

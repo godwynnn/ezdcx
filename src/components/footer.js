@@ -7,8 +7,8 @@ function Footer() {
   return (
     <section className="footer_section w-[100%] min-h-[150vh]  bg-[#0B1215] flex flex-col    text-white p-[8%]" >
       <hr />
-      <br />
-      <p className='text-[30px] text-left'>Our Policy</p>
+      
+      {/* <p className='text-[30px] text-left'>Our Policy</p> */}
 
       <div tabIndex={0} className="collapse t_c collapse-plus border border-base-300 bg-base-200">
         <input type="checkbox" />
@@ -22,9 +22,9 @@ function Footer() {
 
 
 
-         <div>
-          Online Membership Agreement
-          <br />
+          <p>
+            Online Membership Agreement
+            <br />
 
 
             Welcome to EZFRX! This Agreement is between you ("you" or "your") and EZFRX for the supply of products or services accessed on www.ezfrx.com and related sites. It includes free trials and/or Subscription-based services. This Agreement is effective upon confirmation of your Membership and receipt of your initial Subscription fees (“Effective Date”). We may require certified or notarized identity documents at any time and reserve the right to reject applications at our discretion. By accessing our site or applying for our services, you agree to these terms.
@@ -146,35 +146,35 @@ function Footer() {
             <br />
 
 
-         
-
-              To the fullest extent permitted by law, we are not liable for any direct, indirect, special, or incidental damages arising from your Membership or use of the site.
-
-              <br />
 
 
+            To the fullest extent permitted by law, we are not liable for any direct, indirect, special, or incidental damages arising from your Membership or use of the site.
 
-          Indemnification
-          <br />
-
-       
-
-              You agree to indemnify us against any liabilities, claims, damages, or expenses arising from your misuse of the site or breach of these terms.
-
-              <br />
+            <br />
 
 
 
-
-
-       Disputes & Arbitration; Applicable Law
-       <br />
+            Indemnification
+            <br />
 
 
 
-              All disputes will be resolved through arbitration on an individual basis, waiving rights to court or class actions.
+            You agree to indemnify us against any liabilities, claims, damages, or expenses arising from your misuse of the site or breach of these terms.
 
-              <br />
+            <br />
+
+
+
+
+
+            Disputes & Arbitration; Applicable Law
+            <br />
+
+
+
+            All disputes will be resolved through arbitration on an individual basis, waiving rights to court or class actions.
+
+            <br />
 
 
 
@@ -186,27 +186,11 @@ function Footer() {
             <br />
 
 
-        
-
-              This Agreement remains in effect until terminated by either party. You may cancel your Membership at any time. We may terminate immediately for non-compliance with these terms. Termination details are outlined in the full agreement.
-
-              <br />
 
 
+            This Agreement remains in effect until terminated by either party. You may cancel your Membership at any time. We may terminate immediately for non-compliance with these terms. Termination details are outlined in the full agreement.
 
-
-
-
-
-       General
-       <br />
-
-
-           
-
-              This Agreement constitutes the entire agreement between you and us, superseding all prior agreements. These terms do not create any partnership, joint venture, or employment relationship. If any provision is unenforceable, it will be reformed to reflect the intent and the remaining terms will remain in effect.
-              <br />
-           
+            <br />
 
 
 
@@ -214,18 +198,34 @@ function Footer() {
 
 
 
-          Additional Terms and Programs
-          <br />
+            General
+            <br />
 
-           
-              We may add additional terms for specific benefits or programs.
 
-              By agreeing to these terms, you acknowledge that you have read, understood, and agree to comply with these terms and conditions.
 
-           
 
-        
-              </div>
+            This Agreement constitutes the entire agreement between you and us, superseding all prior agreements. These terms do not create any partnership, joint venture, or employment relationship. If any provision is unenforceable, it will be reformed to reflect the intent and the remaining terms will remain in effect.
+            <br />
+
+
+
+
+
+
+
+
+            Additional Terms and Programs
+            <br />
+
+
+            We may add additional terms for specific benefits or programs.
+
+            By agreeing to these terms, you acknowledge that you have read, understood, and agree to comply with these terms and conditions.
+
+
+
+
+          </p>
 
         </div>
       </div>
