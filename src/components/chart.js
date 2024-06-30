@@ -60,8 +60,23 @@ function Chart(props) {
     }],
     options: {
       chart: {
+        toolbar: {
+          show: true,
+          offsetX: 0,
+          offsetY: 0,
+          tools: {
+            download: true,
+            selection: true,
+            zoom: true,
+            zoomin: true,
+            zoomout: true,
+            pan: true,
+            reset: true
+          },
+        },
         type: props.graph,
-        height: 350
+        height: 350,
+        
       },
       title: {
         text: chartData.symbol,
@@ -71,7 +86,7 @@ function Chart(props) {
       },
       grid: {
         // position: 'front',
-        borderColor: 'white',
+        borderColor: '#444444',
         strokeDashArray: 1,
         
         xaxis: {
@@ -91,7 +106,7 @@ function Chart(props) {
           enabled: false
         },
         axisBorder: {
-          show: true,
+          show: false,
           color: '#78909C',
           
       },
@@ -206,7 +221,7 @@ function Chart(props) {
                   }} />
 
                 : */}
-                <ApexCharts series={chart_Data.series} options={chart_Data.options} type='candlestick' width={'100%'} height={500} className={'p-0  m-0 lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] max-md:h-[100%] sm:h-[100%] max-sm:h-[100%] max-sm:w-[100%] '} />
+                <ApexCharts series={chart_Data.series} options={chart_Data.options} type='candlestick' width={'100%'} height={500} className={'p-1  m-0 lg:w-[100%] lg:h-[100%] max-lg:w-[100%] max-lg:h-[100%] md:w-[100%] max-md:h-[100%] sm:h-[100%] max-sm:h-[100%] max-sm:w-[100%] '} />
 
 
               {/* } */}
