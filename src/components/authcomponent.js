@@ -20,6 +20,8 @@ function AuthComponent() {
   const searchParams = useSearchParams()
   const next = searchParams.get('next')
   const user_admin = searchParams.get('admin')
+  const [loginLoading,setLoginLoading]=useState(false)
+  const [signupLoading,setSignupLoading]=useState(false)
 
   // console.log(user_admin)
 
@@ -36,12 +38,14 @@ function AuthComponent() {
       passWord: '',
     },
     onSubmit: async (values) => {
-      console.log(values)
+      // console.log(values)
+      
       if (user_admin !== null) {
         var auth_url = `${url.signup}/?admin=${user_admin}`
       } else {
         var auth_url = url.signup
       }
+      setSignupLoading(true)
 
 
       const res = await fetch(auth_url, {
@@ -57,13 +61,15 @@ function AuthComponent() {
       console.log(data.message)
       if (data.status === 'success') {
         toast.success(data.message)
+        setSignupLoading(false)
         router.reload()
+        
         
         // console.log(data.message)
 
-      }
-      else {
+      }else {
         toast.error(data.message)
+        setSignupLoading(false)
         console.log(data.message)
       }
 
@@ -89,6 +95,8 @@ function AuthComponent() {
     onSubmit: values => {
       // console.log(values)
 
+
+      setLoginLoading(true)
       fetch(url.login, {
         method: 'POST',
         headers: {
@@ -102,11 +110,14 @@ function AuthComponent() {
 
           console.log('authdata_login',data)
           toast.success(data.message)
+          
 
           dispatch(AuthencticationAction.Login({ ...values, data }))
           router.push(next ?? '/dashboard')
+          setLoginLoading(false)
         } else {
           toast.error(data.message)
+          setLoginLoading(false)
         }
 
       })
@@ -165,7 +176,7 @@ function AuthComponent() {
 
     <div className=' flex flex-col justify-center  items-center bg_default '>
     <Toaster position="top-right" expand={true} richColors/>
-      <div className=' bg-slate-100 opacity-[80%] rounded-lg flex flex-col lg:h-[90%] lg:w-[40%] md:h-[90%] md:w-[50%] sm:h-[90%] sm:w-[60%] max-sm:h-[90%] max-sm:w-[80%]  p-3  auth_holder relative'>
+      <div className=' bg-slate-100 opacity-[80%] rounded-lg flex flex-col lg:h-[90%] lg:w-[40%] md:h-[90%] md:w-[50%] sm:h-[90%] sm:w-[60%] max-sm:h-[90%] max-sm:w-[95%]  p-3  auth_holder relative'>
         <div className='flex flex-row justify-evenly h-[10%] w-[100%] relative'>
           <div className="btn_selector absolute top-0 left-0 h-full w-[50%]  bg-[#101720] rounded-md" ref={select_btn}></div>
           <button className='relative w-[50%] btn_active' ref={login_btn}>Login</button>
@@ -196,7 +207,7 @@ function AuthComponent() {
             <p className=' text-red-600 text-sm text-left'>{loginFormik.errors.passWord}</p>
           }
 
-          <button class="btn btn-success mt-5" type='submit'>Login</button>
+          <button class="btn btn-success mt-5 text-white" type='submit'>{loginLoading?<span className="loading loading-spinner loading-md text-white"></span>:'Login'}</button>
           <br />
 
           <a href="password/reset" className=' text-red-600'>Forgot Password?</a>
@@ -240,7 +251,7 @@ function AuthComponent() {
           <br />
 
             
-          <button class="btn btn-neutral mt-5" type='submit'>Signup</button>
+          <button class="btn btn-neutral mt-5" type='submit'>{signupLoading?<span className="loading loading-spinner loading-md text-white"></span>:'Signup'}</button>
 
 
         </form>

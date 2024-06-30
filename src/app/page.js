@@ -424,7 +424,7 @@ export default function Home() {
 
 
         <section className=" w-[100%] relative lg:min-h-[120vh] md:h-[90vh] sm:h-[190vh]  flex lg:flex-row md:flex-row sm:flex-col  max-sm:flex-col  bg-[#0B1215]  p-[10%] gap-0 justify-center items-center text-white">
-          <div className=" z-[105] rounded-md lg:min-h-[100%] md:h-[100%] sm:h-[100%] w-[100%] max-sm:w-[60%] sm:w-[70%]  max-sm:mb-[15%] flex justify-left items-center p-2 max-sm:text-center lg:text-left md:text-left sm:text-left " ref={feature_holder_img}>
+          <div className=" z-[105] rounded-md lg:min-h-[100%] md:h-[100%] sm:h-[100%] w-[100%] max-sm:w-[100%] sm:w-[70%]  max-sm:mb-[15%] flex justify-left items-center p-0 max-sm:text-center lg:text-left md:text-left sm:text-left " ref={feature_holder_img}>
 
             {/* <Image src={require('../../assets/img16.webp')} className="w-[100%] " /> */}
 
