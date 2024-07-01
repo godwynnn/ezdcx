@@ -62,18 +62,19 @@ function Chart(props) {
       chart: {
         toolbar: {
           show: true,
-          offsetX: 0,
+          offsetX: -100,
           offsetY: 0,
           tools: {
             download: true,
             selection: true,
-            zoom: true,
+            zoom: false,
             zoomin: true,
             zoomout: true,
             pan: true,
             reset: true,
             customIcons:[]
           },
+          autoSelected: 'pan' 
         },
         type: props.graph,
         height: 350,
@@ -228,6 +229,7 @@ function Chart(props) {
 
 
               {/* } */}
+              
 
             </div>
           </>
