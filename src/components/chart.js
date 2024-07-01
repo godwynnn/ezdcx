@@ -62,7 +62,7 @@ function Chart(props) {
       chart: {
         toolbar: {
           show: true,
-          offsetX: -100,
+          offsetX: 0,
           offsetY: 0,
           tools: {
             download: true,
